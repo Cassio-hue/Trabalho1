@@ -23,6 +23,7 @@ bool Nome::setNome(string valor){
         nome = valor;
         return true;
     }
+    \\ como o nome e invalido, pode-se pedir outro nome antes de seguir o programa
     return false;
 }
 

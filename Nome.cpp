@@ -1,6 +1,10 @@
 #include "Nome.h"
+#include <stdexcept>
 
-bool validateNome(string valor){
+using namespace std;
+
+bool Nome::validateNome(string nome){
+    
     /*
     Nome e sobrenome
     Ate 30 caracteres
@@ -15,16 +19,15 @@ bool validateNome(string valor){
 
     return (numeroCaracteres && primeiraLetraNome && primeiraLetraSobrenome && sequenciaEspacobranco);
     */
-   return 0;
+   return true;
 }
 
-bool Nome::setNome(string valor){
-    if (validateNome(valor)){
-        nome = valor;
-        return true;
+void Nome::setNome(string nome){
+    if (validateNome(nome)){
+        this -> nome = nome;
+        return;
     }
-    \\ como o nome e invalido, pode-se pedir outro nome antes de seguir o programa
-    return false;
+    throw std::invalid_argument("");
 }
 
 string Nome::getNome(){

@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1655832051 source:c:\users\cassi\downloads\trabalho1\main.cpp
+	<iostream>
+	"Nome.h"
+
+1655831422 c:\users\cassi\downloads\trabalho1\nome.h
+	<iostream>
+
+1655832111 source:c:\users\cassi\downloads\trabalho1\nome.cpp
+	"Nome.h"
+	<stdexcept>
+

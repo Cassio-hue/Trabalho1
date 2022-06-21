@@ -4,7 +4,7 @@
 
 using namespace std;
 
-bool Nome::validateNome(string nome){
+bool Nome::validarNome(string nome){
     int numEspacoBranco = 0;
     int numLetrasMaisculas = 0;
     int nomeTamanho = nome.length();
@@ -47,7 +47,7 @@ bool Nome::validateNome(string nome){
 }
 
 void Nome::setNome(string nome){
-    if (validateNome(nome)){
+    if (validarNome(nome)){
         this -> nome = nome;
         return;
     }

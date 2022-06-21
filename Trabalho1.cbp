@@ -36,6 +36,8 @@
 		</Compiler>
 		<Unit filename="Nome.cpp" />
 		<Unit filename="Nome.h" />
+		<Unit filename="Nota.cpp" />
+		<Unit filename="Nota.h" />
 		<Unit filename="main.cpp" />
 		<Extensions />
 	</Project>

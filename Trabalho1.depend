@@ -1,13 +1,23 @@
 # depslib dependency file v1.0
-1655836494 source:c:\users\cassi\downloads\trabalho1\main.cpp
+1655847631 source:c:\users\cassi\downloads\trabalho1\main.cpp
 	<iostream>
 	"Nome.h"
+	"Nota.h"
 
-1655831422 c:\users\cassi\downloads\trabalho1\nome.h
+1655844720 c:\users\cassi\downloads\trabalho1\nome.h
 	<iostream>
 
-1655836514 source:c:\users\cassi\downloads\trabalho1\nome.cpp
+1655844741 source:c:\users\cassi\downloads\trabalho1\nome.cpp
 	"Nome.h"
+	<cctype>
+	<stdexcept>
+
+1655847597 c:\users\cassi\downloads\trabalho1\nota.h
+	<iostream>
+
+1655847284 source:c:\users\cassi\downloads\trabalho1\nota.cpp
+	"Nota.h"
+	<iostream>
 	<cctype>
 	<stdexcept>
 

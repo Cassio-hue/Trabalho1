@@ -16,30 +16,30 @@ bool Nome::validarNome(string nome){
     }
 
     for (int i=0; i < nomeTamanho; i++){
-        if (isupper(nome[i])){
-            numLetrasMaisculas += 1;
-        }
-        if (nome[i] == ' '){
-            numEspacoBranco += 1;
-        }
         if (isdigit(nome[i])){
             return false;
         }
-        else if (nome[i] == ' ' && espacoBranco){
+        if (espacoBranco && islower(nome[i])){
             return false;
         }
-        else if (nome[i] == ' ') {
+        if (espacoBranco && nome[i] == ' '){
+            return false;
+        }
+        else if (isupper(nome[i])){
+            numLetrasMaisculas += 1;
+        }
+        else if (nome[i] == ' '){
+            numEspacoBranco += 1;
+        }
+        else if (nome[i] == ' '){
             espacoBranco = true;
         }
-        else if (espacoBranco && islower(nome[i])){
-            return false;
-        }
-        else{
+        else {
             espacoBranco = false;
         }
     }
 
-    if (numLetrasMaisculas != 2 | numEspacoBranco != 1) {
+    if (numLetrasMaisculas != 2 | numEspacoBranco != 1){
         return false;
     }
 

@@ -6,17 +6,17 @@ using namespace std;
 
 int main()
 {
-    // Nome a;
-    // a.setNome("Cassio Vinicius");
-    // cout << a.getNome() << endl;
+    Nome a;
+    a.setNome("C4ssio Borges");
+    cout << a.getNome() << endl;
 
     string nota;
 
-    Nota a;
+    Nota b;
     cout << "Digite uma nota (0-10): ";
     cin >> nota;
-    a.setNota(nota);
-    cout << a.getNota() << endl;
+    b.setNota(nota);
+    cout << b.getNota() << endl;
 
     return 0;
 }

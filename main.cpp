@@ -13,8 +13,8 @@ int main()
     string nota;
 
     Nota a;
+    cout << "Digite uma nota (0-10): ";
     cin >> nota;
-    cout << nota << endl;
     a.setNota(nota);
     cout << a.getNota() << endl;
 

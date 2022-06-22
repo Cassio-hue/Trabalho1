@@ -6,8 +6,12 @@
 using namespace std;
 
 bool Nota::validarNota(string valor) {
+    if (valor.length() > 2) {
+        return false;
+    }
+    
     for (int i = 0; i < valor.length(); i++){
-        if (isalpha(valor[i])) {
+        if (!isdigit(valor[i])) {
             return false;
         }
     }

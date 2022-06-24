@@ -1,13 +1,13 @@
 #include <iostream>
-#include "Nome.h"
+#include "Dominios.h"
 
 using namespace std;
 
 int main()
 {
     Nome a;
-    a.setNome("Cassio Vinicius");
-    cout << a.getNome() << endl;
+    a.setValor("Cassio Vinicius");
+    cout << a.getValor() << endl;
 
     return 0;
 }

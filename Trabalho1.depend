@@ -11,3 +11,15 @@
 	<cctype>
 	<stdexcept>
 
+1656028703 source:/home/artistreak/Desktop/progr/cpp/TP1/Trab1/Trabalho1/Dominios.cpp
+	"Dominios.h"
+	<string>
+
+1656028601 /home/artistreak/Desktop/progr/cpp/TP1/Trab1/Trabalho1/Dominios.h
+	<string>
+	<stdexcept>
+
+1656028595 source:/home/artistreak/Desktop/progr/cpp/TP1/Trab1/Trabalho1/main.cpp
+	<iostream>
+	"Dominios.h"
+

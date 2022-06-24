@@ -1,10 +1,16 @@
-#include "Nome.h"
-#include <cctype>
-#include <stdexcept>
+#include "Dominios.h"
+
+#include <string>
 
 using namespace std;
 
-bool Nome::validateNome(string nome){
+void Dominio::setValor(string valor){
+    validar(valor);
+    this->valor = valor;
+}
+
+
+void Nome::validar(string nome){
     int numEspacoBranco = 0;
     int numLetrasMaisculas = 0;
     int nomeTamanho = nome.length();
@@ -12,7 +18,7 @@ bool Nome::validateNome(string nome){
     bool primeiraLetraNome = isupper(nome[0]);
 
     if (!primeiraLetraNome | nomeTamanho >= 31){
-        return false;
+        throw invalid_argument("Formato inadequado para nome.");
     }
 
     for (int i=0; i < nomeTamanho; i++){
@@ -23,16 +29,16 @@ bool Nome::validateNome(string nome){
             numEspacoBranco += 1;
         }
         if (isdigit(nome[i])){
-            return false;
+            throw invalid_argument("Formato inadequado para nome.");
         }
         else if (nome[i] == ' ' && espacoBranco){
-            return false;
+            throw invalid_argument("Formato inadequado para nome.");
         }
         else if (nome[i] == ' ') {
             espacoBranco = true;
         }
         else if (espacoBranco && islower(nome[i])){
-            return false;
+            throw invalid_argument("Formato inadequado para nome.");
         }
         else{
             espacoBranco = false;
@@ -40,21 +46,6 @@ bool Nome::validateNome(string nome){
     }
 
     if (numLetrasMaisculas != 2 | numEspacoBranco != 1) {
-        return false;
+        throw invalid_argument("Formato inadequado para nome.");
     }
-
-   return true;
-}
-
-void Nome::setNome(string nome){
-    if (validateNome(nome)){
-        this -> nome = nome;
-        return;
-    }
-    
-    throw std::invalid_argument("Nome invalido");
-}
-
-string Nome::getNome(){
-    return nome;
 }

@@ -16,5 +16,11 @@ int main()
     b.setValor(nota);
     cout << b.getValor() << endl;
 
+    Idioma lingua;
+    string idio;
+    cout << "Digite seu idioma (sem acento): ";
+    cin >> idio;
+    lingua.setValor(idio);
+    cout << lingua.getValor() << endl;
     return 0;
 }

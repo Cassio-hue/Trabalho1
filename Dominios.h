@@ -37,4 +37,9 @@ class Nota : public Dominio {
 };
 
 
+class Idioma : public Dominio {
+    private:
+        void validar(string);
+};
+
 #endif // DOMINIOS_H_INCLUDED

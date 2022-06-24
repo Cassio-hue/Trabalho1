@@ -1,5 +1,6 @@
 #include "Dominios.h"
 
+
 void Dominio::setValor(string valor){
     validar(valor);
     this->valor = valor;
@@ -61,4 +62,17 @@ void Nota::validar(string valor){
     if (VALOR_MIN > stoi(valor) | stoi(valor)> VALOR_MAX){
         throw invalid_argument("A nota deve ser um valor entre " + to_string(VALOR_MIN) + " e " + to_string(VALOR_MAX));
     }
+}
+
+
+void Idioma::validar(string valor){
+    const int numeroIdiomas = 11;
+    string idiomas[numeroIdiomas] = {"Arabe", "Bengali", "Chines", "Espanhol", "Frances", "Hindi", "Indonesio", "Ingles", "Mandarim", "Portugues", "Russo"};
+
+    for (int i=0; i < numeroIdiomas; i++){
+        if (valor == idiomas[i]){
+            return;
+        }
+    }
+    throw invalid_argument("Idioma nao disponivel");
 }

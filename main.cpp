@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
     Nome a;
-    a.setValor("Cassio Vini");
+    a.setValor("Cassio Vinicius");
     cout << a.getValor() << endl;
 
     string nota;

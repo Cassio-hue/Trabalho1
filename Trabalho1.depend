@@ -15,12 +15,11 @@
 	<iostream>
 	"Dominios.h"
 
-1656031791 c:\users\cassi\documents\projetos\trabalho1\dominios.h
-	<string>
+1656096824 c:\users\cassi\documents\projetos\trabalho1\dominios.h
 	<stdexcept>
 	<ctype.h>
+	<string>
 
-1656031917 source:c:\users\cassi\documents\projetos\trabalho1\dominios.cpp
+1656096819 source:c:\users\cassi\documents\projetos\trabalho1\dominios.cpp
 	"Dominios.h"
-	<ctype.h>
 

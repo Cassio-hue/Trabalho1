@@ -8,6 +8,7 @@ int main()
     Nome a;
     a.setValor("Cassio Vinicius");
     cout << a.getValor() << endl;
+    cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 
     string nota;
 

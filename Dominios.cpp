@@ -1,6 +1,5 @@
 #include "Dominios.h"
 
-#include <string>
 
 using namespace std;
 
@@ -58,7 +57,7 @@ void Nota::validar(string valor){
     if (valor.length() > 2) {
         throw invalid_argument("A nota não pode conter mais de dois dígitos.");
     }
-    
+
     for (int i = 0; i < valor.length(); i++){
         if (!isdigit(valor[i])){
             throw invalid_argument("A nota deve ser um número.");
@@ -66,7 +65,7 @@ void Nota::validar(string valor){
     }
 
     if (stoi(valor) < VALOR_MIN | stoi(valor)> VALOR_MAX){
-        throw invalid_argument("A nota deve ser um valor entre 0 e 10."); 
+        throw invalid_argument("A nota deve ser um valor entre 0 e 10.");
         // formatar string pa fica bunitu
     }
 }

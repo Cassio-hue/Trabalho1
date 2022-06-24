@@ -59,7 +59,6 @@ void Nota::validar(string valor){
     }
 
     if (VALOR_MIN > stoi(valor) | stoi(valor)> VALOR_MAX){
-        throw invalid_argument("A nota deve ser um valor entre 0 e 10.");
-        // formatar string pa fica bunitu
+        throw invalid_argument("A nota deve ser um valor entre " + to_string(VALOR_MIN) + " e " + to_string(VALOR_MAX));
     }
 }

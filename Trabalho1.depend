@@ -11,3 +11,16 @@
 	<iostream>
 	"Dominios.h"
 
+1656031951 source:c:\users\cassi\documents\projetos\trabalho1\main.cpp
+	<iostream>
+	"Dominios.h"
+
+1656031791 c:\users\cassi\documents\projetos\trabalho1\dominios.h
+	<string>
+	<stdexcept>
+	<ctype.h>
+
+1656031917 source:c:\users\cassi\documents\projetos\trabalho1\dominios.cpp
+	"Dominios.h"
+	<ctype.h>
+

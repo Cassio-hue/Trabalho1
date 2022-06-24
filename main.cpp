@@ -6,12 +6,10 @@ using namespace std;
 int main()
 {
     Nome a;
-    a.setValor("Cassio Vinicius");
+    a.setValor("Cassio Vini");
     cout << a.getValor() << endl;
-    cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 
     string nota;
-
     Nota b;
     cout << "Digite uma nota (0-10): ";
     cin >> nota;

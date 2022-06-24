@@ -1,7 +1,4 @@
-!.gitignore
-!Trabalho1.cbp
-./Trabalho1.depend
-./Trabalho1.layout
+.gitignore
 .vscode
-/bin
-/obj
+bin
+obj

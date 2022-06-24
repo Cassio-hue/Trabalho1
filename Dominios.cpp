@@ -1,8 +1,5 @@
 #include "Dominios.h"
 
-
-using namespace std;
-
 void Dominio::setValor(string valor){
     validar(valor);
     this->valor = valor;
@@ -26,9 +23,6 @@ void Nome::validar(string nome){
         }
         else if (nome[i] == ' ' && espacoBranco){
             throw invalid_argument("Formato inadequado para nome.");
-        }
-        else if (nome[i] == ' ') {
-            espacoBranco = true;
         }
         else if (espacoBranco && islower(nome[i])){
             throw invalid_argument("Formato inadequado para nome.");
@@ -64,7 +58,7 @@ void Nota::validar(string valor){
         }
     }
 
-    if (stoi(valor) < VALOR_MIN | stoi(valor)> VALOR_MAX){
+    if (VALOR_MIN > stoi(valor) | stoi(valor)> VALOR_MAX){
         throw invalid_argument("A nota deve ser um valor entre 0 e 10.");
         // formatar string pa fica bunitu
     }

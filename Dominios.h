@@ -1,8 +1,8 @@
 #ifndef DOMINIOS_H_INCLUDED
 #define DOMINIOS_H_INCLUDED
-#include <string>
 #include <stdexcept>
 #include <ctype.h>
+#include <string>
 
 
 using namespace std;

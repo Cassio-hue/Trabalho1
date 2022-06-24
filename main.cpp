@@ -1,22 +1,21 @@
 #include <iostream>
-#include "Nome.h"
-#include "Nota.h"
+#include "Dominios.h"
 
 using namespace std;
 
 int main()
 {
     Nome a;
-    a.setNome("C4ssio Borges");
-    cout << a.getNome() << endl;
+    a.setValor("Cassio Vinicius");
+    cout << a.getValor() << endl;
 
     string nota;
 
     Nota b;
     cout << "Digite uma nota (0-10): ";
     cin >> nota;
-    b.setNota(nota);
-    cout << b.getNota() << endl;
+    b.setValor(nota);
+    cout << b.getValor() << endl;
 
     return 0;
 }

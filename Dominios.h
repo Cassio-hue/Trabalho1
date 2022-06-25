@@ -34,7 +34,6 @@ class Nome : public Dominio {
 class Nota : public Dominio {
     private:
         void validar(string valor);
-        static const int VALOR_MAX = 10, VALOR_MIN = 0;
 };
 
 

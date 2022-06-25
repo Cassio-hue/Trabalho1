@@ -49,18 +49,11 @@ void Nome::validar(string nome){
 
 
 void Nota::validar(string valor){
-    if (valor.length() > 2) {
-        throw invalid_argument("A nota não pode conter mais de dois dígitos.");
-    }
 
-    for (int i = 0; i < valor.length(); i++){
-        if (!isdigit(valor[i])){
-            throw invalid_argument("A nota deve ser um número.");
-        }
-    }
+    regex rule("^([0-9]|10)$");
 
-    if (VALOR_MIN > stoi(valor) | stoi(valor)> VALOR_MAX){
-        throw invalid_argument("A nota deve ser um valor entre " + to_string(VALOR_MIN) + " e " + to_string(VALOR_MAX));
+    if (!regex_match(valor, rule)){
+        throw invalid_argument("A nota deve ser um valor valido.");
     }
 }
 

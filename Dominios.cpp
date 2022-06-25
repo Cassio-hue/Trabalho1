@@ -66,13 +66,75 @@ void Nota::validar(string valor){
 
 
 void Idioma::validar(string valor){
-    const int numeroIdiomas = 11;
-    string idiomas[numeroIdiomas] = {"Arabe", "Bengali", "Chines", "Espanhol", "Frances", "Hindi", "Indonesio", "Ingles", "Mandarim", "Portugues", "Russo"};
+    string idiomas[NUMERO_IDIOMAS] = {"Arabe", "Bengali", "Chines", "Espanhol", "Frances", "Hindi", "Indonesio", "Ingles", "Mandarim", "Portugues", "Russo"};
 
-    for (int i=0; i < numeroIdiomas; i++){
+    for (int i=0; i < NUMERO_IDIOMAS; i++){
         if (valor == idiomas[i]){
             return;
         }
     }
     throw invalid_argument("Idioma nao disponivel");
+}
+
+void Data::validar(string valor){
+
+    int barPosition = valor.find("/");
+    string meses[12] = {"Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"};
+    string dia = "";
+    int diaNum = 0;
+    string mes = "";
+    bool mesValido = false;
+
+    if (valor.length() != TAMANHO_DATA | barPosition != 2){
+        throw invalid_argument("Formato inadequado para data.");
+    }
+
+    // Verificacao do dia
+    for (int i = 0; i < 2; i++){
+        if (!isdigit(valor[i])){
+            throw invalid_argument("Formato inadequado para data.");
+        }
+        dia += valor[i];
+    }
+
+    diaNum = stoi(dia);
+
+    if (!(diaNum >= 1 && diaNum <= 31)){
+            throw invalid_argument("Formato inadequado para data.");
+    }
+
+    // Verificacao do mes
+    for (int i = 3; i < 6; i++){
+        if (!isalpha(valor[i])){
+            throw invalid_argument("Formato inadequado para data.");
+        }
+        mes += valor[i];
+    }
+
+    for (int i = 0; i < MESES_ANO; i++){
+        if (mes == meses[i]){
+            mesValido = true;
+            break;
+        }
+    }
+    if (!mesValido){
+        throw invalid_argument("Formato inadequado para data.");
+    }
+
+    // Validacao dos dias dos meses
+    if (mes == meses[1] && diaNum > 29){
+        throw invalid_argument("Formato inadequado para data.");
+    }
+    else if (mes == meses[3] && diaNum == 31) {
+        throw invalid_argument("Formato inadequado para data.");
+    }
+    else if (mes == meses[5] && diaNum == 31) {
+        throw invalid_argument("Formato inadequado para data.");
+    }
+    else if (mes == meses[8] && diaNum == 31) {
+        throw invalid_argument("Formato inadequado para data.");
+    }
+    else if (mes == meses[10] && diaNum == 31) {
+        throw invalid_argument("Formato inadequado para data.");
+    }
 }

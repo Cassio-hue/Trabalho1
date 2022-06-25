@@ -10,13 +10,12 @@ using namespace std;
 
 
 class Dominio {
-    public:
-        void setValor(string);
-        string getValor() const;
-
     private:
         string valor;
         virtual void validar(string) = 0;
+    public:
+        void setValor(string);
+        string getValor() const;
 };
 
 inline string Dominio::getValor() const {

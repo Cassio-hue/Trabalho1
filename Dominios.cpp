@@ -78,3 +78,29 @@ void Data::validar(string valor){
     }
 
 }
+
+void Codigo::validar(string valor) {
+    if (size(valor) == TAMANHO_CODIGO) {
+        int soma = 0;
+        bool ehpar = false;
+
+        for (int i= TAMANHO_CODIGO-1; i>=0; i--) {
+            int d = valor[i] - '0';
+
+            if (ehpar) {
+                d = d*2;
+            }
+
+            soma += d/10;
+            soma += d%10;
+            ehpar = !ehpar;
+        }
+
+        if (soma % 10 != 0) {
+            throw invalid_argument("Ultimo digito incorreto.");
+        }
+
+    }else {
+        throw invalid_argument("Tamanho do codigo invalido.");
+    }
+}

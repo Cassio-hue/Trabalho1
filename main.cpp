@@ -23,13 +23,19 @@ int main()
     // lingua.setValor(idio);
     // cout << lingua.getValor() << endl;
 
-    Data day;
+    // Data day;
+    // string data;
+    // cout << "Digite a data (DD/MES): ";
+    // cin >> data;
+    // day.setValor(data);
+    // cout << day.getValor() << endl;
 
-    string data;
+    // Codigo code;
+    // string codiguin;
+    // cout << "Digite o codigo: ";
+    // cin >> codiguin;
+    // code.setValor(codiguin);
+    // cout << code.getValor() << endl;
 
-    cout << "Digite a data (DD/MES): ";
-    cin >> data;
-    day.setValor(data);
-    cout << day.getValor() << endl;
     return 0;
 }

@@ -47,5 +47,11 @@ class Data : public Dominio {
         void validar(string);
 };
 
+class Codigo : public Dominio {
+    private:
+        static const int TAMANHO_CODIGO = 11;
+        void validar(string);
+};
+
 
 #endif // DOMINIOS_H_INCLUDED

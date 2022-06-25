@@ -1,6 +1,5 @@
 #include "Dominios.h"
 
-
 void Dominio::setValor(string valor){
     validar(valor);
     this->valor = valor;
@@ -77,4 +76,27 @@ void Data::validar(string valor){
         throw invalid_argument("Data invalida");
     }
 
+}
+
+
+
+const string Cidade::POSSIVEIS[Cidade::N_POSSIVEIS] = {
+        "Antalya", "Bangkok", "Delhi", "Dubai", "Hong Kong", "Londres", "Macau",
+        "Mumbai", "Paris", "Rio de Janeiro", "Sao Paulo", "Seul", "Istambul", "Kuala Lumpur",
+        "Nova Iorque", "Osaka", "Phuket", "Shenzhen", "Toquio"
+    };
+
+
+void Cidade::validar(string valor){
+    bool valido = false;
+
+    for(int i = 0; i < N_POSSIVEIS; i++) {
+        if (POSSIVEIS[i] == valor) {
+            valido = true;
+        }
+    }
+
+    if (!valido){
+        throw invalid_argument("Cidade Invalida");
+    }
 }

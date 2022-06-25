@@ -48,4 +48,13 @@ class Data : public Dominio {
 };
 
 
+class Cidade : public Dominio {
+    public:
+        static const int N_POSSIVEIS = 19;
+        static const string POSSIVEIS[N_POSSIVEIS];
+    private:
+        void validar(string);
+};
+
+
 #endif // DOMINIOS_H_INCLUDED

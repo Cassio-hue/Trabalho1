@@ -9,8 +9,7 @@
 using namespace std;
 
 
-class Dominio
-{
+class Dominio {
     public:
         void setValor(string);
         string getValor() const;

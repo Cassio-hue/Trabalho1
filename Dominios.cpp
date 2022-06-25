@@ -1,5 +1,6 @@
 #include "Dominios.h"
 
+
 void Dominio::setValor(string valor){
     validar(valor);
     this->valor = valor;
@@ -48,17 +49,33 @@ void Nome::validar(string nome){
 
 
 void Nota::validar(string valor){
-    if (valor.length() > 2) {
-        throw invalid_argument("A nota não pode conter mais de dois dígitos.");
-    }
 
-    for (int i = 0; i < valor.length(); i++){
-        if (!isdigit(valor[i])){
-            throw invalid_argument("A nota deve ser um número.");
+    regex rule("^([0-9]|10)$");
+
+    if (!regex_match(valor, rule)){
+        throw invalid_argument("A nota deve ser um valor valido.");
+    }
+}
+
+
+void Idioma::validar(string valor){
+    string idiomas[NUMERO_IDIOMAS] = {"Arabe", "Bengali", "Chines", "Espanhol", "Frances", "Hindi", "Indonesio", "Ingles", "Mandarim", "Portugues", "Russo"};
+
+    for (int i=0; i < NUMERO_IDIOMAS; i++){
+        if (valor == idiomas[i]){
+            return;
         }
     }
+    throw invalid_argument("Idioma nao disponivel");
+}
 
-    if (VALOR_MIN > stoi(valor) | stoi(valor)> VALOR_MAX){
-        throw invalid_argument("A nota deve ser um valor entre " + to_string(VALOR_MIN) + " e " + to_string(VALOR_MAX));
+void Data::validar(string valor){
+
+    int barPosition = valor.find("/");
+    regex rule("^(([0-2][0-9]|[3][01]).(Jan|Mar|Mai|Jul|Ago|Out|Dez))|([0-2][0-9]|[3][0]).(Abr|Jun|Set|Nov)|([0-2][0-9]).(Fev)$");
+
+    if (barPosition != 2 | (!regex_match(valor, rule))) {
+        throw invalid_argument("Data invalida");
     }
+
 }

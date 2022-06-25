@@ -71,10 +71,9 @@ void Idioma::validar(string valor){
 
 void Data::validar(string valor){
 
-    int barPosition = valor.find("/");
-    regex rule("^(([0-2][0-9]|[3][01]).(Jan|Mar|Mai|Jul|Ago|Out|Dez))|([0-2][0-9]|[3][0]).(Abr|Jun|Set|Nov)|([0-2][0-9]).(Fev)$");
+    regex rule("^(([0-2][0-9]|[3][01])[\/](Jan|Mar|Mai|Jul|Ago|Out|Dez))|([0-2][0-9]|[3][0])[\/](Abr|Jun|Set|Nov)|([0-2][0-9])[\/](Fev)$");
 
-    if (barPosition != 2 | (!regex_match(valor, rule))) {
+    if ((!regex_match(valor, rule))) {
         throw invalid_argument("Data invalida");
     }
 

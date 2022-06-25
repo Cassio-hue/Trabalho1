@@ -3,6 +3,7 @@
 #include <stdexcept>
 #include <ctype.h>
 #include <string>
+#include <regex>
 
 
 using namespace std;

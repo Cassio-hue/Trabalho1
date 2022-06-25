@@ -1,5 +1,7 @@
 #ifndef DOMINIOS_H_INCLUDED
 #define DOMINIOS_H_INCLUDED
+
+
 #include <stdexcept>
 #include <ctype.h>
 #include <string>
@@ -48,4 +50,9 @@ class Data : public Dominio {
 };
 
 
+class Email : public Dominio {
+    private:
+        static const regex PADRAO_EMAIL_ACEITO;
+        void validar(string);
+};
 #endif // DOMINIOS_H_INCLUDED

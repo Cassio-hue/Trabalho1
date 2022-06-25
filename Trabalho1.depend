@@ -1,13 +1,14 @@
 # depslib dependency file v1.0
-1656030624 source:/home/artistreak/Desktop/progr/cpp/TP1/Trab1/Trabalho1/Dominios.cpp
+1656183944 source:/home/artistreak/Desktop/progr/cpp/TP1/Trab1/Trabalho1/Dominios.cpp
 	"Dominios.h"
 
-1656030654 /home/artistreak/Desktop/progr/cpp/TP1/Trab1/Trabalho1/Dominios.h
-	<string>
+1656187037 /home/artistreak/Desktop/progr/cpp/TP1/Trab1/Trabalho1/Dominios.h
 	<stdexcept>
 	<ctype.h>
+	<string>
+	<regex>
 
-1656030451 source:/home/artistreak/Desktop/progr/cpp/TP1/Trab1/Trabalho1/main.cpp
+1656186983 source:/home/artistreak/Desktop/progr/cpp/TP1/Trab1/Trabalho1/main.cpp
 	<iostream>
 	"Dominios.h"
 

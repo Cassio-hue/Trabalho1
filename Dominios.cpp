@@ -78,3 +78,15 @@ void Data::validar(string valor){
     }
 
 }
+
+
+const regex Email::PADRAO_EMAIL_ACEITO = regex("^(?!^[.]|.*[-_.]{2}.*[@]|.*[._@][@-]|.*[-][.@]|.*[-.]$)[a-zA-Z0-9-_.]{1,64}[@]([a-zA-Z0-9-]{1,63}[.]?)+$");
+
+void Email::validar(string valor){
+    // Matrícula: 211038208
+
+    if ( !regex_match(valor, PADRAO_EMAIL_ACEITO) ) {
+        throw invalid_argument("Email invalido");
+    }
+
+}

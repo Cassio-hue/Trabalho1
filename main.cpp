@@ -1,4 +1,5 @@
 #include <iostream>
+
 #include "Dominios.h"
 
 using namespace std;
@@ -23,13 +24,13 @@ int main()
     // lingua.setValor(idio);
     // cout << lingua.getValor() << endl;
 
-    Data day;
+    Email m;
 
-    string data;
+    string email;
 
-    cout << "Digite a data (DD/MES): ";
-    cin >> data;
-    day.setValor(data);
-    cout << day.getValor() << endl;
+    cout << "Digite o email: ";
+    cin >> email;
+    m.setValor(email);
+    cout << m.getValor() << endl;
     return 0;
 }

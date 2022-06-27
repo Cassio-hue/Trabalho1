@@ -1,12 +1,13 @@
 #include <iostream>
+
 #include "Dominios.h"
 
 using namespace std;
 
 int main()
 {
-    Nome a;
-    while (true) {
+    // Nome a;
+    // while (true) {
         string nome;
         cout << "Digite um nome (nome sobrenome): ";
         getline(cin, nome);
@@ -22,12 +23,24 @@ int main()
     // b.setValor(nota);
     // cout << b.getValor() << endl;
 
+
     // Idioma lingua;
     // string idio;
     // cout << "Digite seu idioma (sem acento): ";
     // cin >> idio;
     // lingua.setValor(idio);
     // cout << lingua.getValor() << endl;
+
+
+    // Email m;
+
+    // string email;
+
+    // cout << "Digite o email: ";
+    // cin >> email;
+    // m.setValor(email);
+    // cout << m.getValor() << endl;
+
 
     // Data day;
 
@@ -37,5 +50,6 @@ int main()
     // cin >> data;
     // day.setValor(data);
     // cout << day.getValor() << endl;
+
     return 0;
 }

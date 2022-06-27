@@ -1,4 +1,7 @@
 #include "Dominios.h"
+#include <iostream>
+
+using namespace std;
 
 
 void Dominio::setValor(string valor){
@@ -14,12 +17,12 @@ void Nome::validar(string nome){
     bool espacoBranco = false;
     bool primeiraLetraNome = isupper(nome[0]);
 
-    if (!primeiraLetraNome | nomeTamanho >= 31){
+    if (!primeiraLetraNome || nomeTamanho >= 31){
         throw invalid_argument("Formato inadequado para nome.");
     }
-
-    for (int i=0; i < nomeTamanho; i++){
-        if (isdigit(nome[i])){
+    for (int i=0; i < nomeTamanho; ++i){
+        cout << nome[i] << endl;
+        if (!isalpha(nome[i]) && (nome[i] != ' ')){
             throw invalid_argument("Formato inadequado para nome.");
         }
         else if (nome[i] == ' ' && espacoBranco){
@@ -30,11 +33,10 @@ void Nome::validar(string nome){
         }
         else if (isupper(nome[i])){
             numLetrasMaisculas += 1;
+            espacoBranco = false;
         }
         else if (nome[i] == ' '){
             numEspacoBranco += 1;
-        }
-        else if (nome[i] == ' '){
             espacoBranco = true;
         }
         else {
@@ -42,7 +44,7 @@ void Nome::validar(string nome){
         }
     }
 
-    if (numLetrasMaisculas != 2 | numEspacoBranco != 1) {
+    if (numLetrasMaisculas != 2 || numEspacoBranco != 1) {
         throw invalid_argument("Formato inadequado para nome.");
     }
 }
@@ -71,7 +73,7 @@ void Idioma::validar(string valor){
 
 void Data::validar(string valor){
 
-    regex rule("^(([0-2][0-9]|[3][01])[\/](Jan|Mar|Mai|Jul|Ago|Out|Dez))|([0-2][0-9]|[3][0])[\/](Abr|Jun|Set|Nov)|([0-2][0-9])[\/](Fev)$");
+    regex rule("^(([0-2][0-9]|[3][01])[\\/](Jan|Mar|Mai|Jul|Ago|Out|Dez))|([0-2][0-9]|[3][0])[\\/](Abr|Jun|Set|Nov)|([0-2][0-9])[\\/](Fev)$");
 
     if ((!regex_match(valor, rule))) {
         throw invalid_argument("Data invalida");

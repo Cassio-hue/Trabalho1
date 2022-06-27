@@ -1,13 +1,25 @@
 # depslib dependency file v1.0
-1656030624 source:/home/artistreak/Desktop/progr/cpp/TP1/Trab1/Trabalho1/Dominios.cpp
+
+1656189933 source:/home/artistreak/Desktop/progr/cpp/TP1/Trab1/Trabalho1/Dominios.cpp
 	"Dominios.h"
 
-1656030654 /home/artistreak/Desktop/progr/cpp/TP1/Trab1/Trabalho1/Dominios.h
-	<string>
+1656189028 /home/artistreak/Desktop/progr/cpp/TP1/Trab1/Trabalho1/Dominios.h
+
+1656183944 source:/home/artistreak/Desktop/progr/cpp/TP1/Trab1/Trabalho1/Dominios.cpp
+	"Dominios.h"
+
+1656187037 /home/artistreak/Desktop/progr/cpp/TP1/Trab1/Trabalho1/Dominios.h
+
 	<stdexcept>
 	<ctype.h>
+	<string>
+	<regex>
 
-1656030451 source:/home/artistreak/Desktop/progr/cpp/TP1/Trab1/Trabalho1/main.cpp
+
+1656189702 source:/home/artistreak/Desktop/progr/cpp/TP1/Trab1/Trabalho1/main.cpp
+
+1656186983 source:/home/artistreak/Desktop/progr/cpp/TP1/Trab1/Trabalho1/main.cpp
+
 	<iostream>
 	"Dominios.h"
 
@@ -22,5 +34,19 @@
 	<regex>
 
 1656131258 source:c:\users\cassi\documents\projetos\trabalho1\dominios.cpp
+	"Dominios.h"
+
+1656336025 source:c:\users\cassi\onedrive\documentos\trabalho1\dominios.cpp
+	"Dominios.h"
+	<iostream>
+
+1656164463 c:\users\cassi\onedrive\documentos\trabalho1\dominios.h
+	<stdexcept>
+	<ctype.h>
+	<string>
+	<regex>
+
+1656335446 source:c:\users\cassi\onedrive\documentos\trabalho1\main.cpp
+	<iostream>
 	"Dominios.h"
 

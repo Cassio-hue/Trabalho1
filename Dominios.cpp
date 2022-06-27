@@ -80,7 +80,7 @@ void Data::validar(string valor){
 
 
 
-const string Cidade::POSSIVEIS[Cidade::N_POSSIVEIS] = {
+const unordered_set<string> Cidade::POSSIVEIS = {
         "Antalya", "Bangkok", "Delhi", "Dubai", "Hong Kong", "Londres", "Macau",
         "Mumbai", "Paris", "Rio de Janeiro", "Sao Paulo", "Seul", "Istambul", "Kuala Lumpur",
         "Nova Iorque", "Osaka", "Phuket", "Shenzhen", "Toquio"
@@ -88,15 +88,7 @@ const string Cidade::POSSIVEIS[Cidade::N_POSSIVEIS] = {
 
 
 void Cidade::validar(string valor){
-    bool valido = false;
-
-    for(int i = 0; i < N_POSSIVEIS; i++) {
-        if (POSSIVEIS[i] == valor) {
-            valido = true;
-        }
-    }
-
-    if (!valido){
+    if (POSSIVEIS.find(valor) == POSSIVEIS.end()){
         throw invalid_argument("Cidade Invalida");
     }
 }

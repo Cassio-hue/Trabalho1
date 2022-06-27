@@ -4,6 +4,7 @@
 #include <ctype.h>
 #include <string>
 #include <regex>
+#include <unordered_set>
 
 
 using namespace std;
@@ -49,9 +50,10 @@ class Data : public Dominio {
 
 
 class Cidade : public Dominio {
+    // Matrícula: 211038208
+
     public:
-        static const int N_POSSIVEIS = 19;
-        static const string POSSIVEIS[N_POSSIVEIS];
+        static const unordered_set<string> POSSIVEIS;
     private:
         void validar(string);
 };

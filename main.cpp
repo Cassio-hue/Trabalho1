@@ -6,15 +6,14 @@ using namespace std;
 
 int main()
 {
-        Nome a;
-        while (true) {
+    Nome a;
+    while (true) {
         string nome;
         cout << "Digite um nome (nome sobrenome): ";
         getline(cin, nome);
         a.setValor(nome);
         cout << "Nome armazenado: " << a.getValor() << endl;
-
-    };
+    }
 
     // string nota;
     // Nota b;
@@ -80,7 +79,6 @@ int main()
     // getline(cin, cidade);
     // city.setValor(cidade);
     // cout << city.getValor() << endl;
-
 
     return 0;
 }

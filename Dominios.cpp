@@ -82,6 +82,31 @@ void Data::validar(string valor){
 }
 
 
+void Codigo::validar(string valor) {
+    if (!( valor.size() == TAMANHO_CODIGO )) {
+        throw invalid_argument("Tamanho do codigo invalido.");
+    }
+
+    int soma = 0;
+    bool ehpar = false;
+
+    for (int i= TAMANHO_CODIGO-1; i>=0; i--) {
+        int d = valor[i] - '0';
+
+        if (ehpar) {
+            d = d*2;
+        }
+
+        soma += d/10;
+        soma += d%10;
+        ehpar = !ehpar;
+    }
+
+    if (soma % 10 != 0) {
+        throw invalid_argument("Ultimo digito incorreto.");
+    }
+
+        
 const unordered_set<string> Cidade::POSSIVEIS = {
         "Antalya", "Bangkok", "Delhi", "Dubai", "Hong Kong", "Londres", "Macau",
         "Mumbai", "Paris", "Rio de Janeiro", "Sao Paulo", "Seul", "Istambul", "Kuala Lumpur",
@@ -103,5 +128,5 @@ void Email::validar(string valor){
     if ( !regex_match(valor, PADRAO_ACEITO) ) {
         throw invalid_argument("Email invalido");
     }
-
 }
+

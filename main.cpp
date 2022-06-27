@@ -32,6 +32,21 @@ int main()
     // cout << lingua.getValor() << endl;
 
 
+    // Data day;
+    // string data;
+    // cout << "Digite a data (DD/MES): ";
+    // cin >> data;
+    // day.setValor(data);
+    // cout << day.getValor() << endl;
+
+    // Codigo code;
+    // string codiguin;
+    // cout << "Digite o codigo: ";
+    // cin >> codiguin;
+    // code.setValor(codiguin);
+    // cout << code.getValor() << endl;
+
+
     // Email m;
 
     // string email;
@@ -65,6 +80,7 @@ int main()
     // getline(cin, cidade);
     // city.setValor(cidade);
     // cout << city.getValor() << endl;
+
 
     return 0;
 }

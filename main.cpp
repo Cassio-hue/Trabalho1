@@ -1,4 +1,5 @@
 #include <iostream>
+
 #include "Dominios.h"
 
 using namespace std;
@@ -6,8 +7,14 @@ using namespace std;
 int main()
 {
     // Nome a;
-    // a.setValor("Cassio Vinicius");
-    // cout << a.getValor() << endl;
+    // while (true) {
+        string nome;
+        cout << "Digite um nome (nome sobrenome): ";
+        getline(cin, nome);
+        a.setValor(nome);
+        cout << "Nome armazenado: " << a.getValor() << endl;
+
+    };
 
     // string nota;
     // Nota b;
@@ -16,6 +23,7 @@ int main()
     // b.setValor(nota);
     // cout << b.getValor() << endl;
 
+
     // Idioma lingua;
     // string idio;
     // cout << "Digite seu idioma (sem acento): ";
@@ -23,14 +31,31 @@ int main()
     // lingua.setValor(idio);
     // cout << lingua.getValor() << endl;
 
-    Data day;
 
-    string data;
+    // Email m;
 
-    cout << "Digite a data (DD/MES): ";
-    cin >> data;
-    day.setValor(data);
-    cout << day.getValor() << endl;
+    // string email;
+
+    // cout << "Digite o email: ";
+    // cin >> email;
+    // m.setValor(email);
+    // cout << m.getValor() << endl;
+
+
+    // Data day;
+
+    // string data;
+
+    // cout << "Digite a data (DD/MES): ";
+    // cin >> data;
+    // day.setValor(data);
+    // cout << day.getValor() << endl;
+
+
+    // cout << "Digite a data (DD/MES): ";
+    // cin >> data;
+    // day.setValor(data);
+    // cout << day.getValor() << endl;
 
     // Cidade city;
 
@@ -40,5 +65,6 @@ int main()
     // getline(cin, cidade);
     // city.setValor(cidade);
     // cout << city.getValor() << endl;
+
     return 0;
 }

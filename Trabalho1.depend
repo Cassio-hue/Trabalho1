@@ -24,3 +24,17 @@
 1656131258 source:c:\users\cassi\documents\projetos\trabalho1\dominios.cpp
 	"Dominios.h"
 
+1656336025 source:c:\users\cassi\onedrive\documentos\trabalho1\dominios.cpp
+	"Dominios.h"
+	<iostream>
+
+1656164463 c:\users\cassi\onedrive\documentos\trabalho1\dominios.h
+	<stdexcept>
+	<ctype.h>
+	<string>
+	<regex>
+
+1656335446 source:c:\users\cassi\onedrive\documentos\trabalho1\main.cpp
+	<iostream>
+	"Dominios.h"
+

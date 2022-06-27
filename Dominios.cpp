@@ -3,7 +3,6 @@
 
 using namespace std;
 
-
 void Dominio::setValor(string valor){
     validar(valor);
     this->valor = valor;
@@ -71,6 +70,7 @@ void Idioma::validar(string valor){
     throw invalid_argument("Idioma nao disponivel");
 }
 
+
 void Data::validar(string valor){
 
     regex rule("^(([0-2][0-9]|[3][01])[\\/](Jan|Mar|Mai|Jul|Ago|Out|Dez))|([0-2][0-9]|[3][0])[\\/](Abr|Jun|Set|Nov)|([0-2][0-9])[\\/](Fev)$");
@@ -80,6 +80,19 @@ void Data::validar(string valor){
     }
 
 }
+
+
+const unordered_set<string> Cidade::POSSIVEIS = {
+        "Antalya", "Bangkok", "Delhi", "Dubai", "Hong Kong", "Londres", "Macau",
+        "Mumbai", "Paris", "Rio de Janeiro", "Sao Paulo", "Seul", "Istambul", "Kuala Lumpur",
+        "Nova Iorque", "Osaka", "Phuket", "Shenzhen", "Toquio"
+    };
+
+
+void Cidade::validar(string valor){
+    if (POSSIVEIS.find(valor) == POSSIVEIS.end()){
+        throw invalid_argument("Cidade Invalida");
+    }
 
 
 const regex Email::PADRAO_ACEITO = regex("^(?!^[.]|.*[-_.]{2}.*[@]|.*[._@][@-]|.*[-][.@]|.*[-.]$)[a-zA-Z0-9-_.]{1,64}[@]([a-zA-Z0-9-]{1,63}[.]?)+$");

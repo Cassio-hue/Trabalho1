@@ -51,5 +51,20 @@ int main()
     // day.setValor(data);
     // cout << day.getValor() << endl;
 
+
+    // cout << "Digite a data (DD/MES): ";
+    // cin >> data;
+    // day.setValor(data);
+    // cout << day.getValor() << endl;
+
+    // Cidade city;
+
+    // string cidade;
+
+    // cout << "Digite a cidade: ";
+    // getline(cin, cidade);
+    // city.setValor(cidade);
+    // cout << city.getValor() << endl;
+
     return 0;
 }

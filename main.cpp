@@ -6,8 +6,8 @@ using namespace std;
 
 int main()
 {
-    // Nome a;
-    // while (true) {
+        Nome a;
+        while (true) {
         string nome;
         cout << "Digite um nome (nome sobrenome): ";
         getline(cin, nome);

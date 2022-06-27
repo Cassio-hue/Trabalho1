@@ -105,8 +105,9 @@ void Codigo::validar(string valor) {
     if (soma % 10 != 0) {
         throw invalid_argument("Ultimo digito incorreto.");
     }
+}     
 
-        
+
 const unordered_set<string> Cidade::POSSIVEIS = {
         "Antalya", "Bangkok", "Delhi", "Dubai", "Hong Kong", "Londres", "Macau",
         "Mumbai", "Paris", "Rio de Janeiro", "Sao Paulo", "Seul", "Istambul", "Kuala Lumpur",
@@ -118,9 +119,11 @@ void Cidade::validar(string valor){
     if (POSSIVEIS.find(valor) == POSSIVEIS.end()){
         throw invalid_argument("Cidade Invalida");
     }
+}
 
 
 const regex Email::PADRAO_ACEITO = regex("^(?!^[.]|.*[-_.]{2}.*[@]|.*[._@][@-]|.*[-][.@]|.*[-.]$)[a-zA-Z0-9-_.]{1,64}[@]([a-zA-Z0-9-]{1,63}[.]?)+$");
+
 
 void Email::validar(string valor){
     // Matrícula: 211038208

@@ -1,4 +1,7 @@
 #include "Dominios.h"
+#include <iostream>
+
+using namespace std;
 
 
 void Dominio::setValor(string valor){
@@ -17,9 +20,9 @@ void Nome::validar(string nome){
     if (!primeiraLetraNome | nomeTamanho >= 31){
         throw invalid_argument("Formato inadequado para nome.");
     }
-
-    for (int i=0; i < nomeTamanho; i++){
-        if (isdigit(nome[i])){
+    for (int i=0; i < nomeTamanho; ++i){
+        cout << nome[i] << endl;
+        if (!isalpha(nome[i]) && (nome[i] != ' ')){
             throw invalid_argument("Formato inadequado para nome.");
         }
         else if (nome[i] == ' ' && espacoBranco){
@@ -30,11 +33,10 @@ void Nome::validar(string nome){
         }
         else if (isupper(nome[i])){
             numLetrasMaisculas += 1;
+            espacoBranco = false;
         }
         else if (nome[i] == ' '){
             numEspacoBranco += 1;
-        }
-        else if (nome[i] == ' '){
             espacoBranco = true;
         }
         else {

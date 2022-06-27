@@ -5,9 +5,15 @@ using namespace std;
 
 int main()
 {
-    // Nome a;
-    // a.setValor("Cassio Vinicius");
-    // cout << a.getValor() << endl;
+    Nome a;
+    while (true) {
+        string nome;
+        cout << "Digite um nome (nome sobrenome): ";
+        getline(cin, nome);
+        a.setValor(nome);
+        cout << "Nome armazenado: " << a.getValor() << endl;
+
+    };
 
     // string nota;
     // Nota b;
@@ -23,13 +29,13 @@ int main()
     // lingua.setValor(idio);
     // cout << lingua.getValor() << endl;
 
-    Data day;
+    // Data day;
 
-    string data;
+    // string data;
 
-    cout << "Digite a data (DD/MES): ";
-    cin >> data;
-    day.setValor(data);
-    cout << day.getValor() << endl;
+    // cout << "Digite a data (DD/MES): ";
+    // cin >> data;
+    // day.setValor(data);
+    // cout << day.getValor() << endl;
     return 0;
 }

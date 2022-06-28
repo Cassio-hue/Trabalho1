@@ -6,14 +6,14 @@ using namespace std;
 
 int main()
 {
-    Nome a;
-    while (true) {
-        string nome;
-        cout << "Digite um nome (nome sobrenome): ";
-        getline(cin, nome);
-        a.setValor(nome);
-        cout << "Nome armazenado: " << a.getValor() << endl;
-    }
+    // Nome a;
+    // while (true) {
+    //     string nome;
+    //     cout << "Digite um nome (nome sobrenome): ";
+    //     getline(cin, nome);
+    //     a.setValor(nome);
+    //     cout << "Nome armazenado: " << a.getValor() << endl;
+    // }
 
     // string nota;
     // Nota b;
@@ -80,5 +80,10 @@ int main()
     // city.setValor(cidade);
     // cout << city.getValor() << endl;
 
+    // Descricao desc;
+    // string descricao;
+    // cout << "Digite sua descricao: " << endl;
+    // getline(cin, descricao);
+    // desc.setValor(descricao);
     return 0;
 }

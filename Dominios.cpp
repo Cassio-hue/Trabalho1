@@ -116,7 +116,7 @@ void Codigo::validar(string valor) {
     if (soma % 10 != 0) {
         throw invalid_argument("Ultimo digito incorreto.");
     }
-}     
+}
 
 
 const unordered_set<string> Cidade::POSSIVEIS = {
@@ -146,3 +146,14 @@ void Email::validar(string valor){
     }
 }
 
+const regex Descricao::PADRAO_NAO_ACEITO("[.,;: !?-]{2}");
+
+void Descricao::validar(string valor) {
+    // Matrícula: 211026495
+    if (valor.size() > MAXIMO_CARACTERES) {
+        throw invalid_argument("Descricao deve possuir de 0 a 40 caracteres.");
+    }
+    if (regex_search(valor, PADRAO_NAO_ACEITO)) {
+        throw invalid_argument("Descricao invalida.");
+    }
+}

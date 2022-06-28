@@ -87,4 +87,11 @@ class Email : public Dominio {
         void validar(string);
 };
 
+class Descricao : public Dominio {
+        private:
+        static const regex PADRAO_NAO_ACEITO;
+        static const int MAXIMO_CARACTERES = 40;
+        void validar(string);
+};
+
 #endif // DOMINIOS_H_INCLUDED

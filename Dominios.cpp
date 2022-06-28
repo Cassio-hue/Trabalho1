@@ -146,3 +146,12 @@ void Email::validar(string valor){
     }
 }
 
+
+const regex Senha::PADRAO_ACEITO = regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!#$%&])[a-zA-Z0-9!#$%&]{5}$");
+
+
+void Senha::validar(string valor){
+    if ( !regex_match(valor, PADRAO_ACEITO) ){
+        throw invalid_argument("Senha invalida");
+    }
+}

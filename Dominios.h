@@ -87,4 +87,12 @@ class Email : public Dominio {
         void validar(string);
 };
 
+
+class Senha : public Dominio {
+    private:
+        static const regex PADRAO_ACEITO;
+        void validar(string);
+};
+
+
 #endif // DOMINIOS_H_INCLUDED

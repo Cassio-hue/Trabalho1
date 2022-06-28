@@ -40,6 +40,7 @@ class Nota : public Dominio {
     // Matricula: 211036141
 
     private:
+        static const regex PADRAO_ACEITO;
         void validar(string valor);
 };
 
@@ -47,9 +48,10 @@ class Nota : public Dominio {
 class Idioma : public Dominio {
     // Matricula: 211036141
 
+    public:
+        static const unordered_set<string> POSSIVEIS_VALORES;
     private:
         void validar(string);
-        static const int NUMERO_IDIOMAS = 11;
 };
 
 
@@ -57,6 +59,7 @@ class Data : public Dominio {
     // Matricula: 211036141
 
     private:
+        static const regex PADRAO_ACEITO;
         void validar(string);
 };
 
@@ -73,7 +76,7 @@ class Cidade : public Dominio {
     // Matrícula: 211038208
 
     public:
-        static const unordered_set<string> POSSIVEIS;
+        static const unordered_set<string> POSSIVEIS_VALORES;
     private:
         void validar(string);
 };
@@ -89,6 +92,8 @@ class Email : public Dominio {
 
 
 class Senha : public Dominio {
+    // Matrícula: 211038208
+
     private:
         static const regex PADRAO_ACEITO;
         void validar(string);

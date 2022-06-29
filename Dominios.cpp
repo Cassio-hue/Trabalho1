@@ -53,6 +53,7 @@ void Nome::validar(string nome){
     }
 }
 
+
 void Nota::validar(string valor){
     // Matricula: 211036141
 
@@ -61,6 +62,7 @@ void Nota::validar(string valor){
         throw invalid_argument("A nota deve ser um valor valido.");
     }
 }
+
 
 void Idioma::validar(string valor){
     // Matricula: 211036141
@@ -107,6 +109,7 @@ void Codigo::validar(string valor) {
     }
 }
 
+
 void Cidade::validar(string valor){
     // Matrícula: 211038208
 
@@ -123,6 +126,7 @@ void Email::validar(string valor){
         throw invalid_argument("Email invalido");
     }
 }
+
 
 void Senha::validar(string valor){
     if ( !regex_match(valor, PADRAO_ACEITO) ){

@@ -1,10 +1,13 @@
 #include "Dominios.h"
 
-const regex Nota::PADRAO_ACEITO = regex("^([0-9]|10)$");
-
-
 const unordered_set<string> Idioma::POSSIVEIS_VALORES = {"Arabe", "Bengali", "Chines", "Espanhol", "Frances", "Hindi", "Indonesio", "Ingles", "Mandarim", "Portugues", "Russo"};
 
+
+const unordered_set<string> Cidade::POSSIVEIS_VALORES = {
+    "Antalya", "Bangkok", "Delhi", "Dubai", "Hong Kong", "Londres", "Macau",
+    "Mumbai", "Paris", "Rio de Janeiro", "Sao Paulo", "Seul", "Istambul",
+    "Kuala Lumpur", "Nova Iorque", "Osaka", "Phuket", "Shenzhen", "Toquio"
+    };
 
 
 const regex Data::PADRAO_ACEITO = regex(
@@ -12,13 +15,7 @@ const regex Data::PADRAO_ACEITO = regex(
     );
 
 
-const unordered_set<string> Cidade::POSSIVEIS_VALORES = {
-    // Matrícula: 211038208
-
-    "Antalya", "Bangkok", "Delhi", "Dubai", "Hong Kong", "Londres", "Macau",
-    "Mumbai", "Paris", "Rio de Janeiro", "Sao Paulo", "Seul", "Istambul",
-    "Kuala Lumpur", "Nova Iorque", "Osaka", "Phuket", "Shenzhen", "Toquio"
-    };
+const regex Nota::PADRAO_ACEITO = regex("^([0-9]|10)$");
 
 
 const regex Email::PADRAO_ACEITO = regex(

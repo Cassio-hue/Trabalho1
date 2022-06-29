@@ -53,9 +53,6 @@ void Nome::validar(string nome){
     }
 }
 
-
-const regex Nota::PADRAO_ACEITO = regex("^([0-9]|10)$");
-
 void Nota::validar(string valor){
     // Matricula: 211036141
 
@@ -65,8 +62,6 @@ void Nota::validar(string valor){
     }
 }
 
-const unordered_set<string> Idioma::POSSIVEIS_VALORES = {"Arabe", "Bengali", "Chines", "Espanhol", "Frances", "Hindi", "Indonesio", "Ingles", "Mandarim", "Portugues", "Russo"};
-
 void Idioma::validar(string valor){
     // Matricula: 211036141
 
@@ -75,10 +70,6 @@ void Idioma::validar(string valor){
     }
 }
 
-
-const regex Data::PADRAO_ACEITO = regex(
-    "^(([0-2][0-9]|[3][01])[\\/](Jan|Mar|Mai|Jul|Ago|Out|Dez))|([0-2][0-9]|[3][0])[\\/](Abr|Jun|Set|Nov)|([0-2][0-9])[\\/](Fev)$"
-    );
 
 void Data::validar(string valor){
     // Matricula: 211036141
@@ -114,16 +105,7 @@ void Codigo::validar(string valor) {
     if (soma % 10 != 0) {
         throw invalid_argument("Ultimo digito incorreto.");
     }
-}     
-
-
-const unordered_set<string> Cidade::POSSIVEIS_VALORES = {
-    // Matrícula: 211038208
-
-    "Antalya", "Bangkok", "Delhi", "Dubai", "Hong Kong", "Londres", "Macau",
-    "Mumbai", "Paris", "Rio de Janeiro", "Sao Paulo", "Seul", "Istambul", 
-    "Kuala Lumpur", "Nova Iorque", "Osaka", "Phuket", "Shenzhen", "Toquio"
-    };
+}
 
 void Cidade::validar(string valor){
     // Matrícula: 211038208
@@ -134,10 +116,6 @@ void Cidade::validar(string valor){
 }
 
 
-const regex Email::PADRAO_ACEITO = regex(
-    "^(?!^[.]|.*[-_.]{2}.*[@]|.*[._@][@-]|.*[-][.@]|.*[-.]$)[a-zA-Z0-9-_.]{1,64}[@]([a-zA-Z0-9-]{1,63}[.]?)+$"
-    );
-
 void Email::validar(string valor){
     // Matrícula: 211038208
 
@@ -145,9 +123,6 @@ void Email::validar(string valor){
         throw invalid_argument("Email invalido");
     }
 }
-
-
-const regex Senha::PADRAO_ACEITO = regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!#$%&])[a-zA-Z0-9!#$%&]{5}$");
 
 void Senha::validar(string valor){
     if ( !regex_match(valor, PADRAO_ACEITO) ){

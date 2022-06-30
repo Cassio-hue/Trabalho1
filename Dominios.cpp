@@ -24,6 +24,10 @@ void Nome::validar(string nome){
     if (!primeiraLetraNome || nomeTamanho >= 31){
         throw invalid_argument("Formato inadequado para nome.");
     }
+    else if (nome[nomeTamanho-1] == ' '){
+        throw invalid_argument("Formato inadequado para nome.");
+    }
+    
     for (int i=0; i < nomeTamanho; ++i){
         cout << nome[i] << endl;
         if (!isalpha(nome[i]) && (nome[i] != ' ')){
@@ -48,9 +52,10 @@ void Nome::validar(string nome){
         }
     }
 
-    if (numLetrasMaisculas != 2 || numEspacoBranco != 1) {
-        throw invalid_argument("Formato inadequado para nome.");
-    }
+    // Define quantos nomes são aceitos
+    // if (numLetrasMaisculas != 2 || numEspacoBranco != 1) {
+    //     throw invalid_argument("Formato inadequado para nome.");
+    // }
 }
 
 

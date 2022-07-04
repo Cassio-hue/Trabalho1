@@ -10,6 +10,7 @@
 using namespace std;
 
 
+/// Parente de todos os domínios.
 class Dominio {
     // Matrícula: 211038208
 
@@ -17,7 +18,13 @@ class Dominio {
         string valor;
         virtual void validar(string) = 0;
     public:
+
+/// @param valor uma string qualquer
+/// 
+/// chama uma função de validação e, caso a entrada seja válida, o valor é armazenado
         void setValor(string);
+
+/// @return valor 
         string getValor() const;
 };
 

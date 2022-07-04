@@ -96,7 +96,7 @@ TEST_CASE("Testando Domínio Nota", "[Nota]"){
     }
 
     SECTION("Valores invalidos"){
-        string valor_inicial = "Artur Padovezi";
+        string valor_inicial = "5";
         
         CHECK_NOTHROW(nota.setValor(valor_inicial));
         

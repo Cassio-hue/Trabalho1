@@ -11,6 +11,26 @@ void Dominio::setValor(string valor){
     this->valor = valor;
 }
 
+Dominio::Dominio(string valor){
+    this->valor = valor;
+}
+
+Nome::Nome(string valor) : Dominio(valor){validar(valor);};
+
+Nota::Nota(string valor) : Dominio(valor){validar(valor);};
+
+Idioma::Idioma(string valor) : Dominio(valor){validar(valor);};
+
+Data::Data(string valor) : Dominio(valor){validar(valor);};
+
+Codigo::Codigo(string valor) : Dominio(valor){validar(valor);};
+
+Cidade::Cidade(string valor) : Dominio(valor){validar(valor);};
+
+Email::Email(string valor) : Dominio(valor){validar(valor);};
+
+Senha::Senha(string valor) : Dominio(valor){validar(valor);};
+
 
 void Nome::validar(string nome){
     // Matricula: 211036141
@@ -25,7 +45,6 @@ void Nome::validar(string nome){
         throw invalid_argument("Formato inadequado para nome.");
     }
     for (int i=0; i < nomeTamanho; ++i){
-        cout << nome[i] << endl;
         if (!isalpha(nome[i]) && (nome[i] != ' ')){
             throw invalid_argument("Formato inadequado para nome.");
         }
@@ -122,10 +141,10 @@ void Codigo::validar(string valor) {
 const unordered_set<string> Cidade::POSSIVEIS = {
     // Matrícula: 211038208
 
-        "Antalya", "Bangkok", "Delhi", "Dubai", "Hong Kong", "Londres", "Macau",
-        "Mumbai", "Paris", "Rio de Janeiro", "Sao Paulo", "Seul", "Istambul", "Kuala Lumpur",
-        "Nova Iorque", "Osaka", "Phuket", "Shenzhen", "Toquio"
-    };
+    "Antalya", "Bangkok", "Delhi", "Dubai", "Hong Kong", "Londres", "Macau",
+    "Mumbai", "Paris", "Rio de Janeiro", "Sao Paulo", "Seul", "Istambul", "Kuala Lumpur",
+    "Nova Iorque", "Osaka", "Phuket", "Shenzhen", "Toquio"
+};
 
 void Cidade::validar(string valor){
     // Matrícula: 211038208

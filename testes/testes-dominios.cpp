@@ -67,9 +67,9 @@ TEST_CASE("Testando Domínio Nome", "[Nome]"){
     SECTION("Valores invalidos"){
         string valor_inicial = "Artur Padovezi";
         
-        CHECK_NOTHROW(nome.setValor(valor_inicial));
+        REQUIRE_NOTHROW(nome.setValor(valor_inicial));
         
-        CHECK(nome.getValor() == valor_inicial);
+        REQUIRE(nome.getValor() == valor_inicial);
 
         for(const string &valor : NOMES_INVALIDOS){
             UNSCOPED_INFO("O valor é " << valor);
@@ -98,9 +98,9 @@ TEST_CASE("Testando Domínio Nota", "[Nota]"){
     SECTION("Valores invalidos"){
         string valor_inicial = "5";
         
-        CHECK_NOTHROW(nota.setValor(valor_inicial));
+        REQUIRE_NOTHROW(nota.setValor(valor_inicial));
         
-        CHECK(nota.getValor() == valor_inicial);
+        REQUIRE(nota.getValor() == valor_inicial);
 
         for(const string &valor : NOTAS_INVALIDAS){
             UNSCOPED_INFO("O valor é " << valor);

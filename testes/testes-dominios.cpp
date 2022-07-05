@@ -47,6 +47,35 @@ const string NOTAS_INVALIDAS[] = {
 };
 
 
+const string IDIOMAS_VALIDOS[] = {
+    "Ingles", "Chines", "Mandarim", "Hindi", "Espanhol", "Frances", 
+    "Arabe", "Bengali", "Russo", "Portugues", "Indonesio"
+};
+
+const string IDIOMAS_INVALIDOS[] = {
+    "Arabe ",
+    "Arab",
+    "Árabe"
+};
+
+
+const string DATAS_VALIDAS[] = {
+    "01/Jan", "29/Jan", "31/Mar"
+};
+
+const string DATAS_INVALIDAS[] = {
+    "00/Jan", "30/Fev", "32/Mar", "300/Jan"
+};
+
+
+const string CODIGOS_VALIDOS[] = {
+    "01/Jan", "29/Jan", "31/Mar"
+};
+
+const string CODIGOS_INVALIDOS[] = {
+    "00/Jan", "30/Fev", "32/Mar", "300/Jan"
+};
+
 
 
 TEST_CASE("Testando Domínio Nome", "[Nome]"){ 
@@ -88,11 +117,10 @@ TEST_CASE("Testando Domínio Nome", "[Nome]"){
                 const string& valor = valor_e_info.first, info = valor_e_info.second;
 
                 nomeptr = 0;
-                nomeptr = new Nome(valor);
                 
                 UNSCOPED_INFO("O valor é " << valor << "\n" << info);
 
-                CHECK((nomeptr != 0));
+                CHECK_NOTHROW(nomeptr = new Nome(valor));
                 if(nomeptr != 0)
                     CHECK((nomeptr->getValor() == valor));
                 
@@ -150,7 +178,8 @@ TEST_CASE("Testando Domínio Nota", "[Nota]"){
                 UNSCOPED_INFO("O valor é " << valor);
 
                 CHECK_NOTHROW(notaptr = new Nota(valor));
-                CHECK((notaptr->getValor() == valor));
+                if(notaptr != 0)
+                    CHECK((notaptr->getValor() == valor));
                 
                 delete notaptr;
             }
@@ -165,6 +194,173 @@ TEST_CASE("Testando Domínio Nota", "[Nota]"){
                 CHECK_THROWS_AS(notaptr = new Nota(valor), invalid_argument);
                 
                 delete notaptr;
+            }
+        }
+    }
+}
+
+
+
+
+TEST_CASE("Testando Domínio Idioma", "[Idioma]"){
+    SECTION("Método set", "[set]"){
+        Idioma idioma{IDIOMAS_VALIDOS[0]};
+
+        SECTION("Valores validos", "[validos]"){
+            for(const string &valor : IDIOMAS_VALIDOS){
+                UNSCOPED_INFO("O valor é " << valor);
+
+                CHECK_NOTHROW(idioma.setValor(valor));
+                CHECK((idioma.getValor() == valor));
+            }
+        }
+
+        SECTION("Valores invalidos", "[invalidos]"){
+            for(const string &valor : IDIOMAS_INVALIDOS){
+                UNSCOPED_INFO("O valor é " << valor);
+
+                CHECK_THROWS_AS(idioma.setValor(valor), invalid_argument);
+                CHECK((idioma.getValor() != valor));
+            }
+        }
+    }
+    SECTION("Construtor", "[construtor]"){
+        Idioma* idiomaptr;
+
+        SECTION("Valores validos", "[validos]"){
+            for(const string &valor : IDIOMAS_VALIDOS){
+                idiomaptr = 0;
+                
+                UNSCOPED_INFO("O valor é " << valor);
+
+                CHECK_NOTHROW(idiomaptr = new Idioma(valor));
+                if(idiomaptr != 0)
+                    CHECK((idiomaptr->getValor() == valor));
+                
+                delete idiomaptr;
+            }
+        }
+
+        SECTION("Valores invalidos", "[invalidos]"){
+            for(const string &valor : IDIOMAS_INVALIDOS){
+                idiomaptr = 0;
+                
+                UNSCOPED_INFO("O valor é " << valor);
+
+                CHECK_THROWS_AS(idiomaptr = new Idioma(valor), invalid_argument);
+                
+                delete idiomaptr;
+            }
+        }
+    }
+}
+
+
+
+
+TEST_CASE("Testando Domínio Data", "[Data]"){
+    SECTION("Método set", "[set]"){
+        Data data{DATAS_VALIDAS[0]};
+
+        SECTION("Valores validos", "[validos]"){
+            for(const string &valor : DATAS_VALIDAS){
+                UNSCOPED_INFO("O valor é " << valor);
+
+                CHECK_NOTHROW(data.setValor(valor));
+                CHECK((data.getValor() == valor));
+            }
+        }
+
+        SECTION("Valores invalidos", "[invalidos]"){
+            for(const string &valor : DATAS_INVALIDAS){
+                UNSCOPED_INFO("O valor é " << valor);
+
+                CHECK_THROWS_AS(data.setValor(valor), invalid_argument);
+                CHECK((data.getValor() != valor));
+            }
+        }
+    }
+    SECTION("Construtor", "[construtor]"){
+        Data* dataptr;
+
+        SECTION("Valores validos", "[validos]"){
+            for(const string &valor : DATAS_VALIDAS){
+                dataptr = 0;
+                
+                UNSCOPED_INFO("O valor é " << valor);
+
+                CHECK_NOTHROW(dataptr = new Data(valor));
+                if(dataptr != 0)
+                    CHECK((dataptr->getValor() == valor));
+                
+                delete dataptr;
+            }
+        }
+
+        SECTION("Valores invalidos", "[invalidos]"){
+            for(const string &valor : DATAS_INVALIDAS){
+                dataptr = 0;
+                
+                UNSCOPED_INFO("O valor é " << valor);
+
+                CHECK_THROWS_AS(dataptr = new Data(valor), invalid_argument);
+                
+                delete dataptr;
+            }
+        }
+    }
+}
+
+
+
+TEST_CASE("Testando Domínio Codigo", "[Codigo]"){
+    SECTION("Método set", "[set]"){
+        Codigo codigo{CODIGOS_VALIDOS[0]};
+
+        SECTION("Valores validos", "[validos]"){
+            for(const string &valor : CODIGOS_VALIDOS){
+                UNSCOPED_INFO("O valor é " << valor);
+
+                CHECK_NOTHROW(codigo.setValor(valor));
+                CHECK((codigo.getValor() == valor));
+            }
+        }
+
+        SECTION("Valores invalidos", "[invalidos]"){
+            for(const string &valor : CODIGOS_INVALIDOS){
+                UNSCOPED_INFO("O valor é " << valor);
+
+                CHECK_THROWS_AS(codigo.setValor(valor), invalid_argument);
+                CHECK((codigo.getValor() != valor));
+            }
+        }
+    }
+    SECTION("Construtor", "[construtor]"){
+        Codigo* codigoptr;
+
+        SECTION("Valores validos", "[validos]"){
+            for(const string &valor : CODIGOS_VALIDOS){
+                codigoptr = 0;
+                
+                UNSCOPED_INFO("O valor é " << valor);
+
+                CHECK_NOTHROW(codigoptr = new Codigo(valor));
+                if(codigoptr != 0)
+                    CHECK((codigoptr->getValor() == valor));
+                
+                delete codigoptr;
+            }
+        }
+
+        SECTION("Valores invalidos", "[invalidos]"){
+            for(const string &valor : CODIGOS_INVALIDOS){
+                codigoptr = 0;
+                
+                UNSCOPED_INFO("O valor é " << valor);
+
+                CHECK_THROWS_AS(codigoptr = new Codigo(valor), invalid_argument);
+                
+                delete codigoptr;
             }
         }
     }

@@ -81,14 +81,14 @@ int main()
     // cout << city.getValor() << endl;
     
 
-    Senha password;
+    // Usuario
 
-    string senha;
+    // string senha;
 
-    cout << "Digite a senha: ";
-    cin >> senha;
-    password.setValor(senha);
-    cout << password.getValor() << endl;
+    // cout << "Digite a senha: ";
+    // cin >> senha;
+    // password.setValor(senha);
+    // cout << password.getValor() << endl;
     
     return 0;
 }

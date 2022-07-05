@@ -7,6 +7,7 @@
 #include <regex>
 #include <unordered_set>
 
+
 using namespace std;
 
 
@@ -18,13 +19,13 @@ class Dominio {
         string valor;
         virtual void validar(string) = 0;
     public:
-        Dominio(string);
+        Dominio(const string&);
         virtual ~Dominio(){};
 
 /// @param valor uma string qualquer
 ///
 /// chama uma função de validação e, caso a entrada seja válida, o valor é armazenado
-        void setValor(string);
+        void setValor(const string&);
 
 /// @return valor
         string getValor() const;
@@ -43,7 +44,7 @@ class Nome : public Dominio {
     private:
         void validar(string);
     public:
-        Nome(string);
+        Nome(const string&);
 };
 
 
@@ -53,7 +54,7 @@ class Nota : public Dominio {
     private:
         void validar(string valor);
     public:
-        Nota(string);
+        Nota(const string&);
 };
 
 
@@ -64,7 +65,7 @@ class Idioma : public Dominio {
         void validar(string);
         static const int NUMERO_IDIOMAS = 11;
     public:
-        Idioma(string);
+        Idioma(const string&);
 };
 
 
@@ -74,7 +75,7 @@ class Data : public Dominio {
     private:
         void validar(string);
     public:
-        Data(string);
+        Data(const string&);
 };
 
 class Codigo : public Dominio {
@@ -84,7 +85,7 @@ class Codigo : public Dominio {
         static const int TAMANHO_CODIGO = 11;
         void validar(string);
     public:
-        Codigo(string);
+        Codigo(const string&);
 };
 
 
@@ -93,7 +94,7 @@ class Cidade : public Dominio {
 
     public:
         static const unordered_set<string> POSSIVEIS;
-        Cidade(string);
+        Cidade(const string&);
     private:
         void validar(string);
 };
@@ -102,7 +103,7 @@ class Cidade : public Dominio {
 class Email : public Dominio {
     // Matrícula: 211038208
     public:
-        Email(string);
+        Email(const string&);
 
     private:
         static const regex PADRAO_ACEITO;
@@ -112,7 +113,7 @@ class Email : public Dominio {
 
 class Senha : public Dominio {
     public:
-        Senha(string);
+        Senha(const string&);
 
     private:
         static const regex PADRAO_ACEITO;

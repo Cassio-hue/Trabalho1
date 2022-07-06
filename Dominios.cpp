@@ -4,12 +4,35 @@
 using namespace std;
 
 
-void Dominio::setValor(string valor){
+void Dominio::setValor(const string& valor){
     // Matrícula: 211038208
 
     validar(valor);
     this->valor = valor;
 }
+
+Dominio::Dominio(const string& valor){
+    this->valor = valor;
+}
+
+
+Nome::Nome(const string& valor) : Dominio(valor){validar(valor);};
+
+Nota::Nota(const string& valor) : Dominio(valor){validar(valor);};
+
+Idioma::Idioma(const string& valor) : Dominio(valor){validar(valor);};
+
+Data::Data(const string& valor) : Dominio(valor){validar(valor);};
+
+Codigo::Codigo(const string& valor) : Dominio(valor){validar(valor);};
+
+Cidade::Cidade(const string& valor) : Dominio(valor){validar(valor);};
+
+Email::Email(const string& valor) : Dominio(valor){validar(valor);};
+
+Senha::Senha(const string& valor) : Dominio(valor){validar(valor);};
+
+Descricao::Descricao(const string& valor) : Dominio(valor){validar(valor);};
 
 
 void Nome::validar(string nome){
@@ -29,7 +52,6 @@ void Nome::validar(string nome){
     }
     
     for (int i=0; i < nomeTamanho; ++i){
-        cout << nome[i] << endl;
         if (!isalpha(nome[i]) && (nome[i] != ' ')){
             throw invalid_argument("Formato inadequado para nome.");
         }
@@ -52,16 +74,14 @@ void Nome::validar(string nome){
         }
     }
 
-    // Define quantos nomes são aceitos
-    // if (numLetrasMaisculas != 2 || numEspacoBranco != 1) {
-    //     throw invalid_argument("Formato inadequado para nome.");
-    // }
+    if (numLetrasMaisculas != 2 || numEspacoBranco != 1) {
+        throw invalid_argument("Formato inadequado para nome.");
+    }
 }
 
 
 void Nota::validar(string valor){
     // Matricula: 211036141
-
 
     if (!regex_match(valor, PADRAO_ACEITO)){
         throw invalid_argument("A nota deve ser um valor valido.");
@@ -134,7 +154,20 @@ void Email::validar(string valor){
 
 
 void Senha::validar(string valor){
+    // Matrícula: 211038208
+
     if ( !regex_match(valor, PADRAO_ACEITO) ){
         throw invalid_argument("Senha invalida");
+    }
+}
+
+void Descricao::validar(string valor) {
+    // Matricula: 211026495
+
+    if (valor.size() > MAXIMO_CARACTERES) {
+        throw invalid_argument("Descricao deve possuir de 0 a 40 caracteres.");
+    }
+    if (regex_search(valor, PADRAO_NAO_ACEITO)) {
+        throw invalid_argument("Descricao invalida.");
     }
 }

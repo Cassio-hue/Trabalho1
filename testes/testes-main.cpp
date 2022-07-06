@@ -1,4 +1,4 @@
-#define CATCH_CONFIG_MAIN
+#define CATCH_CONFIG_MAIN // inclui a main definida pela biclioteca
 #include "catch.hpp"
 
 

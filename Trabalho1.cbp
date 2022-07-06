@@ -65,6 +65,12 @@
 		<Unit filename="testes/testes-main.cpp">
 			<Option target="Teste" />
 		</Unit>
+		<Unit filename="testes/testes-valores.h">
+			<Option target="Teste" />
+		</Unit>
+		<Unit filename="testes/testes-valores.cpp">
+			<Option target="Teste" />
+		</Unit>
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

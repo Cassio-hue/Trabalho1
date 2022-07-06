@@ -4,12 +4,32 @@
 using namespace std;
 
 
-void Dominio::setValor(string valor){
+void Dominio::setValor(const string& valor){
     // Matrícula: 211038208
 
     validar(valor);
     this->valor = valor;
 }
+
+Dominio::Dominio(const string& valor){
+    this->valor = valor;
+}
+
+Nome::Nome(const string& valor) : Dominio(valor){validar(valor);};
+
+Nota::Nota(const string& valor) : Dominio(valor){validar(valor);};
+
+Idioma::Idioma(const string& valor) : Dominio(valor){validar(valor);};
+
+Data::Data(const string& valor) : Dominio(valor){validar(valor);};
+
+Codigo::Codigo(const string& valor) : Dominio(valor){validar(valor);};
+
+Cidade::Cidade(const string& valor) : Dominio(valor){validar(valor);};
+
+Email::Email(const string& valor) : Dominio(valor){validar(valor);};
+
+Senha::Senha(const string& valor) : Dominio(valor){validar(valor);};
 
 
 void Nome::validar(string nome){
@@ -25,7 +45,6 @@ void Nome::validar(string nome){
         throw invalid_argument("Formato inadequado para nome.");
     }
     for (int i=0; i < nomeTamanho; ++i){
-        cout << nome[i] << endl;
         if (!isalpha(nome[i]) && (nome[i] != ' ')){
             throw invalid_argument("Formato inadequado para nome.");
         }

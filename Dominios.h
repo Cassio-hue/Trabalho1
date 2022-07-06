@@ -7,9 +7,11 @@
 #include <regex>
 #include <unordered_set>
 
+
 using namespace std;
 
 
+/// Parente de todos os domínios.
 class Dominio {
     // Matrícula: 211038208
 
@@ -17,7 +19,15 @@ class Dominio {
         string valor;
         virtual void validar(string) = 0;
     public:
-        void setValor(string);
+        Dominio(const string&);
+        virtual ~Dominio(){};
+
+/// @param valor uma string qualquer
+///
+/// chama uma função de validação e, caso a entrada seja válida, o valor é armazenado
+        void setValor(const string&);
+
+/// @return valor
         string getValor() const;
 };
 
@@ -33,6 +43,8 @@ class Nome : public Dominio {
 
     private:
         void validar(string);
+    public:
+        Nome(const string&);
 };
 
 
@@ -42,16 +54,20 @@ class Nota : public Dominio {
     private:
         static const regex PADRAO_ACEITO;
         void validar(string valor);
+    public:
+        Nota(const string&);
 };
 
 
 class Idioma : public Dominio {
     // Matricula: 211036141
 
-    public:
-        static const unordered_set<string> POSSIVEIS_VALORES;
     private:
         void validar(string);
+    public:
+        Idioma(const string&);
+        static const unordered_set<string> POSSIVEIS_VALORES;
+
 };
 
 
@@ -61,6 +77,8 @@ class Data : public Dominio {
     private:
         static const regex PADRAO_ACEITO;
         void validar(string);
+    public:
+        Data(const string&);
 };
 
 class Codigo : public Dominio {
@@ -69,6 +87,8 @@ class Codigo : public Dominio {
     private:
         static const int TAMANHO_CODIGO = 11;
         void validar(string);
+    public:
+        Codigo(const string&);
 };
 
 
@@ -77,6 +97,7 @@ class Cidade : public Dominio {
 
     public:
         static const unordered_set<string> POSSIVEIS_VALORES;
+        Cidade(const string&);
     private:
         void validar(string);
 };
@@ -84,6 +105,9 @@ class Cidade : public Dominio {
 
 class Email : public Dominio {
     // Matrícula: 211038208
+    
+    public:
+        Email(const string&);
 
     private:
         static const regex PADRAO_ACEITO;
@@ -94,6 +118,8 @@ class Email : public Dominio {
 class Senha : public Dominio {
     // Matrícula: 211038208
 
+    public:
+        Senha(const string&);
     private:
         static const regex PADRAO_ACEITO;
         void validar(string);

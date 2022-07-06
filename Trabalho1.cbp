@@ -29,6 +29,19 @@
 					<Add option="-s" />
 				</Linker>
 			</Target>
+			<Target title="Teste">
+				<Option output="bin/Teste/Trabalho1" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Teste/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="./" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
@@ -37,7 +50,22 @@
 		<Unit filename="Constantes.cpp" />
 		<Unit filename="Dominios.cpp" />
 		<Unit filename="Dominios.h" />
-		<Unit filename="main.cpp" />
+		<Unit filename="Entidades.cpp" />
+		<Unit filename="Entidades.h" />
+		<Unit filename="main.cpp">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="testes/catch.hpp">
+			<Option compile="1" />
+			<Option target="Teste" />
+		</Unit>
+		<Unit filename="testes/testes-dominios.cpp">
+			<Option target="Teste" />
+		</Unit>
+		<Unit filename="testes/testes-main.cpp">
+			<Option target="Teste" />
+		</Unit>
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

@@ -52,6 +52,7 @@ class Nota : public Dominio {
     // Matricula: 211036141
 
     private:
+        static const regex PADRAO_ACEITO;
         void validar(string valor);
     public:
         Nota(const string&);
@@ -63,9 +64,10 @@ class Idioma : public Dominio {
 
     private:
         void validar(string);
-        static const int NUMERO_IDIOMAS = 11;
     public:
         Idioma(const string&);
+        static const unordered_set<string> POSSIVEIS_VALORES;
+
 };
 
 
@@ -73,6 +75,7 @@ class Data : public Dominio {
     // Matricula: 211036141
 
     private:
+        static const regex PADRAO_ACEITO;
         void validar(string);
     public:
         Data(const string&);
@@ -92,33 +95,48 @@ class Codigo : public Dominio {
 class Cidade : public Dominio {
     // Matrícula: 211038208
 
-    public:
-        static const unordered_set<string> POSSIVEIS;
-        Cidade(const string&);
     private:
         void validar(string);
+    public:
+        static const unordered_set<string> POSSIVEIS_VALORES;
+        Cidade(const string&);
+
 };
 
 
 class Email : public Dominio {
     // Matrícula: 211038208
-    public:
-        Email(const string&);
-
+    
     private:
         static const regex PADRAO_ACEITO;
         void validar(string);
+    public:
+        Email(const string&);
+
 };
 
 
 class Senha : public Dominio {
-    public:
-        Senha(const string&);
+    // Matrícula: 211038208
 
     private:
         static const regex PADRAO_ACEITO;
         void validar(string);
+    public:
+        Senha(const string&);
+
 };
 
+
+class Descricao : public Dominio {
+        // Matricula: 211026495
+
+        private:
+            static const regex PADRAO_NAO_ACEITO;
+            static const int MAXIMO_CARACTERES;
+            void validar(string);
+        public:
+            Descricao(const string&);
+};
 
 #endif // DOMINIOS_H_INCLUDED

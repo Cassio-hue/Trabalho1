@@ -15,6 +15,7 @@ Dominio::Dominio(const string& valor){
     this->valor = valor;
 }
 
+
 Nome::Nome(const string& valor) : Dominio(valor){validar(valor);};
 
 Nota::Nota(const string& valor) : Dominio(valor){validar(valor);};
@@ -31,6 +32,8 @@ Email::Email(const string& valor) : Dominio(valor){validar(valor);};
 
 Senha::Senha(const string& valor) : Dominio(valor){validar(valor);};
 
+Descricao::Descricao(const string& valor) : Dominio(valor){validar(valor);};
+
 
 void Nome::validar(string nome){
     // Matricula: 211036141
@@ -44,6 +47,10 @@ void Nome::validar(string nome){
     if (!primeiraLetraNome || nomeTamanho >= 31){
         throw invalid_argument("Formato inadequado para nome.");
     }
+    else if (nome[nomeTamanho-1] == ' '){
+        throw invalid_argument("Formato inadequado para nome.");
+    }
+    
     for (int i=0; i < nomeTamanho; ++i){
         if (!isalpha(nome[i]) && (nome[i] != ' ')){
             throw invalid_argument("Formato inadequado para nome.");
@@ -76,9 +83,7 @@ void Nome::validar(string nome){
 void Nota::validar(string valor){
     // Matricula: 211036141
 
-    regex rule("^([0-9]|10)$");
-
-    if (!regex_match(valor, rule)){
+    if (!regex_match(valor, PADRAO_ACEITO)){
         throw invalid_argument("A nota deve ser um valor valido.");
     }
 }
@@ -87,26 +92,18 @@ void Nota::validar(string valor){
 void Idioma::validar(string valor){
     // Matricula: 211036141
 
-    string idiomas[NUMERO_IDIOMAS] = {"Arabe", "Bengali", "Chines", "Espanhol", "Frances", "Hindi", "Indonesio", "Ingles", "Mandarim", "Portugues", "Russo"};
-
-    for (int i=0; i < NUMERO_IDIOMAS; i++){
-        if (valor == idiomas[i]){
-            return;
-        }
+    if (POSSIVEIS_VALORES.find(valor) == POSSIVEIS_VALORES.end()){
+        throw invalid_argument("Idioma indisponivel");
     }
-    throw invalid_argument("Idioma nao disponivel");
 }
 
 
 void Data::validar(string valor){
     // Matricula: 211036141
 
-    regex rule("^(([0-2][0-9]|[3][01])[\\/](Jan|Mar|Mai|Jul|Ago|Out|Dez))|([0-2][0-9]|[3][0])[\\/](Abr|Jun|Set|Nov)|([0-2][0-9])[\\/](Fev)$");
-
-    if ((!regex_match(valor, rule))) {
+    if ((!regex_match(valor, PADRAO_ACEITO))) {
         throw invalid_argument("Data invalida");
     }
-
 }
 
 
@@ -135,27 +132,17 @@ void Codigo::validar(string valor) {
     if (soma % 10 != 0) {
         throw invalid_argument("Ultimo digito incorreto.");
     }
-}     
+}
 
-
-const unordered_set<string> Cidade::POSSIVEIS = {
-    // Matrícula: 211038208
-
-    "Antalya", "Bangkok", "Delhi", "Dubai", "Hong Kong", "Londres", "Macau",
-    "Mumbai", "Paris", "Rio de Janeiro", "Sao Paulo", "Seul", "Istambul", "Kuala Lumpur",
-    "Nova Iorque", "Osaka", "Phuket", "Shenzhen", "Toquio"
-};
 
 void Cidade::validar(string valor){
     // Matrícula: 211038208
 
-    if (POSSIVEIS.find(valor) == POSSIVEIS.end()){
+    if (POSSIVEIS_VALORES.find(valor) == POSSIVEIS_VALORES.end()){
         throw invalid_argument("Cidade Invalida");
     }
 }
 
-
-const regex Email::PADRAO_ACEITO = regex("^(?!^[.]|.*[-_.]{2}.*[@]|.*[._@][@-]|.*[-][.@]|.*[-.]$)[a-zA-Z0-9-_.]{1,64}[@]([a-zA-Z0-9-]{1,63}[.]?)+$");
 
 void Email::validar(string valor){
     // Matrícula: 211038208
@@ -166,11 +153,21 @@ void Email::validar(string valor){
 }
 
 
-const regex Senha::PADRAO_ACEITO = regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!#$%&])[a-zA-Z0-9!#$%&]{5}$");
-
-
 void Senha::validar(string valor){
+    // Matrícula: 211038208
+
     if ( !regex_match(valor, PADRAO_ACEITO) ){
         throw invalid_argument("Senha invalida");
+    }
+}
+
+void Descricao::validar(string valor) {
+    // Matricula: 211026495
+
+    if (valor.size() > MAXIMO_CARACTERES) {
+        throw invalid_argument("Descricao deve possuir de 0 a 40 caracteres.");
+    }
+    if (regex_search(valor, PADRAO_NAO_ACEITO)) {
+        throw invalid_argument("Descricao invalida.");
     }
 }

@@ -21,7 +21,6 @@ ValoresEInfo< Nome >::VALORES_VALIDOS[] = {
     make_pair("Artur Zbcdefghijklmnopqrstuvw", "com 30 caracteres (o limite)"),
 };
 
-
 template<> const pair<string, string>
 ValoresEInfo<Nome>::VALORES_INVALIDOS[] = {
     make_pair("ArtUr Padovezi", "com maiuscula a mais"),
@@ -52,7 +51,6 @@ ValoresEInfo< Nota >::VALORES_VALIDOS[] = {
     make_pair("9", "maximo com unico digito"),
     make_pair("10", "limite superior"),
 };
-    
 
 template<> const pair<string, string> 
 ValoresEInfo< Nota >::VALORES_INVALIDOS[] = {
@@ -67,7 +65,6 @@ ValoresEInfo< Data >::VALORES_VALIDOS[] = {
     make_pair("29/Fev", ""),
     make_pair("31/Dez", "ultimo dia do ano"),
 };
-
 
 template<> const pair<string, string> 
 ValoresEInfo< Data >::VALORES_INVALIDOS[] = {
@@ -90,7 +87,6 @@ ValoresEInfo< Codigo >::VALORES_INVALIDOS[] = {
 };
 
 
-// Cidade
 template<> const pair<string, string> 
 ValoresEInfo< Cidade >::VALORES_VALIDOS[] = {
     make_pair("Antalya", "cidade valida"),
@@ -123,10 +119,61 @@ ValoresEInfo< Cidade >::VALORES_INVALIDOS[] = {
     make_pair(" Osaka", "cidade valida, mas com um espaco antes"),
 };
 
-//  Email
 
-// Senha
+template<> const pair<string, string> 
+ValoresEInfo< Email >::VALORES_VALIDOS[] = {
+    make_pair("a@Z", "menor email possivel"),
+    make_pair("-Z09_a.u@unb.br", "email valido com os possiveis caracteres nao alfanumericos no nome"),
+    make_pair("a@unb-a--Z.09br", "email valido com os possiveis caracteres nao alfanumericos no dominio"),
+    make_pair("artur8879@gmail.com.br", "email comum"),
+    make_pair("Xxarturo_va.vaxX@struct.unb.br", "email estranho"),
+};
 
-// Descricao
+template<> const pair<string, string> 
+ValoresEInfo< Email >::VALORES_INVALIDOS[] = {
+    make_pair("artur--8879@gmail.com.br", "dois '-' seguidos no nome"),
+    make_pair("artu..r8879@gmail.com.br", "dois '.' seguidos no nome"),
+    make_pair(".artur8879@gmail.com.br", "nome comecando com '.'"),
+    make_pair("artur8879@.gmail.com.br", "dominio comecando com '.'"),
+    make_pair("artur8879@-gmail.com.br", "dominio comecando com '-'"),
+    make_pair("artur8879@gmail.com.br.", "dominio terminando com '.'"),
+    make_pair("artur8879gmail.com.br", "email sem '@'"),
+    make_pair("artur8879@@gmail.com.br", "email com 2 '@'"),
+};
+
+
+template<> const pair<string, string> 
+ValoresEInfo< Senha >::VALORES_VALIDOS[] = {
+    make_pair("aZ#90", "senha comum"),
+    make_pair("aZ$9Z", "senha comum"),
+    make_pair("az%0b", "senha comum"),
+    make_pair("9AZ0&", "senha comum"),
+    make_pair("AaZ!9", "senha comum"),
+};
+
+template<> const pair<string, string> 
+ValoresEInfo< Senha >::VALORES_INVALIDOS[] = {
+    make_pair("AaZ!a", "faltando numero"),
+    make_pair("#$905", "faltando letra"),
+    make_pair("905Aa", "faltando caractere especial"),
+    make_pair("aZ#9Aa", "com 6 caracteres (len=5)"),
+    make_pair("aZ#9", "com 4 caracteres (len=5)"),
+};
+
+
+
+template<> const pair<string, string> 
+ValoresEInfo< Descricao >::VALORES_VALIDOS[] = {
+    make_pair("", ""),
+};
+
+template<> const pair<string, string> 
+ValoresEInfo< Descricao >::VALORES_INVALIDOS[] = {
+    make_pair("", ""),
+};
+
+
+
+
 
 #endif // TEST_VALUES_H_DEFINED

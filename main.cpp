@@ -71,14 +71,14 @@ int main()
     // day.setValor(data);
     // cout << day.getValor() << endl;
 
-    // Cidade city;
+    Cidade city;
 
-    // string cidade;
+    string cidade;
 
-    // cout << "Digite a cidade: ";
-    // getline(cin, cidade);
-    // city.setValor(cidade);
-    // cout << city.getValor() << endl;
+    cout << "Digite a cidade: ";
+    getline(cin, cidade);
+    city.setValor(cidade);
+    cout << city.getValor() << endl;
     
 
     // Usuario

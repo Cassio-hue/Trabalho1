@@ -81,11 +81,15 @@ class Data : public Dominio {
         Data(const string&);
 };
 
+/// Código indentificador pelo último digito (algoritmo de Luhn)
 class Codigo : public Dominio {
     // Matricula: 211026495
-
     private:
+/// @param TAMANHO_CODIGO único tamanho permitido para código     
         static const int TAMANHO_CODIGO = 11;
+/// verifica se o inserido é valido
+/// 
+/// @throw invalid_argument código não é valido, por último dígito ou tamanho
         void validar(string);
     public:
         Codigo(const string&);
@@ -127,16 +131,33 @@ class Senha : public Dominio {
 
 };
 
-
+/// Descricao de usuário, hospedagem ou avaliação
 class Descricao : public Dominio {
         // Matricula: 211026495
-
         private:
+/// @param PADRAO_NAO_ACEITO constante regex que garante que a string inserida não possui pontuação em sequência
             static const regex PADRAO_NAO_ACEITO;
             static const int MAXIMO_CARACTERES;
             void validar(string);
+
+/// @throw invalid_argument quando a descrição possui mais de 40 caracteres ou pontuação em sequência
         public:
             Descricao(const string&);
+};
+
+/// Pais escolhido para hospedagem
+class Pais : public Dominio {
+    // Matricula: 211026495
+
+    private:
+/// @param POSSIVEIS objeto com únicos possíveis países que são aceitos na classe
+    static const unordered_set<string> POSSIVEIS;
+
+/// @throw invalid_argument país não está entre os aceitos
+    void validar(string);
+
+    public:
+    Pais(const string&);
 };
 
 #endif // DOMINIOS_H_INCLUDED

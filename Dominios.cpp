@@ -34,6 +34,7 @@ Senha::Senha(const string& valor) : Dominio(valor){validar(valor);};
 
 Descricao::Descricao(const string& valor) : Dominio(valor){validar(valor);};
 
+Pais::Pais(const string& valor) : Dominio(valor){validar(valor);};
 
 void Nome::validar(string nome){
     // Matricula: 211036141
@@ -169,5 +170,13 @@ void Descricao::validar(string valor) {
     }
     if (regex_search(valor, PADRAO_NAO_ACEITO)) {
         throw invalid_argument("Descricao invalida.");
+    }
+}
+
+void Pais::validar(string valor){
+    // Matrícula: 211026495
+
+    if (POSSIVEIS.find(valor) == POSSIVEIS.end()){
+        throw invalid_argument("Pais Invalido");
     }
 }

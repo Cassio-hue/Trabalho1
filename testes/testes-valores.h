@@ -77,13 +77,12 @@ ValoresEInfo< Data >::VALORES_INVALIDOS[] = {
 
 template<> const pair<string, string> 
 ValoresEInfo< Codigo >::VALORES_VALIDOS[] = {
-    // faz aí, Enzo
-    make_pair("faz ai, Enzo", "faz ai, Enzo"), 
+    make_pair("12345678903", "codigo valido"), 
 };
 
 template<> const pair<string, string> 
 ValoresEInfo< Codigo >::VALORES_INVALIDOS[] = {
-    make_pair("faz ai, Enzo", "faz ai, Enzo"), 
+    make_pair("12345678908", "codigo invalido"), 
 };
 
 

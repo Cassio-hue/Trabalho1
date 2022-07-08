@@ -7,7 +7,7 @@ using namespace std;
 
 
 TEMPLATE_TEST_CASE( "dominios tem construtor, set e get funcionando", "[dominios][template]",
-            Nome , Nota, Data, Codigo, Cidade, Email, Senha //, outros dominios. Acessiveis no teste por TestType
+            Nome , Nota, Data, Codigo, Cidade, Email, Senha, Descricao //, outros dominios. Acessiveis no teste por TestType
     ) {
     
  

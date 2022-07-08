@@ -1,5 +1,14 @@
 \hypertarget{class_idioma}{}\doxysection{Idioma Class Reference}
 \label{class_idioma}\index{Idioma@{Idioma}}
+
+
+Domínio \mbox{\hyperlink{class_idioma}{Idioma}}.  
+
+
+
+
+{\ttfamily \#include $<$Dominios.\+h$>$}
+
 Inheritance diagram for Idioma\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -19,6 +28,30 @@ Inheritance diagram for Idioma\+:\begin{figure}[H]
 static const unordered\+\_\+set$<$ string $>$ {\bfseries POSSIVEIS\+\_\+\+VALORES} = \{\char`\"{}Arabe\char`\"{}, \char`\"{}Bengali\char`\"{}, \char`\"{}Chines\char`\"{}, \char`\"{}Espanhol\char`\"{}, \char`\"{}Frances\char`\"{}, \char`\"{}Hindi\char`\"{}, \char`\"{}Indonesio\char`\"{}, \char`\"{}Ingles\char`\"{}, \char`\"{}Mandarim\char`\"{}, \char`\"{}Portugues\char`\"{}, \char`\"{}Russo\char`\"{}\}
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Domínio \mbox{\hyperlink{class_idioma}{Idioma}}. 
+
+É importante se alientar que não ocorre a validação da acentuação, logo caso esteja presente algum acento no valor passado, será lançada uma exceção! Possui uma função validar. Se o idioma (tipo string) passado para a função for válido, o idioma é armazenada. Caso contrário, ocorre o lançamento de uma exceção.
+
+{\bfseries{Regras para o idioma ser aceito}}\+:
+\begin{DoxyEnumerate}
+\item Somente letras
+\item Estar presente na seguinte lista\+:
+\end{DoxyEnumerate}
+\begin{DoxyItemize}
+\item Arabe
+\item Bengali
+\item Chines
+\item Espanhol
+\item Frances
+\item Hindi
+\item Indonesio
+\item Ingles
+\item Mandarim
+\item Portugues
+\item Russo 
+\end{DoxyItemize}
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

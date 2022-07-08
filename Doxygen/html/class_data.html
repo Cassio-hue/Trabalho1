@@ -100,12 +100,27 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Domínio <a class="el" href="class_data.html" title="Domínio Data.">Data</a>. </p>
 <p >Possui uma função validar. Se a data (tipo string) passada para a função for válida, a data é armazenada. Caso contrário, ocorre o lançamento de uma exceção.</p>
-<p ><b>Regras para a nota ser aceita</b>:</p><ol type="1">
-<li>Somente números</li>
-<li>A nota deve ser um número entre 0 e 10</li>
-</ol>
-<ul>
-<li>0 é a menor nota possível e 10 a maior nota possível </li>
+<p >O formato da data considerado válido: <b>DIA/MES</b></p>
+<p ><b>Formato dos dias</b>: Numeros entre 01 - 31, número menor que 10 deve ser acompanhado com um zero.</p>
+<p ><b>Formato dos meses</b>:</p><ul>
+<li>JAN</li>
+<li>FEV</li>
+<li>MAC</li>
+<li>ABR</li>
+<li>MAI</li>
+<li>JUN</li>
+<li>JUL</li>
+<li>AGO</li>
+<li>SET</li>
+<li>OUT</li>
+<li>NOV</li>
+<li>DEZ</li>
+</ul>
+<p >A função validar não leva em consideração anos bissextos</p>
+<p ><b>Observações</b>:</p><ul>
+<li>O mês de FEV vai até o dia 29</li>
+<li>Os meses: ABR, JUN, SET, NOV vão até o dia 30</li>
+<li>Os meses: JAN, MAR, MAIO, JUL, AGO, OUT vão até o dia 31 </li>
 </ul>
 </div><hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_dominios_8h_source.html">Dominios.h</a></li>

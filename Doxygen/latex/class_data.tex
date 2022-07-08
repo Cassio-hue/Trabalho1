@@ -28,13 +28,33 @@ Domínio \mbox{\hyperlink{class_data}{Data}}.
 
 Possui uma função validar. Se a data (tipo string) passada para a função for válida, a data é armazenada. Caso contrário, ocorre o lançamento de uma exceção.
 
-{\bfseries{Regras para a nota ser aceita}}\+:
-\begin{DoxyEnumerate}
-\item Somente números
-\item A nota deve ser um número entre 0 e 10
-\end{DoxyEnumerate}
+O formato da data considerado válido\+: {\bfseries{DIA/\+MES}}
+
+{\bfseries{Formato dos dias}}\+: Numeros entre 01 -\/ 31, número menor que 10 deve ser acompanhado com um zero.
+
+{\bfseries{Formato dos meses}}\+:
 \begin{DoxyItemize}
-\item 0 é a menor nota possível e 10 a maior nota possível 
+\item JAN
+\item FEV
+\item MAC
+\item ABR
+\item MAI
+\item JUN
+\item JUL
+\item AGO
+\item SET
+\item OUT
+\item NOV
+\item DEZ
+\end{DoxyItemize}
+
+A função validar não leva em consideração anos bissextos
+
+{\bfseries{Observações}}\+:
+\begin{DoxyItemize}
+\item O mês de FEV vai até o dia 29
+\item Os meses\+: ABR, JUN, SET, NOV vão até o dia 30
+\item Os meses\+: JAN, MAR, MAIO, JUL, AGO, OUT vão até o dia 31 
 \end{DoxyItemize}
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

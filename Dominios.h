@@ -40,6 +40,7 @@ inline string Dominio::getValor() const {
 
 /// \brief Domínio Nome 
 ///
+/// É importante se alientar que não ocorre a validação da acentuação, logo caso esteja presente algum acento no valor passado, será lançada uma exceção!
 /// Possui uma função validar. Se o nome (tipo string) passado para a função for válido, o nome é armazenado. Caso contrário, ocorre o lançamento de uma exceção.
 ///
 /// **Regras para o nome ser aceito**:
@@ -84,6 +85,25 @@ class Nota : public Dominio {
         Nota(const string&);
 };
 
+/// \brief Domínio Idioma 
+///
+/// É importante se alientar que não ocorre a validação da acentuação, logo caso esteja presente algum acento no valor passado, será lançada uma exceção!
+/// Possui uma função validar. Se o idioma (tipo string) passado para a função for válido, o idioma é armazenada. Caso contrário, ocorre o lançamento de uma exceção.
+///
+/// **Regras para o idioma ser aceito**:
+/// 1. Somente letras
+/// 2. Estar presente na seguinte lista:
+/// - Arabe
+/// - Bengali
+/// - Chines
+/// - Espanhol
+/// - Frances
+/// - Hindi
+/// - Indonesio
+/// - Ingles
+/// - Mandarim
+/// - Portugues
+/// - Russo
 
 class Idioma : public Dominio {
     // Matricula: 211036141
@@ -96,7 +116,14 @@ class Idioma : public Dominio {
 
 };
 
-
+/// \brief Domínio Data 
+///
+/// Possui uma função validar. Se a data (tipo string) passada para a função for válida, a data é armazenada. Caso contrário, ocorre o lançamento de uma exceção.
+///
+/// **Regras para a nota ser aceita**:
+/// 1. Somente números
+/// 2. A nota deve ser um número entre 0 e 10
+/// - 0 é a menor nota possível e 10 a maior nota possível
 class Data : public Dominio {
     // Matricula: 211036141
 

@@ -40,7 +40,7 @@ inline string Dominio::getValor() const {
 
 /// \brief Domínio Nome 
 ///
-/// Possui uma função validar. Se o nome (tipo string) passado para a função for válido, o valor é armazenado. Caso contrário, ocorre o lançamento de uma exceção.
+/// Possui uma função validar. Se o nome (tipo string) passado para a função for válido, o nome é armazenado. Caso contrário, ocorre o lançamento de uma exceção.
 ///
 /// **Regras para o nome ser aceito**:
 /// 1. Até 30 caracteres
@@ -66,10 +66,14 @@ class Nome : public Dominio {
 };
 
 
-/// Domínio Nota 
-/// Possui uma função validar. Se o nome (tipo string) passado para a função for válido, o valor é armazenado. Caso contrário, ocorre o lançamento de uma exceção.
+/// \brief Domínio Nota 
 ///
-
+/// Possui uma função validar. Se a nota (tipo string) passada para a função for válida, a nota é armazenada. Caso contrário, ocorre o lançamento de uma exceção.
+///
+/// **Regras para a nota ser aceita**:
+/// 1. Somente números
+/// 2. A nota deve ser um número entre 0 e 10
+/// - Sendo 0 a menor nota possível e 10 a maior nota possível
 class Nota : public Dominio {
     // Matricula: 211036141
 

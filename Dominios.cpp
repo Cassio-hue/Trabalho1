@@ -44,7 +44,7 @@ void Nome::validar(string nome){
     bool espacoBranco = false;
     bool primeiraLetraNome = isupper(nome[0]);
 
-    if (!primeiraLetraNome || nomeTamanho >= 31){
+    if (!primeiraLetraNome || nomeTamanho > 30){
         throw invalid_argument("Formato inadequado para nome.");
     }
     else if (nome[nomeTamanho-1] == ' '){

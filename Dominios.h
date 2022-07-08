@@ -73,7 +73,7 @@ class Nome : public Dominio {
 /// **Regras para a nota ser aceita**:
 /// 1. Somente números
 /// 2. A nota deve ser um número entre 0 e 10
-/// - Sendo 0 a menor nota possível e 10 a maior nota possível
+/// - 0 é a menor nota possível e 10 a maior nota possível
 class Nota : public Dominio {
     // Matricula: 211036141
 

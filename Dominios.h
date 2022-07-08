@@ -37,8 +37,24 @@ inline string Dominio::getValor() const {
     return valor;
 }
 
-/// Domínio Nome 
+
+/// \brief Domínio Nome 
+///
 /// Possui uma função validar. Se o nome (tipo string) passado para a função for válido, o valor é armazenado. Caso contrário, ocorre o lançamento de uma exceção.
+///
+/// **Regras para o nome ser aceito**:
+/// 1. Até 30 caracteres
+/// 2. Formato: prenome sobrenome
+/// 3. Não pode ter dois espaços em branco
+/// 4. Não pode terminar ou começar com espaço em branco
+/// 5. Somente letras
+/// 6. As letras iniciais do prenome e sobrenome devem ser maiúsculas
+///
+/// **Exemplos de nomes válidos**:
+/// - Cassio Vinicius
+/// - Joaquim Silva
+/// - Dom Quixote
+/// - Princesa Jujuba
 
 class Nome : public Dominio {
     // Matricula: 211036141
@@ -52,6 +68,8 @@ class Nome : public Dominio {
 
 /// Domínio Nota 
 /// Possui uma função validar. Se o nome (tipo string) passado para a função for válido, o valor é armazenado. Caso contrário, ocorre o lançamento de uma exceção.
+///
+
 class Nota : public Dominio {
     // Matricula: 211036141
 

@@ -37,6 +37,8 @@ inline string Dominio::getValor() const {
     return valor;
 }
 
+/// Domínio Nome 
+/// Possui uma função validar. Se o nome (tipo string) passado para a função for válido, o valor é armazenado. Caso contrário, ocorre o lançamento de uma exceção.
 
 class Nome : public Dominio {
     // Matricula: 211036141
@@ -48,6 +50,8 @@ class Nome : public Dominio {
 };
 
 
+/// Domínio Nota 
+/// Possui uma função validar. Se o nome (tipo string) passado para a função for válido, o valor é armazenado. Caso contrário, ocorre o lançamento de uma exceção.
 class Nota : public Dominio {
     // Matricula: 211036141
 

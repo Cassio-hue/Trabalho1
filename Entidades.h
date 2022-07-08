@@ -11,7 +11,7 @@ class Usuario {
         Senha senha;
     public:
 };
-
+// #-----------------------------------------classe hospedagem-----------------------------------------#
 class Hospedagem {
     private:
         Codigo codigo;
@@ -76,6 +76,49 @@ inline void Hospedagem::setDescricao(const Descricao& descricao){
 inline Descricao Hospedagem::getDescricao() const {
     return descricao;
 }
+// #-----------------------------------------classe Avaliacao-----------------------------------------#
 
+
+class Avaliacao {
+    private:
+        Codigo codigo;
+        Nota nota;
+        Descricao descricao;
+
+    public:
+        void setCodigo(const Codigo&);
+        Codigo getCodigo() const;
+
+        void setNota(const Nota&);
+        Nota getNota() const;
+
+        void setDescricao(const Descricao&);
+        Descricao getDescricao() const;
+};
+
+inline void Avaliacao::setCodigo(const Codigo& codigo){
+    this->codigo = codigo;
+}
+
+inline Codigo Avaliacao::getCodigo() const {
+    return codigo;
+}
+
+inline void Avaliacao::setNota(const Nota& nota){
+    this->nota = nota;
+}
+
+inline Nota Avaliacao::getNota() const {
+    return nota;
+}
+
+inline void Avaliacao::setDescricao(const Descricao& descricao){
+    this->descricao = descricao;
+}
+
+inline Descricao Avaliacao::getDescricao() const {
+    return descricao;
+}
+// #---------------------------------------------------------------------------------------------------#
 
 #endif // ENTIDADES_H_INCLUDED

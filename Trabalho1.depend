@@ -667,25 +667,25 @@
 1657068236 /home/artistreak/Desktop/progr/cpp/TP1/Trabalho1/testes/testes-valores.h
 	<string>
 
-1657303050 source:c:\users\enzo\desktop\projeto2\trabalho1\constantes.cpp
+1657309630 source:c:\users\enzo\desktop\projeto2\trabalho1\constantes.cpp
 	"Dominios.h"
 
-1657306361 c:\users\enzo\desktop\projeto2\trabalho1\dominios.h
+1657309630 c:\users\enzo\desktop\projeto2\trabalho1\dominios.h
 	<stdexcept>
 	<ctype.h>
 	<string>
 	<regex>
 	<unordered_set>
 
-1657303073 source:c:\users\enzo\desktop\projeto2\trabalho1\dominios.cpp
+1657309630 source:c:\users\enzo\desktop\projeto2\trabalho1\dominios.cpp
 	"Dominios.h"
 	<iostream>
 
-1657302885 source:c:\users\enzo\desktop\projeto2\trabalho1\entidades.cpp
+1657310172 source:c:\users\enzo\desktop\projeto2\trabalho1\entidades.cpp
 	"Entidades.h"
 	<stdexcept>
 
-1657306796 c:\users\enzo\desktop\projeto2\trabalho1\entidades.h
+1657311929 c:\users\enzo\desktop\projeto2\trabalho1\entidades.h
 	"Dominios.h"
 
 1657302885 source:c:\users\enzo\desktop\projeto2\trabalho1\testes\testes-dominios.cpp
@@ -694,7 +694,7 @@
 	"testes-valores.h"
 	"catch.hpp"
 
-1657307278 c:\users\enzo\desktop\projeto2\trabalho1\testes\testes-valores.h
+1657309630 c:\users\enzo\desktop\projeto2\trabalho1\testes\testes-valores.h
 	"../Dominios.h"
 	<string>
 

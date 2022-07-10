@@ -176,7 +176,7 @@ void Descricao::validar(string valor) {
 void Pais::validar(string valor){
     // Matrícula: 211026495
 
-    if (POSSIVEIS.find(valor) == POSSIVEIS.end()){
+    if (POSSIVEIS_VALORES.find(valor) == POSSIVEIS_VALORES.end()){
         throw invalid_argument("Pais Invalido");
     }
 }

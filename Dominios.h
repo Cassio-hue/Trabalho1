@@ -210,8 +210,8 @@ class Pais : public Dominio {
     // Matricula: 211026495
 
     private:
-/// @param POSSIVEIS objeto com únicos possíveis países que são aceitos na classe
-    static const unordered_set<string> POSSIVEIS;
+/// @param POSSIVEIS_VALORES objeto com únicos possíveis países que são aceitos na classe
+    static const unordered_set<string> POSSIVEIS_VALORES;
 
 /// @throw invalid_argument país não está entre os aceitos
     void validar(string);

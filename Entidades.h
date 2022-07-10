@@ -17,22 +17,24 @@ class Usuario {
 
     public:
         void setNome(const Nome&);
-        Nome getNome() const;
+        string getNome() const;
 
         void setEmail(const Email&);
-        Email getEmail() const;
+        string getEmail() const;
 
         void setSenha(const Senha&);
-        Senha getSenha() const;
+        string getSenha() const;
 
         void setIdioma(const Idioma&);
-        Idioma getIdioma() const;
+        string getIdioma() const;
 
         void setData(const Data&);
-        Data getData() const;
+        string getData() const;
 
         void setDescricao(const Descricao&);
-        Descricao getDescricao() const;
+        string getDescricao() const;
+
+        Usuario(string nome, string email, string senha, string idioma, string data, string descricao);
 };
 
 
@@ -40,48 +42,48 @@ inline void Usuario::setNome(const Nome& nome){
     this->nome = nome;
 }
 
-inline Nome Usuario::getNome() const {
-    return nome;
+inline string Usuario::getNome() const {
+    return nome.getValor();
 }
 
 inline void Usuario::setEmail(const Email& email){
     this->email = email;
 }
 
-inline Email Usuario::getEmail() const {
-    return email;
+inline string Usuario::getEmail() const {
+    return email.getValor();
 }
 
 inline void Usuario::setSenha(const Senha& senha){
     this->senha = senha;
 }
 
-inline Senha Usuario::getSenha() const {
-    return senha;
+inline string Usuario::getSenha() const {
+    return senha.getValor();
 }
 
 inline void Usuario::setIdioma(const Idioma& idioma){
     this->idioma = idioma;
 }
 
-inline Idioma Usuario::getIdioma() const {
-    return idioma;
+inline string Usuario::getIdioma() const {
+    return idioma.getValor();
 }
 
 inline void Usuario::setData(const Data& data){
     this->data = data;
 }
 
-inline Data Usuario::getData() const {
-    return data;
+inline string Usuario::getData() const {
+    return data.getValor();
 }
 
 inline void Usuario::setDescricao(const Descricao& descricao){
     this->descricao = descricao;
 }
 
-inline Descricao Usuario::getDescricao() const {
-    return descricao;
+inline string Usuario::getDescricao() const {
+    return descricao.getValor();
 }
 
 

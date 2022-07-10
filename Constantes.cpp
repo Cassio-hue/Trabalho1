@@ -11,7 +11,7 @@ const unordered_set<string> Cidade::POSSIVEIS_VALORES = {
 
 
 const regex Data::PADRAO_ACEITO = regex(
-    "^(([0-2][0-9]|[3][01])[\\/](Jan|Mar|Mai|Jul|Ago|Out|Dez))|([0-2][0-9]|[3][0])[\\/](Abr|Jun|Set|Nov)|([0-2][0-9])[\\/](Fev)$"
+    "^(([0-2][1-9]|[3][01])[\\/](Jan|Mar|Mai|Jul|Ago|Out|Dez))|([0-2][0-9]|[3][0])[\\/](Abr|Jun|Set|Nov)|([0-2][0-9])[\\/](Fev)$"
     );
 
 

@@ -29,3 +29,8 @@ const regex Senha::PADRAO_ACEITO = regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.
 const regex Descricao::PADRAO_NAO_ACEITO("[.,;: !?-]{2}");
 
 const int Descricao::MAXIMO_CARACTERES = 40;
+
+const unordered_set<string> Pais::POSSIVEIS = {
+    "Estados Unidos", "Brasil", "China", "Coreia do Sul", "Emirados", "Franca", "India", "Japao",
+    "Malasia", "Reino Unido", "Tailandia", "Turquia"
+    };

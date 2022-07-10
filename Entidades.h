@@ -109,6 +109,8 @@ class Hospedagem {
 
         void setDescricao(const Descricao&);
         Descricao getDescricao() const;
+
+        Hospedagem(string codigo, string cidade, string pais, string nota, string descricao);
 };
 
 inline void Hospedagem::setCodigo(const Codigo& codigo){

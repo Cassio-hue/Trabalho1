@@ -15,7 +15,7 @@ using namespace std;
 class Dominio {
     // Matrícula: 211038208
 
-    private:
+    protected:
         string valor;
         virtual void validar(string) = 0;
     public:
@@ -59,7 +59,7 @@ inline string Dominio::getValor() const {
 class Nome : public Dominio {
     // Matricula: 211036141
 
-    private:
+    protected:
         void validar(string);
     public:
         Nome(const string&);
@@ -77,7 +77,7 @@ class Nome : public Dominio {
 class Nota : public Dominio {
     // Matricula: 211036141
 
-    private:
+    protected:
         static const regex PADRAO_ACEITO;
         void validar(string valor);
     public:
@@ -92,7 +92,7 @@ class Nota : public Dominio {
 class Idioma : public Dominio {
     // Matricula: 211036141
 
-    private:
+    protected:
         void validar(string);
     public:
         Idioma(const string&);
@@ -134,7 +134,7 @@ class Idioma : public Dominio {
 class Data : public Dominio {
     // Matricula: 211036141
 
-    private:
+    protected:
         static const regex PADRAO_ACEITO;
         void validar(string);
     public:
@@ -144,7 +144,7 @@ class Data : public Dominio {
 /// Código indentificador pelo último digito (algoritmo de Luhn)
 class Codigo : public Dominio {
     // Matricula: 211026495
-    private:
+    protected:
 /// @param TAMANHO_CODIGO único tamanho permitido para código     
         static const int TAMANHO_CODIGO = 11;
 /// verifica se o inserido é valido
@@ -159,7 +159,7 @@ class Codigo : public Dominio {
 class Cidade : public Dominio {
     // Matrícula: 211038208
 
-    private:
+    protected:
         void validar(string);
     public:
         static const unordered_set<string> POSSIVEIS_VALORES;
@@ -171,7 +171,7 @@ class Cidade : public Dominio {
 class Email : public Dominio {
     // Matrícula: 211038208
     
-    private:
+    protected:
         static const regex PADRAO_ACEITO;
         void validar(string);
     public:
@@ -183,7 +183,7 @@ class Email : public Dominio {
 class Senha : public Dominio {
     // Matrícula: 211038208
 
-    private:
+    protected:
         static const regex PADRAO_ACEITO;
         void validar(string);
     public:
@@ -194,7 +194,7 @@ class Senha : public Dominio {
 /// Descricao de usuário, hospedagem ou avaliação
 class Descricao : public Dominio {
         // Matricula: 211026495
-        private:
+        protected:
 /// @param PADRAO_NAO_ACEITO constante regex que garante que a string inserida não possui pontuação em sequência
             static const regex PADRAO_NAO_ACEITO;
             static const int MAXIMO_CARACTERES;
@@ -209,7 +209,7 @@ class Descricao : public Dominio {
 class Pais : public Dominio {
     // Matricula: 211026495
 
-    private:
+    protected:
 /// @param POSSIVEIS objeto com únicos possíveis países que são aceitos na classe
     static const unordered_set<string> POSSIVEIS;
 

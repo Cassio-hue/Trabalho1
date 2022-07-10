@@ -23,7 +23,7 @@ const regex Email::PADRAO_ACEITO = regex(
     );
 
 
-const regex Senha::PADRAO_ACEITO = regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!#$%&])[a-zA-Z0-9!#$%&]{5}$");
+const regex Senha::PADRAO_ACEITO = regex("^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!#$%&])[a-zA-Z0-9!#$%&]{5}$");
 
 
 const regex Descricao::PADRAO_NAO_ACEITO("[.,;:!?-]{2}|[ ]{2}");

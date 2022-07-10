@@ -18,7 +18,7 @@ ValoresEInfo< Nome >::VALORES_VALIDOS[] = {
     make_pair("Artur Padovezi", "comum"),
     make_pair("Enzo Zanetti", "comum"),
     make_pair("A B", "com numero minimo de caracteres"),
-    make_pair("Artur Zbcdefghijklmnopqrstuvw", "com 30 caracteres (o limite)"),
+    make_pair("Artur Zbcdefghijklmnopqrstuvwx", "com 30 caracteres (o limite)"),
 };
 
 template<> const pair<string, string>
@@ -37,8 +37,8 @@ ValoresEInfo<Nome>::VALORES_INVALIDOS[] = {
     make_pair("Artur Padove-zi", "contendo caracter invalido"),
     make_pair("Artur Padove.zi", "contendo caracter invalido"),
     make_pair("Artur Padove@zi", "contendo caracter invalido"),
-    make_pair("Artur Zbcdefghijklmnopqrstuvwx", "contendo 31 caracteres (max=30)"),
-    make_pair("Artur Zbcdefghijklmnopqrstuvwxz", "contendo 32 caracteres (max=30)"),
+    make_pair("Artur Zbcdefghijklmnopqrstuvwxy", "contendo 31 caracteres (max=30)"),
+    make_pair("Artur Zbcdefghijklmnopqrstuvwxyz", "contendo 32 caracteres (max=30)"),
     make_pair("Artur Padovezi Piratelli", "contendo nome a mais"),
     make_pair("Artur de Sa", "contendo nome a mais, nome do meio so de minusculas"),
     make_pair("Artur Padovezi piratelli", "contendo nome a mais, nome final so de minusculas"),
@@ -163,12 +163,15 @@ ValoresEInfo< Senha >::VALORES_INVALIDOS[] = {
 
 template<> const pair<string, string> 
 ValoresEInfo< Descricao >::VALORES_VALIDOS[] = {
-    make_pair("", ""),
+    make_pair("Ava! Meus amigos? t;do: que-sabes, naoo.", "com o maximo de caracteres (max=40)"),
+    make_pair("", "com o minimo de caracteres (min=0)"),
 };
 
 template<> const pair<string, string> 
 ValoresEInfo< Descricao >::VALORES_INVALIDOS[] = {
-    make_pair("", ""),
+    make_pair("sava meus amigos. Tudo que sabes nao era.", "com 41 caracteres (max=40)"),
+    make_pair("Ava meus amigos.  tudo", "com 2 espacos seguidos"),
+    make_pair("Ava meus amigos:; tudo", "com 2 pontuacoes seguidas"),
 };
 
 

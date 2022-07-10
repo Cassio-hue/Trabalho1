@@ -38,6 +38,24 @@ inline string Dominio::getValor() const {
 }
 
 
+/// \brief Domínio Nome 
+///
+/// Possui uma função validar. Se o nome (tipo string) passado para a função for válido, o nome é armazenado. Caso contrário, ocorre o lançamento de uma exceção.
+///
+/// **Regras para o nome ser aceito**:
+/// 1. Até 30 caracteres
+/// 2. Formato: prenome sobrenome
+/// 3. Não pode ter dois espaços em branco
+/// 4. Não pode terminar ou começar com espaço em branco
+/// 5. Somente letras
+/// 6. As letras iniciais do prenome e sobrenome devem ser maiúsculas
+///
+/// **Exemplos de nomes válidos**:
+/// - Cassio Vinicius
+/// - Joaquim Silva
+/// - Dom Quixote
+/// - Princesa Jujuba
+
 class Nome : public Dominio {
     // Matricula: 211036141
 
@@ -48,6 +66,14 @@ class Nome : public Dominio {
 };
 
 
+/// \brief Domínio Nota 
+///
+/// Possui uma função validar. Se a nota (tipo string) passada para a função for válida, a nota é armazenada. Caso contrário, ocorre o lançamento de uma exceção.
+///
+/// **Regras para a nota ser aceita**:
+/// 1. Somente números
+/// 2. A nota deve ser um número entre 0 e 10
+/// - 0 é a menor nota possível e 10 a maior nota possível
 class Nota : public Dominio {
     // Matricula: 211036141
 
@@ -58,7 +84,11 @@ class Nota : public Dominio {
         Nota(const string&);
 };
 
-
+/// \brief Domínio Idioma
+///
+/// É importante se alientar que não ocorre a validação da acentuação, logo caso esteja presente algum acento no valor passado, será lançada uma exceção!
+///
+/// Possui uma função validar. Se o idioma (tipo string) passado para a função for válido, o idioma é armazenada. Caso contrário, ocorre o lançamento de uma exceção.
 class Idioma : public Dominio {
     // Matricula: 211036141
 
@@ -66,10 +96,40 @@ class Idioma : public Dominio {
         void validar(string);
     public:
         Idioma(const string&);
+        /// **Os idiomas presentes no array de POSSIVEIS_VALORES são aceitos pela função validar**
         static const unordered_set<string> POSSIVEIS_VALORES;
 
 };
 
+/// \brief Domínio Data
+///
+/// Possui uma função validar. Se a data (tipo string) passada para a função for válida, a data é armazenada. Caso contrário, ocorre o lançamento de uma exceção.
+///
+/// O formato da data considerado válido: **DIA/MES**
+///
+/// **Formato dos dias**:
+/// Numeros entre 01 - 31, número menor que 10 deve ser acompanhado com um zero.
+///
+/// **Formato dos meses**:
+/// - JAN
+/// - FEV
+/// - MAC
+/// - ABR
+/// - MAI
+/// - JUN
+/// - JUL
+/// - AGO
+/// - SET
+/// - OUT
+/// - NOV
+/// - DEZ
+///
+/// A função validar não leva em consideração anos bissextos
+///
+/// **Observações**:
+/// - O mês de FEV vai até o dia 29
+/// - Os meses: ABR, JUN, SET, NOV vão até o dia 30
+/// - Os meses: JAN, MAR, MAIO, JUL, AGO, OUT vão até o dia 31
 
 class Data : public Dominio {
     // Matricula: 211036141

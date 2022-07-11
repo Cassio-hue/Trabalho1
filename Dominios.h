@@ -24,7 +24,7 @@ class Dominio {
 
 /// @param valor uma string qualquer
 ///
-/// chama uma função de validação e, caso a entrada seja válida, o valor é armazenado
+/// Chama uma função de validação e, caso a entrada seja válida, o valor é armazenado
         void setValor(const string&);
 
 /// @return valor
@@ -86,7 +86,7 @@ class Nota : public Dominio {
 
 /// \brief Domínio Idioma
 ///
-/// É importante se alientar que não ocorre a validação da acentuação, logo caso esteja presente algum acento no valor passado, será lançada uma exceção!
+/// É importante salientar que não ocorre a validação da acentuação, logo caso esteja presente algum acento no valor passado, será lançada uma exceção!
 ///
 /// Possui uma função validar. Se o idioma (tipo string) passado para a função for válido, o idioma é armazenada. Caso contrário, ocorre o lançamento de uma exceção.
 class Idioma : public Dominio {
@@ -105,31 +105,31 @@ class Idioma : public Dominio {
 ///
 /// Possui uma função validar. Se a data (tipo string) passada para a função for válida, a data é armazenada. Caso contrário, ocorre o lançamento de uma exceção.
 ///
-/// O formato da data considerado válido: **DIA/MES**
+/// O formato da data considerado válido: **dia/Mes**
 ///
 /// **Formato dos dias**:
-/// Numeros entre 01 - 31, número menor que 10 deve ser acompanhado com um zero.
+/// Números entre 01 - 31. Número menor que 10 deve ser acompanhado por um zero.
 ///
 /// **Formato dos meses**:
-/// - JAN
-/// - FEV
-/// - MAC
-/// - ABR
-/// - MAI
-/// - JUN
-/// - JUL
-/// - AGO
-/// - SET
-/// - OUT
-/// - NOV
-/// - DEZ
+/// - Jan
+/// - Fev
+/// - Mar
+/// - Abr
+/// - Mai
+/// - Jun
+/// - Jul
+/// - Aag
+/// - Set
+/// - Out
+/// - Nov
+/// - Dez
 ///
 /// A função validar não leva em consideração anos bissextos
 ///
 /// **Observações**:
-/// - O mês de FEV vai até o dia 29
-/// - Os meses: ABR, JUN, SET, NOV vão até o dia 30
-/// - Os meses: JAN, MAR, MAIO, JUL, AGO, OUT vão até o dia 31
+/// - O mês de Fev vai até o dia 29
+/// - Os meses: Abr, Jun, Set, Nov vão até o dia 30
+/// - Os meses: Jan, Mar, Mai, Jul, Ago, Out, Dez vão até o dia 31
 
 class Data : public Dominio {
     // Matricula: 211036141
@@ -141,13 +141,13 @@ class Data : public Dominio {
         Data(const string&);
 };
 
-/// Código indentificador pelo último digito (algoritmo de Luhn)
+/// Código indentificador. É reconhecido pelo último dígito (algoritmo de Luhn)
 class Codigo : public Dominio {
     // Matricula: 211026495
     protected:
-/// @param TAMANHO_CODIGO único tamanho permitido para código     
+/// @param TAMANHO_CODIGO Único tamanho permitido para código     
         static const int TAMANHO_CODIGO = 11;
-/// verifica se o inserido é valido
+/// Verifica se o código inserido é valido
 /// 
 /// @throw invalid_argument código não é valido, por último dígito ou tamanho
         void validar(string);
@@ -155,39 +155,48 @@ class Codigo : public Dominio {
         Codigo(const string&);
 };
 
-
+/// Cidade de usuário e hospedagem
 class Cidade : public Dominio {
     // Matrícula: 211038208
 
     protected:
         void validar(string);
     public:
+        /// **As cidades presentes no array de POSSIVEIS_VALORES são aceitas pela função validar**
         static const unordered_set<string> POSSIVEIS_VALORES;
         Cidade(const string&);
 
 };
 
-
+/// Email do usuário
 class Email : public Dominio {
     // Matrícula: 211038208
     
     protected:
+    /// @param PADRAO_ACEITO constante regex que garante que a string inserida seja um email válido
         static const regex PADRAO_ACEITO;
         void validar(string);
     public:
         Email(const string&);
 
+/// Deve seguir o padrão: parte-local@dominio
+
 };
 
-
+/// Senha do usuário
 class Senha : public Dominio {
     // Matrícula: 211038208
 
     protected:
+    /// @param PADRAO_ACEITO constante regex que garante que a string inserida seja uma senha válida
         static const regex PADRAO_ACEITO;
         void validar(string);
     public:
         Senha(const string&);
+    /// Senha deve ter no máximo 5 caracteres, dentre eles no mínimo:
+    /// 1. Um caracter especial [!#$%&]
+    /// 2. Um numero [0-9]
+    /// 3. Uma letra [a-zA-Z]
 
 };
 

@@ -1,6 +1,7 @@
 #include "catch.hpp"
 #include "../Entidades.h"
 #include <iostream>
+#include "testes-valores.h"
 
 
 TEST_CASE ("usuario tem construtor, set e get funcionando", "[entidades][usuario]") {
@@ -11,18 +12,18 @@ TEST_CASE ("usuario tem construtor, set e get funcionando", "[entidades][usuario
 TEST_CASE ("hospedagem tem construtor, set e get funcionando", "[entidades][hospedagem]") {
     Hospedagem* hospedagem = 0;
 
-    Codigo      codigo      ("12345678903");
-    Cidade      cidade      ("Antalya");
-    Pais        pais        ("Estados Unidos");
-    Nota        nota        ("10");
-    Descricao   descricao   ("Ava! Meus amigos? t;do: que-sabes, naoo.");
+    Codigo      codigo      (ValoresEInfo< Codigo >::VALORES_VALIDOS[0].first);
+    Cidade      cidade      (ValoresEInfo< Cidade >::VALORES_VALIDOS[0].first);
+    Pais        pais        (ValoresEInfo< Pais >::VALORES_VALIDOS[0].first);
+    Nota        nota        (ValoresEInfo< Nota >::VALORES_VALIDOS[0].first);
+    Descricao   descricao   (ValoresEInfo< Descricao >::VALORES_VALIDOS[0].first);
 
 
-    Codigo      codigo2      ("12345678903");
-    Cidade      cidade2      ("Bangkok");
-    Pais        pais2        ("Brasil");
-    Nota        nota2        ("0");
-    Descricao   descricao2   ("");
+    Codigo      codigo2      (ValoresEInfo< Codigo >::VALORES_VALIDOS[1].first);
+    Cidade      cidade2      (ValoresEInfo< Cidade >::VALORES_VALIDOS[1].first);
+    Pais        pais2        (ValoresEInfo< Pais >::VALORES_VALIDOS[1].first);
+    Nota        nota2        (ValoresEInfo< Nota >::VALORES_VALIDOS[1].first);
+    Descricao   descricao2   (ValoresEInfo< Descricao >::VALORES_VALIDOS[1].first);
 
     SECTION("construtor funciona", "[construtor]") {
         REQUIRE_NOTHROW( hospedagem = new Hospedagem(codigo, cidade, pais, nota, descricao) );
@@ -32,6 +33,7 @@ TEST_CASE ("hospedagem tem construtor, set e get funcionando", "[entidades][hosp
         CHECK(hospedagem->getPais().getValor()      == pais.getValor()     );
         CHECK(hospedagem->getNota().getValor()      == nota.getValor()     );
         CHECK(hospedagem->getDescricao().getValor() == descricao.getValor());
+
 
         SECTION("metodo set funciona", "[set]") {
             REQUIRE_NOTHROW(hospedagem->setCodigo   (   codigo2     ));
@@ -56,14 +58,15 @@ TEST_CASE ("hospedagem tem construtor, set e get funcionando", "[entidades][hosp
 TEST_CASE ("avaliacao tem construtor, set e get funcionando", "[entidades][avaliacao]") {
     Avaliacao* avaliacao = 0;
 
-    Codigo      codigo      ("12345678903");
-    Nota        nota        ("10");
-    Descricao   descricao   ("Ava! Meus amigos? t;do: que-sabes, naoo.");
+    Codigo      codigo      (ValoresEInfo< Codigo >::VALORES_VALIDOS[0].first);
+    Nota        nota        (ValoresEInfo< Nota >::VALORES_VALIDOS[0].first);
+    Descricao   descricao   (ValoresEInfo< Descricao >::VALORES_VALIDOS[0].first);
 
 
-    Codigo      codigo2      ("12345678903");
-    Nota        nota2        ("0");
-    Descricao   descricao2   ("");
+    Codigo      codigo2      (ValoresEInfo< Codigo >::VALORES_VALIDOS[1].first);
+    Nota        nota2        (ValoresEInfo< Nota >::VALORES_VALIDOS[1].first);
+    Descricao   descricao2   (ValoresEInfo< Descricao >::VALORES_VALIDOS[1].first);
+
 
     SECTION("construtor funciona", "[construtor]") {
         REQUIRE_NOTHROW( avaliacao = new Avaliacao(codigo, nota, descricao) );
@@ -71,6 +74,7 @@ TEST_CASE ("avaliacao tem construtor, set e get funcionando", "[entidades][avali
         CHECK(avaliacao->getCodigo().getValor()    == codigo.getValor()   );
         CHECK(avaliacao->getNota().getValor()      == nota.getValor()     );
         CHECK(avaliacao->getDescricao().getValor() == descricao.getValor());
+
 
         SECTION("metodo set funciona", "[set]") {
             REQUIRE_NOTHROW(avaliacao->setCodigo   (   codigo2     ));

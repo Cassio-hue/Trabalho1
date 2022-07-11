@@ -110,7 +110,7 @@ class Hospedagem {
         void setDescricao(const Descricao&);
         Descricao getDescricao() const;
 
-        Hospedagem(string codigo, string cidade, string pais, string nota, string descricao);
+        Hospedagem(const Codigo&, const Cidade&, const Pais&, const Nota&, const Descricao&);
 };
 
 inline void Hospedagem::setCodigo(const Codigo& codigo){
@@ -171,6 +171,8 @@ class Avaliacao {
 
         void setDescricao(const Descricao&);
         Descricao getDescricao() const;
+
+        Avaliacao(const Codigo&, const Nota&, const Descricao&);
 };
 
 inline void Avaliacao::setCodigo(const Codigo& codigo){

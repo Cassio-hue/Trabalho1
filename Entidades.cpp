@@ -16,7 +16,6 @@ Hospedagem::Hospedagem(const Codigo& codigo, const Cidade& cidade,
   nota(nota.getValor()), descricao(descricao.getValor()) {
 }
 
-Avaliacao::Avaliacao(const Codigo& codigo, const Nota& nota, const Descricao& descricao); : 
+Avaliacao::Avaliacao(const Codigo& codigo, const Nota& nota, const Descricao& descricao) : 
   codigo(codigo.getValor()), nota(nota.getValor()), descricao(descricao.getValor()) {
-
 }

@@ -1,8 +1,8 @@
-#ifndef TEST_VALUES_H_DEFINED
-#define TEST_VALUES_H_DEFINED
-
 #include "../Dominios.h"
 #include <string>
+
+#ifndef TEST_VALUES_H_
+#define TEST_VALUES_H_
 
 using namespace std;
 
@@ -13,7 +13,7 @@ template <class Dom> class ValoresEInfo{
 };
 
 
-template<> const pair<string, string> 
+template<> const pair<string, string>
 ValoresEInfo< Nome >::VALORES_VALIDOS[] = {
     make_pair("Artur Padovezi", "comum"),
     make_pair("Enzo Zanetti", "comum"),
@@ -45,48 +45,50 @@ ValoresEInfo<Nome>::VALORES_INVALIDOS[] = {
 };
 
 
-template<> const pair<string, string> 
+template<> const pair<string, string>
 ValoresEInfo< Nota >::VALORES_VALIDOS[] = {
     make_pair("0", "limite inferior"),
     make_pair("9", "maximo com unico digito"),
     make_pair("10", "limite superior"),
 };
 
-template<> const pair<string, string> 
+template<> const pair<string, string>
 ValoresEInfo< Nota >::VALORES_INVALIDOS[] = {
     make_pair("11", "acima do limite superior (nota <= 10)"),
     make_pair("-1", "abaixo do limite inferior (nota <= 0)")
-}; 
+};
 
 
-template<> const pair<string, string> 
+template<> const pair<string, string>
 ValoresEInfo< Data >::VALORES_VALIDOS[] = {
     make_pair("01/Jan", "primeiro dia do ano"),
     make_pair("29/Fev", ""),
     make_pair("31/Dez", "ultimo dia do ano"),
 };
 
-template<> const pair<string, string> 
+template<> const pair<string, string>
 ValoresEInfo< Data >::VALORES_INVALIDOS[] = {
-    make_pair("00/Jan", ""), 
-    make_pair("30/Fev", ""), 
-    make_pair("32/Mar", ""), 
+    make_pair("00/Jan", ""),
+    make_pair("30/Fev", ""),
+    make_pair("32/Mar", ""),
     make_pair("300/Jan", "")
 };
 
 
-template<> const pair<string, string> 
+template<> const pair<string, string>
 ValoresEInfo< Codigo >::VALORES_VALIDOS[] = {
-    make_pair("12345678903", "codigo valido"), 
+    make_pair("12345678903", "codigo valido"),
+    make_pair("12345678903", "codigo valido"),
 };
 
-template<> const pair<string, string> 
+template<> const pair<string, string>
 ValoresEInfo< Codigo >::VALORES_INVALIDOS[] = {
-    make_pair("12345678908", "codigo invalido"), 
+    make_pair("12345678908", "codigo invalido"),
+    make_pair("12345678908", "codigo invalido"),
 };
 
 
-template<> const pair<string, string> 
+template<> const pair<string, string>
 ValoresEInfo< Cidade >::VALORES_VALIDOS[] = {
     make_pair("Antalya", "cidade valida"),
     make_pair("Bangkok", "cidade valida"),
@@ -109,7 +111,7 @@ ValoresEInfo< Cidade >::VALORES_VALIDOS[] = {
     make_pair("Toquio", "cidade valida"),
 };
 
-template<> const pair<string, string> 
+template<> const pair<string, string>
 ValoresEInfo< Cidade >::VALORES_INVALIDOS[] = {
     make_pair("Tóquio", "cidade valida, mas com um acento"),
     make_pair("Shenzhin", "cidade valida, mas com uma letra errada"),
@@ -119,7 +121,7 @@ ValoresEInfo< Cidade >::VALORES_INVALIDOS[] = {
 };
 
 
-template<> const pair<string, string> 
+template<> const pair<string, string>
 ValoresEInfo< Email >::VALORES_VALIDOS[] = {
     make_pair("a@Z", "menor email possivel"),
     make_pair("-Z09_a.u@unb.br", "email valido com os possiveis caracteres nao alfanumericos no nome"),
@@ -128,7 +130,7 @@ ValoresEInfo< Email >::VALORES_VALIDOS[] = {
     make_pair("Xxarturo_va.vaxX@struct.unb.br", "email estranho"),
 };
 
-template<> const pair<string, string> 
+template<> const pair<string, string>
 ValoresEInfo< Email >::VALORES_INVALIDOS[] = {
     make_pair("artur--8879@gmail.com.br", "dois '-' seguidos no nome"),
     make_pair("artu..r8879@gmail.com.br", "dois '.' seguidos no nome"),
@@ -141,7 +143,7 @@ ValoresEInfo< Email >::VALORES_INVALIDOS[] = {
 };
 
 
-template<> const pair<string, string> 
+template<> const pair<string, string>
 ValoresEInfo< Senha >::VALORES_VALIDOS[] = {
     make_pair("aZ#90", "senha comum"),
     make_pair("aZ$9Z", "senha comum"),
@@ -150,7 +152,7 @@ ValoresEInfo< Senha >::VALORES_VALIDOS[] = {
     make_pair("AaZ!9", "senha comum"),
 };
 
-template<> const pair<string, string> 
+template<> const pair<string, string>
 ValoresEInfo< Senha >::VALORES_INVALIDOS[] = {
     make_pair("AaZ!a", "faltando numero"),
     make_pair("#$905", "faltando letra"),
@@ -161,13 +163,13 @@ ValoresEInfo< Senha >::VALORES_INVALIDOS[] = {
 
 
 
-template<> const pair<string, string> 
+template<> const pair<string, string>
 ValoresEInfo< Descricao >::VALORES_VALIDOS[] = {
     make_pair("Ava! Meus amigos? t;do: que-sabes, naoo.", "com o maximo de caracteres (max=40)"),
     make_pair("", "com o minimo de caracteres (min=0)"),
 };
 
-template<> const pair<string, string> 
+template<> const pair<string, string>
 ValoresEInfo< Descricao >::VALORES_INVALIDOS[] = {
     make_pair("sava meus amigos. Tudo que sabes nao era.", "com 41 caracteres (max=40)"),
     make_pair("Ava meus amigos.  tudo", "com 2 espacos seguidos"),
@@ -176,6 +178,31 @@ ValoresEInfo< Descricao >::VALORES_INVALIDOS[] = {
 
 
 
+template<> const pair<string, string>
+ValoresEInfo< Pais >::VALORES_VALIDOS[] = {
+    make_pair("Estados Unidos", "pais valido"),
+    make_pair("Brasil", "pais valido"),
+    make_pair("China", "pais valido"),
+    make_pair("Coreia do Sul", "pais valido"),
+    make_pair("Emirados", "pais valido"),
+    make_pair("Franca", "pais valido"),
+    make_pair("India", "pais valido"),
+    make_pair("Japao", "pais valido"),
+    make_pair("Malasia", "pais valido"),
+    make_pair("Reino Unido", "pais valido"),
+    make_pair("Tailandia", "pais valido"),
+    make_pair("Turquia", "pais valido")
+};
+
+template<> const pair<string, string>
+ValoresEInfo< Pais >::VALORES_INVALIDOS[] = {
+    make_pair("Estados Unidos ", "pais valido, mas com espaco a mais"),
+    make_pair("Tailândia", "pais valido, mas com acento invalido"),
+};
 
 
-#endif // TEST_VALUES_H_DEFINED
+
+
+
+
+#endif // TEST_VALUES_H_

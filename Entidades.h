@@ -16,74 +16,74 @@ class Usuario {
         Descricao descricao;
 
     public:
-        void setNome(const Nome&);
-        Nome getNome() const;
+        void setNome(const string&);
+        string getNome() const;
 
-        void setEmail(const Email&);
-        Email getEmail() const;
+        void setEmail(const string&);
+        string getEmail() const;
 
-        void setSenha(const Senha&);
-        Senha getSenha() const;
+        void setSenha(const string&);
+        string getSenha() const;
 
-        void setIdioma(const Idioma&);
-        Idioma getIdioma() const;
+        void setIdioma(const string&);
+        string getIdioma() const;
 
-        void setData(const Data&);
-        Data getData() const;
+        void setData(const string&);
+        string getData() const;
 
-        void setDescricao(const Descricao&);
-        Descricao getDescricao() const;
+        void setDescricao(const string&);
+        string getDescricao() const;
 
-        Usuario(string nome, string email, string senha, string idioma, string data, string descricao);
+        Usuario(const string& nome, const string& email, const string& senha, const string& idioma, const string& data, const string& descricao);
 };
 
 
-inline void Usuario::setNome(const Nome& nome){
-    this->nome = nome;
+inline void Usuario::setNome(const string& nome){
+    this->nome.setValor(nome);
 }
 
-inline Nome Usuario::getNome() const {
-    return nome;
+inline string Usuario::getNome() const {
+    return nome.getValor();
 }
 
-inline void Usuario::setEmail(const Email& email){
-    this->email = email;
+inline void Usuario::setEmail(const string& email){
+    this->email.setValor(email);
 }
 
-inline Email Usuario::getEmail() const {
-    return email;
+inline string Usuario::getEmail() const {
+    return email.getValor();
 }
 
-inline void Usuario::setSenha(const Senha& senha){
-    this->senha = senha;
+inline void Usuario::setSenha(const string& senha){
+    this->senha.setValor(senha);
 }
 
-inline Senha Usuario::getSenha() const {
-    return senha;
+inline string Usuario::getSenha() const {
+    return senha.getValor();
 }
 
-inline void Usuario::setIdioma(const Idioma& idioma){
-    this->idioma = idioma;
+inline void Usuario::setIdioma(const string& idioma){
+    this->idioma.setValor(idioma);
 }
 
-inline Idioma Usuario::getIdioma() const {
-    return idioma;
+inline string Usuario::getIdioma() const {
+    return idioma.getValor();
 }
 
-inline void Usuario::setData(const Data& data){
-    this->data = data;
+inline void Usuario::setData(const string& data){
+    this->data.setValor(data);
 }
 
-inline Data Usuario::getData() const {
-    return data;
+inline string Usuario::getData() const {
+    return data.getValor();
 }
 
-inline void Usuario::setDescricao(const Descricao& descricao){
-    this->descricao = descricao;
+inline void Usuario::setDescricao(const string& descricao){
+    this->descricao.setValor(descricao);
 }
 
-inline Descricao Usuario::getDescricao() const {
-    return descricao;
+inline string Usuario::getDescricao() const {
+    return descricao.getValor();
 }
 
 
@@ -97,62 +97,62 @@ class Hospedagem {
         Descricao descricao;
 
     public:
-        void setCodigo(const Codigo&);
-        Codigo getCodigo() const;
+        void setCodigo(const string&);
+        string getCodigo() const;
 
-        void setCidade(const Cidade&);
-        Cidade getCidade() const;
+        void setCidade(const string&);
+        string getCidade() const;
 
-        void setPais(const Pais&);
-        Pais getPais() const;
+        void setPais(const string&);
+        string getPais() const;
 
-        void setNota(const Nota&);
-        Nota getNota() const;
+        void setNota(const string&);
+        string getNota() const;
 
-        void setDescricao(const Descricao&);
-        Descricao getDescricao() const;
+        void setDescricao(const string&);
+        string getDescricao() const;
 
-        Hospedagem(const Codigo&, const Cidade&, const Pais&, const Nota&, const Descricao&);
+        Hospedagem(const string&, const string&, const string&, const string&, const string&);
 };
 
-inline void Hospedagem::setCodigo(const Codigo& codigo){
-    this->codigo = codigo;
+inline void Hospedagem::setCodigo(const string& codigo){
+    this->codigo.setValor(codigo);
 }
 
-inline Codigo Hospedagem::getCodigo() const {
-    return codigo;
+inline string Hospedagem::getCodigo() const {
+    return codigo.getValor();
 }
 
-inline void Hospedagem::setCidade(const Cidade& cidade){
-    this->cidade = cidade;
+inline void Hospedagem::setCidade(const string& cidade){
+    this->cidade.setValor(cidade);
 }
 
-inline Cidade Hospedagem::getCidade() const {
-    return cidade;
+inline string Hospedagem::getCidade() const {
+    return cidade.getValor();
 }
 
-inline void Hospedagem::setPais(const Pais& pais){
-    this->pais = pais;
+inline void Hospedagem::setPais(const string& pais){
+    this->pais.setValor(pais);
 }
 
-inline Pais Hospedagem::getPais() const {
-    return pais;
+inline string Hospedagem::getPais() const {
+    return pais.getValor();
 }
 
-inline void Hospedagem::setNota(const Nota& nota){
-    this->nota = nota;
+inline void Hospedagem::setNota(const string& nota){
+    this->nota.setValor(nota);
 }
 
-inline Nota Hospedagem::getNota() const {
-    return nota;
+inline string Hospedagem::getNota() const {
+    return nota.getValor();
 }
 
-inline void Hospedagem::setDescricao(const Descricao& descricao){
-    this->descricao = descricao;
+inline void Hospedagem::setDescricao(const string& descricao){
+    this->descricao.setValor(descricao);
 }
 
-inline Descricao Hospedagem::getDescricao() const {
-    return descricao;
+inline string Hospedagem::getDescricao() const {
+    return descricao.getValor();
 }
 
 
@@ -165,40 +165,40 @@ class Avaliacao {
         Descricao descricao;
 
     public:
-        void setCodigo(const Codigo&);
-        Codigo getCodigo() const;
+        void setCodigo(const string&);
+        string getCodigo() const;
 
-        void setNota(const Nota&);
-        Nota getNota() const;
+        void setNota(const string&);
+        string getNota() const;
 
-        void setDescricao(const Descricao&);
-        Descricao getDescricao() const;
+        void setDescricao(const string&);
+        string getDescricao() const;
 
-        Avaliacao(const Codigo&, const Nota&, const Descricao&);
+        Avaliacao(const string&, const string&, const string&);
 };
 
-inline void Avaliacao::setCodigo(const Codigo& codigo){
-    this->codigo = codigo;
+inline void Avaliacao::setCodigo(const string& codigo){
+    this->codigo.setValor(codigo);
 }
 
-inline Codigo Avaliacao::getCodigo() const {
-    return codigo;
+inline string Avaliacao::getCodigo() const {
+    return codigo.getValor();
 }
 
-inline void Avaliacao::setNota(const Nota& nota){
-    this->nota = nota;
+inline void Avaliacao::setNota(const string& nota){
+    this->nota.setValor(nota);
 }
 
-inline Nota Avaliacao::getNota() const {
-    return nota;
+inline string Avaliacao::getNota() const {
+    return nota.getValor();
 }
 
-inline void Avaliacao::setDescricao(const Descricao& descricao){
-    this->descricao = descricao;
+inline void Avaliacao::setDescricao(const string& descricao){
+    this->descricao.setValor(descricao);
 }
 
-inline Descricao Avaliacao::getDescricao() const {
-    return descricao;
+inline string Avaliacao::getDescricao() const {
+    return descricao.getValor();
 }
 // #---------------------------------------------------------------------------------------------------#
 

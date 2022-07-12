@@ -192,9 +192,30 @@ ValoresEInfo< Pais >::VALORES_INVALIDOS[] = {
     make_pair("Tailândia", "pais valido, mas com acento invalido"),
 };
 
+// ,  , , , , , , , , 
+template<> const pair<string, string>
+ValoresEInfo< Idioma >::VALORES_VALIDOS[] = {
+    make_pair("Ingles", "idioma valido"),
+    make_pair("Chines", "idioma valido"),
+    make_pair("Mandarim", "idioma valido"),
+    make_pair("Hindi", "idioma valido"),
+    make_pair("Espanhol", "idioma valido"),
+    make_pair("Frances", "idioma valido"),
+    make_pair("Arabe", "idioma valido"),
+    make_pair("Bengali", "idioma valido"),
+    make_pair("Russo", "idioma valido"),
+    make_pair("Portugues", "idioma valido"),
+    make_pair("Indonesio", "idioma valido"),
+};
 
-// declaracoes para obter os tamanhos de cada array:
+template<> const pair<string, string>
+ValoresEInfo< Idioma >::VALORES_INVALIDOS[] = {
+    make_pair("Indonesio ", "idioma valido, mas com espaco a mais"),
+    make_pair("Indonésio", "idioma valido, mas com acento invalido"),
+};
 
+
+// obtendo os tamanhos de cada array:
 
 template <> const int
 ValoresEInfo< Nome >::N_VALORES_VALIDOS = 
@@ -278,4 +299,13 @@ ValoresEInfo< Pais >::N_VALORES_VALIDOS =
 template <> const int
 ValoresEInfo< Pais >::N_VALORES_INVALIDOS = 
     (int)(sizeof(ValoresEInfo< Pais >::VALORES_INVALIDOS) / sizeof(ValoresEInfo< Pais >::VALORES_INVALIDOS[0]));
+
+
+template <> const int
+ValoresEInfo< Idioma >::N_VALORES_VALIDOS = 
+    (int)(sizeof(ValoresEInfo< Idioma >::VALORES_VALIDOS) / sizeof(ValoresEInfo< Idioma >::VALORES_VALIDOS[0]));
+
+template <> const int
+ValoresEInfo< Idioma >::N_VALORES_INVALIDOS = 
+    (int)(sizeof(ValoresEInfo< Idioma >::VALORES_INVALIDOS) / sizeof(ValoresEInfo< Idioma >::VALORES_INVALIDOS[0]));
 

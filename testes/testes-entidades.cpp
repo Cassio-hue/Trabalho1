@@ -4,82 +4,80 @@
 #include "testes-valores.h"
 
 
-TEST_CASE ("usuario tem construtor, set e get funcionando", "[entidades][usuario]") {
+TEST_CASE("usuario tem construtor, set e get funcionando", "[entidades][usuario]") {
     Usuario* usuario = 0;
-
 
     string  nome      = ValoresEInfo< Nome >::VALORES_VALIDOS[0].first;
     string  email     = ValoresEInfo< Email >::VALORES_VALIDOS[0].first;
     string  senha     = ValoresEInfo< Senha >::VALORES_VALIDOS[0].first;
     string  idioma    = ValoresEInfo< Idioma >::VALORES_VALIDOS[0].first;
-    string  data      = ValoresEInfo< Data >::VALORES_VALIDOS[0].first;
+    string  aniversario      = ValoresEInfo< Data >::VALORES_VALIDOS[0].first;
     string  descricao = ValoresEInfo< Descricao >::VALORES_VALIDOS[0].first;
-
 
     string  nome2     = ValoresEInfo< Nome >::VALORES_VALIDOS[1].first;
     string  email2    = ValoresEInfo< Email >::VALORES_VALIDOS[1].first;
     string  senha2    = ValoresEInfo< Senha >::VALORES_VALIDOS[1].first;
     string  idioma2   = ValoresEInfo< Idioma >::VALORES_VALIDOS[1].first;
-    string  data2     = ValoresEInfo< Data >::VALORES_VALIDOS[1].first;
+    string  aniversario2     = ValoresEInfo< Data >::VALORES_VALIDOS[1].first;
     string  descricao2= ValoresEInfo< Descricao >::VALORES_VALIDOS[1].first;
 
     string  nome_invalido      = ValoresEInfo< Nome >::VALORES_INVALIDOS[0].first;
     string  email_invalido     = ValoresEInfo< Email >::VALORES_INVALIDOS[0].first;
     string  senha_invalido     = ValoresEInfo< Senha >::VALORES_INVALIDOS[0].first;
     string  idioma_invalido    = ValoresEInfo< Idioma >::VALORES_INVALIDOS[0].first;
-    string  data_invalido      = ValoresEInfo< Data >::VALORES_INVALIDOS[0].first;
+    string  aniversario_invalido      = ValoresEInfo< Data >::VALORES_INVALIDOS[0].first;
     string  descricao_invalido = ValoresEInfo< Descricao >::VALORES_INVALIDOS[0].first;
 
 
     SECTION("construtor funciona", "[construtor]") {
-        REQUIRE_NOTHROW( usuario = new Usuario(nome, email, senha, idioma, data, descricao) );
+        REQUIRE_NOTHROW( usuario = new Usuario(nome, email, senha, idioma, aniversario, descricao) );
 
 
         SECTION("validar ainda funciona") {
-            REQUIRE_THROWS_AS( usuario = new Usuario(nome_invalido, email, senha, idioma, data, descricao), invalid_argument );
-            REQUIRE_THROWS_AS( usuario = new Usuario(nome, email_invalido, senha, idioma, data, descricao), invalid_argument );
-            REQUIRE_THROWS_AS( usuario = new Usuario(nome, email, senha_invalido, idioma, data, descricao), invalid_argument );
-            REQUIRE_THROWS_AS( usuario = new Usuario(nome, email, senha, idioma_invalido, data, descricao), invalid_argument );
-            REQUIRE_THROWS_AS( usuario = new Usuario(nome, email, senha, idioma, data_invalido, descricao), invalid_argument );
-            REQUIRE_THROWS_AS( usuario = new Usuario(nome, email, senha, idioma, data, descricao_invalido), invalid_argument );
+            REQUIRE_THROWS_AS( usuario = new Usuario(nome_invalido, email, senha, idioma, aniversario, descricao), invalid_argument );
+            REQUIRE_THROWS_AS( usuario = new Usuario(nome, email_invalido, senha, idioma, aniversario, descricao), invalid_argument );
+            REQUIRE_THROWS_AS( usuario = new Usuario(nome, email, senha_invalido, idioma, aniversario, descricao), invalid_argument );
+            REQUIRE_THROWS_AS( usuario = new Usuario(nome, email, senha, idioma_invalido, aniversario, descricao), invalid_argument );
+            REQUIRE_THROWS_AS( usuario = new Usuario(nome, email, senha, idioma, aniversario_invalido, descricao), invalid_argument );
+            REQUIRE_THROWS_AS( usuario = new Usuario(nome, email, senha, idioma, aniversario, descricao_invalido), invalid_argument );
         }
         
-        CHECK(usuario->getNome()        == nome     );
-        CHECK(usuario->getEmail()       == email    );
-        CHECK(usuario->getSenha()       == senha    );
-        CHECK(usuario->getIdioma()      == idioma   );
-        CHECK(usuario->getData()        == data     );
-        CHECK(usuario->getDescricao()   == descricao);
+        CHECK(usuario->getNome()        == nome         );
+        CHECK(usuario->getEmail()       == email        );
+        CHECK(usuario->getSenha()       == senha        );
+        CHECK(usuario->getIdioma()      == idioma       );
+        CHECK(usuario->getAniversario() == aniversario  );
+        CHECK(usuario->getDescricao()   == descricao    );
 
         delete usuario;
     }
 
 
-    usuario = new Usuario(nome, email, senha, idioma, data, descricao);
+    usuario = new Usuario(nome, email, senha, idioma, aniversario, descricao);
     SECTION("metodo set funciona", "[set]") {
-        CHECK_NOTHROW(usuario->setNome     (    nome2       ));
-        CHECK_NOTHROW(usuario->setEmail    (    email2      ));
-        CHECK_NOTHROW(usuario->setSenha    (    senha2      ));
-        CHECK_NOTHROW(usuario->setIdioma   (    idioma2     ));
-        CHECK_NOTHROW(usuario->setData     (    data2       ));
-        CHECK_NOTHROW(usuario->setDescricao(    descricao2  ));
+        CHECK_NOTHROW(usuario->setNome       (    nome2       ));
+        CHECK_NOTHROW(usuario->setEmail      (    email2      ));
+        CHECK_NOTHROW(usuario->setSenha      (    senha2      ));
+        CHECK_NOTHROW(usuario->setIdioma     (    idioma2     ));
+        CHECK_NOTHROW(usuario->setAniversario(    aniversario2));
+        CHECK_NOTHROW(usuario->setDescricao  (    descricao2  ));
 
         SECTION("validar ainda funciona") {
-            REQUIRE_THROWS_AS(usuario->setNome     (  nome_invalido       ), invalid_argument);
-            REQUIRE_THROWS_AS(usuario->setEmail    (  email_invalido      ), invalid_argument);
-            REQUIRE_THROWS_AS(usuario->setSenha    (  senha_invalido      ), invalid_argument);
-            REQUIRE_THROWS_AS(usuario->setIdioma   (  idioma_invalido     ), invalid_argument);
-            REQUIRE_THROWS_AS(usuario->setData     (  data_invalido       ), invalid_argument);
-            REQUIRE_THROWS_AS(usuario->setDescricao(  descricao_invalido  ), invalid_argument);
+            REQUIRE_THROWS_AS(usuario->setNome       (  nome_invalido       ), invalid_argument);
+            REQUIRE_THROWS_AS(usuario->setEmail      (  email_invalido      ), invalid_argument);
+            REQUIRE_THROWS_AS(usuario->setSenha      (  senha_invalido      ), invalid_argument);
+            REQUIRE_THROWS_AS(usuario->setIdioma     (  idioma_invalido     ), invalid_argument);
+            REQUIRE_THROWS_AS(usuario->setAniversario(  aniversario_invalido), invalid_argument);
+            REQUIRE_THROWS_AS(usuario->setDescricao  (  descricao_invalido  ), invalid_argument);
         }
 
 
-        CHECK(usuario->getNome()        == nome2     );
-        CHECK(usuario->getEmail()       == email2    );
-        CHECK(usuario->getSenha()       == senha2    );
-        CHECK(usuario->getIdioma()      == idioma2   );
-        CHECK(usuario->getData()        == data2     );
-        CHECK(usuario->getDescricao()   == descricao2);
+        CHECK(usuario->getNome()        == nome2        );
+        CHECK(usuario->getEmail()       == email2       );
+        CHECK(usuario->getSenha()       == senha2       );
+        CHECK(usuario->getIdioma()      == idioma2      );
+        CHECK(usuario->getAniversario() == aniversario2 );
+        CHECK(usuario->getDescricao()   == descricao2   );
     }
 
     delete usuario;

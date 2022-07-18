@@ -2,9 +2,9 @@
 #include <stdexcept>
 
 Usuario:: Usuario(const string& nome, const string& email, const string& senha,
-  const string& idioma, const string& data, const string& descricao):
+  const string& idioma, const string& aniversario, const string& descricao):
   nome(nome),     email(email), senha(senha),
-  idioma(idioma), data(data),   descricao(descricao) {
+  idioma(idioma), aniversario(aniversario),   descricao(descricao) {
 }
 
 Hospedagem::Hospedagem(const string& codigo, const string& cidade,

@@ -12,7 +12,7 @@ class Usuario {
         Email email;
         Senha senha;
         Idioma idioma;
-        Data data;
+        Data aniversario;
         Descricao descricao;
 
     public:
@@ -28,13 +28,13 @@ class Usuario {
         void setIdioma(const string&);
         string getIdioma() const;
 
-        void setData(const string&);
-        string getData() const;
+        void setAniversario(const string&);
+        string getAniversario() const;
 
         void setDescricao(const string&);
         string getDescricao() const;
 
-        Usuario(const string& nome, const string& email, const string& senha, const string& idioma, const string& data, const string& descricao);
+        Usuario(const string&, const string&, const string&, const string&, const string&, const string&);
 };
 
 
@@ -70,12 +70,12 @@ inline string Usuario::getIdioma() const {
     return idioma.getValor();
 }
 
-inline void Usuario::setData(const string& data){
-    this->data.setValor(data);
+inline void Usuario::setAniversario(const string& aniversario){
+    this->aniversario.setValor(aniversario);
 }
 
-inline string Usuario::getData() const {
-    return data.getValor();
+inline string Usuario::getAniversario() const {
+    return aniversario.getValor();
 }
 
 inline void Usuario::setDescricao(const string& descricao){

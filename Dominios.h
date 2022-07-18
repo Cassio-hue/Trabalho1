@@ -17,6 +17,7 @@ class Dominio {
 
     protected:
         string valor;
+/// Método que verifica se a string introduzida está conforme o esperado para cada classe
         virtual void validar(string) = 0;
     public:
         Dominio(const string&);
@@ -62,6 +63,7 @@ class Nome : public Dominio {
     protected:
         void validar(string);
     public:
+/// Constrói o Domínio Nome e valída o dado inserido
         Nome(const string&);
 };
 
@@ -81,6 +83,7 @@ class Nota : public Dominio {
         static const regex PADRAO_ACEITO;
         void validar(string valor);
     public:
+/// Constrói o Domínio Nota e valída o dado inserido
         Nota(const string&);
 };
 
@@ -95,6 +98,7 @@ class Idioma : public Dominio {
     protected:
         void validar(string);
     public:
+/// Constrói o Domínio Idioma e valída o dado inserido
         Idioma(const string&);
         /// **Os idiomas presentes no array de POSSIVEIS_VALORES são aceitos pela função validar**
         static const unordered_set<string> POSSIVEIS_VALORES;
@@ -138,6 +142,7 @@ class Data : public Dominio {
         static const regex PADRAO_ACEITO;
         void validar(string);
     public:
+/// Constrói o Domínio Data e valída o dado inserido
         Data(const string&);
 };
 
@@ -152,6 +157,7 @@ class Codigo : public Dominio {
 /// @throw invalid_argument código não é valido, por último dígito ou tamanho
         void validar(string);
     public:
+/// Constrói o Domínio Código e valída o dado inserido
         Codigo(const string&);
 };
 
@@ -162,8 +168,9 @@ class Cidade : public Dominio {
     protected:
         void validar(string);
     public:
-        /// **As cidades presentes no array de POSSIVEIS_VALORES são aceitas pela função validar**
-        static const unordered_set<string> POSSIVEIS_VALORES;
+        
+        static const unordered_set<string> POSSIVEIS_VALORES; /**< Únicas cidades aceitas para validação da string inserida */
+/// Constrói o Domínio Cidade e valída o dado inserido
         Cidade(const string&);
 
 };
@@ -177,6 +184,7 @@ class Email : public Dominio {
         static const regex PADRAO_ACEITO;
         void validar(string);
     public:
+/// Constrói o Domínio Email e valída o dado inserido
         Email(const string&);
 
 /// Deve seguir o padrão: parte-local@dominio
@@ -192,6 +200,7 @@ class Senha : public Dominio {
         static const regex PADRAO_ACEITO;
         void validar(string);
     public:
+/// Constrói o Domínio Senha e valída o dado inserido
         Senha(const string&);
     /// Senha deve ter no máximo 5 caracteres, dentre eles no mínimo:
     /// 1. Um caracter especial [!#$%&]
@@ -211,6 +220,7 @@ class Descricao : public Dominio {
 
 /// @throw invalid_argument quando a descrição possui mais de 40 caracteres ou pontuação em sequência
         public:
+/// Constrói o Domínio Descricao e valída o dado inserido
             Descricao(const string&);
 };
 
@@ -218,7 +228,7 @@ class Descricao : public Dominio {
 class Pais : public Dominio {
     // Matricula: 211026495
 
-    private:
+    protected:
 /// @param POSSIVEIS_VALORES objeto com únicos possíveis países que são aceitos na classe
     static const unordered_set<string> POSSIVEIS_VALORES;
 
@@ -226,6 +236,7 @@ class Pais : public Dominio {
     void validar(string);
 
     public:
+/// Constrói o Domínio Pais e valída o dado inserido
     Pais(const string&);
 };
 

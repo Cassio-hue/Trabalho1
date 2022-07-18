@@ -5,7 +5,7 @@
 
 // #-----------------------------------------classe Usuario-----------------------------------------#
 
-
+/// Usuário que utilizará a aplicação
 class Usuario {
     private:
         Nome nome;
@@ -33,7 +33,7 @@ class Usuario {
 
         void setDescricao(const string&);
         string getDescricao() const;
-
+/// @param Usuario Construtor da entidade Usuário que utiliza os testes para validação dos atributos a serem inseridos
         Usuario(const string&, const string&, const string&, const string&, const string&, const string&);
 };
 
@@ -111,7 +111,8 @@ class Hospedagem {
 
         void setDescricao(const string&);
         string getDescricao() const;
-
+        /// Cada atributo da entidade possui um set/get**NomeDoAtributo**
+        /// É necessário inserir cinco parâmetros para os construtores da  
         Hospedagem(const string&, const string&, const string&, const string&, const string&);
 };
 
@@ -174,7 +175,6 @@ class Avaliacao {
 
         void setDescricao(const string&);
         string getDescricao() const;
-
         Avaliacao(const string&, const string&, const string&);
 };
 

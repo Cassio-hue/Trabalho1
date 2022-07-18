@@ -11,7 +11,8 @@
 using namespace std;
 
 
-/// Parente de todos os domínios.
+/// \brief Domínio pai.
+/// Base para os outros domínios.
 class Dominio {
     // Matrícula: 211038208
 
@@ -93,7 +94,7 @@ class Nota : public Dominio {
 
 /// \brief Domínio Idioma
 ///
-/// É importante salientar que não sçao aceitos acentos. Logo, caso esteja presente algum acento 
+/// É importante salientar que não são aceitos acentos. Logo, caso esteja presente algum acento 
 /// no valor passado, será lançada uma exceção!
 ///
 /// Possui uma função validar. Se o idioma (tipo string) passado para a função for válido, 
@@ -196,7 +197,8 @@ class Cidade : public Dominio {
 
 };
 
-/// Email do usuário
+
+/// \brief Domínio Email
 class Email : public Dominio {
     // Matrícula: 211038208
     
@@ -213,7 +215,7 @@ class Email : public Dominio {
 
 };
 
-/// Senha do usuário
+/// \brief Senha do usuário
 /// 
 /// Senha deve ter no máximo 5 caracteres, dentre eles no mínimo:
 /// 1. Um caracter especial [!#$%&]
@@ -233,6 +235,7 @@ class Senha : public Dominio {
         Senha(const string&);
 };
 
+/// \brief Domínio Descricao
 /// Descricao de usuário, hospedagem ou avaliação
 class Descricao : public Dominio {
         // Matricula: 211026495
@@ -249,6 +252,7 @@ class Descricao : public Dominio {
         Descricao(const string&);
 };
 
+/// \brief Dominio Pais
 /// Pais escolhido para hospedagem
 class Pais : public Dominio {
     // Matricula: 211026495

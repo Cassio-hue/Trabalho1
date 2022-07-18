@@ -165,7 +165,7 @@ void Senha::validar(string valor){
 void Descricao::validar(string valor) {
     // Matricula: 211026495
 
-    if (valor.size() > MAXIMO_CARACTERES) {
+    if ((int)valor.size() > MAXIMO_CARACTERES) {
         throw invalid_argument("Descricao deve possuir de 0 a 40 caracteres.");
     }
     if (regex_search(valor, PADRAO_NAO_ACEITO)) {

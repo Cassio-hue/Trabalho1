@@ -17,15 +17,16 @@
 	<iostream>
 	"Dominios.h"
 
-1657241077 c:\users\cassi\documents\projetos\trabalho1\dominios.h
+1658112551 c:\users\cassi\documents\projetos\trabalho1\dominios.h
 	<stdexcept>
 	<ctype.h>
 	<string>
 	<regex>
 	<unordered_set>
 
-1656131258 source:c:\users\cassi\documents\projetos\trabalho1\dominios.cpp
+1657494124 source:c:\users\cassi\documents\projetos\trabalho1\dominios.cpp
 	"Dominios.h"
+	<iostream>
 
 1656609115 source:c:\users\cassi\onedrive\documentos\trabalho1\dominios.cpp
 	"Dominios.h"
@@ -672,17 +673,17 @@
 	"../Dominios.h"
 	<string>
 
-1657241077 source:c:\users\cassi\documents\projetos\trabalho1\constantes.cpp
+1657494124 source:c:\users\cassi\documents\projetos\trabalho1\constantes.cpp
 	"Dominios.h"
 
-1657241077 source:c:\users\cassi\documents\projetos\trabalho1\entidades.cpp
+1658108527 source:c:\users\cassi\documents\projetos\trabalho1\entidades.cpp
 	"Entidades.h"
 	<stdexcept>
 
-1657241077 c:\users\cassi\documents\projetos\trabalho1\entidades.h
+1658111512 c:\users\cassi\documents\projetos\trabalho1\entidades.h
 	"Dominios.h"
 
-1657241077 source:c:\users\cassi\documents\projetos\trabalho1\testes\catch.hpp
+1657412596 source:c:\users\cassi\documents\projetos\trabalho1\testes\catch.hpp
 	<TargetConditionals.h>
 	<cstddef>
 	<ciso646>
@@ -977,17 +978,17 @@
 	<iomanip>
 	<cassert>
 
-1657241077 source:c:\users\cassi\documents\projetos\trabalho1\testes\testes-dominios.cpp
+1658105402 source:c:\users\cassi\documents\projetos\trabalho1\testes\testes-dominios.cpp
 	"../Dominios.h"
 	<unordered_map>
 	"testes-valores.h"
 	"catch.hpp"
 
-1657241077 c:\users\cassi\documents\projetos\trabalho1\testes\testes-valores.h
+1657575612 c:\users\cassi\documents\projetos\trabalho1\testes\testes-valores.h
 	"../Dominios.h"
 	<string>
 
-1657241077 c:\users\cassi\documents\projetos\trabalho1\testes\catch.hpp
+1657412596 c:\users\cassi\documents\projetos\trabalho1\testes\catch.hpp
 	<TargetConditionals.h>
 	<cstddef>
 	<ciso646>
@@ -1282,7 +1283,7 @@
 	<iomanip>
 	<cassert>
 
-1657241077 source:c:\users\cassi\documents\projetos\trabalho1\testes\testes-main.cpp
+1657412596 source:c:\users\cassi\documents\projetos\trabalho1\testes\testes-main.cpp
 	"catch.hpp"
 
 1657493241 source:c:\users\enzo\desktop\projeto2\trabalho1\entidades.cpp
@@ -1913,6 +1914,17 @@
 	"Dominios.h"
 
 1658106706 source:/home/artistreak/Desktop/progr/cpp/TP1/Trabalho1/testes/testes-entidades.cpp
+	"catch.hpp"
+	"../Entidades.h"
+	<iostream>
+	"testes-valores.h"
+
+1658105402 source:c:\users\cassi\documents\projetos\trabalho1\testes\testes-valores.cpp
+	"../Dominios.h"
+	"testes-valores.h"
+	<string>
+
+1658108527 source:c:\users\cassi\documents\projetos\trabalho1\testes\testes-entidades.cpp
 	"catch.hpp"
 	"../Entidades.h"
 	<iostream>

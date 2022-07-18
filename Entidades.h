@@ -5,7 +5,9 @@
 
 // #-----------------------------------------classe Usuario-----------------------------------------#
 
-/// Usuário que utilizará a aplicação
+/// \brief Entidade Usuario
+///
+/// Usuário que utilizará a aplicação. Interage com hospedagem e avaliação.
 class Usuario {
     private:
         Nome nome;

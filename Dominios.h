@@ -235,8 +235,7 @@ class Senha : public Dominio {
         Senha(const string&);
 };
 
-/// \brief Domínio Descricao
-/// Descricao de usuário, hospedagem ou avaliação
+/// \brief Domínio Descricao de usuário, hospedagem ou avaliação.
 class Descricao : public Dominio {
         // Matricula: 211026495
     protected:
@@ -252,8 +251,7 @@ class Descricao : public Dominio {
         Descricao(const string&);
 };
 
-/// \brief Dominio Pais
-/// Pais escolhido para hospedagem
+/// \brief Dominio Pais escolhido para hospedagem.
 class Pais : public Dominio {
     // Matricula: 211026495
 

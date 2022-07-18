@@ -5,7 +5,7 @@
 
 // #-----------------------------------------classe Usuario-----------------------------------------#
 
-
+/// Usuário que utilizará a aplicação
 class Usuario {
     private:
         Nome nome;
@@ -33,7 +33,7 @@ class Usuario {
 
         void setDescricao(const string&);
         string getDescricao() const;
-
+/// @param Usuario Construtor da entidade Usuário que utiliza os testes para validação dos atributos a serem inseridos
         Usuario(const string&, const string&, const string&, const string&, const string&, const string&);
 };
 

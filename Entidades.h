@@ -33,7 +33,8 @@ class Usuario {
 
         void setDescricao(const string&);
         string getDescricao() const;
-/// @param Usuario Construtor da entidade Usuário que utiliza os testes para validação dos atributos a serem inseridos
+/// Construtor da entidade Usuário que utiliza os testes para validação dos atributos a serem inseridos
+/// @param nome, email, senha, idioma, aniversario, descricao  
         Usuario(const string&, const string&, const string&, const string&, const string&, const string&);
 };
 
@@ -179,6 +180,8 @@ class Avaliacao {
 
         void setDescricao(const string&);
         string getDescricao() const;
+/// Construtor da entidade Avaliação, por meio da validação de cada um das strings introduzidas
+/// @param codigo, nota, descricao
         Avaliacao(const string&, const string&, const string&);
 };
 

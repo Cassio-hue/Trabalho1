@@ -215,7 +215,8 @@ class Email : public Dominio {
 
 /// Senha do usuário
 /// 
-/// Senha deve ter no máximo 5 caracteres, dentre eles no mínimo:
+/// **Regra para a senha ser aceita**:
+/// Senha deve ter 5 caracteres, dentre eles, deve ter, no mínimo:
 /// 1. Um caracter especial [!#$%&]
 /// 2. Um numero [0-9]
 /// 3. Uma letra [a-zA-Z]
@@ -234,6 +235,11 @@ class Senha : public Dominio {
 };
 
 /// Descricao de usuário, hospedagem ou avaliação
+///
+/// **Regra para a descrição ser aceita**:
+/// 1. Tem de 0 a 40 caracteres
+/// 2. Não há espaços em branco seguidos
+/// 3. Não há caracteres de pontuação (. , ; : ? ! -) em sequência
 class Descricao : public Dominio {
         // Matricula: 211026495
     protected:

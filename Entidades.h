@@ -88,6 +88,8 @@ inline string Usuario::getDescricao() const {
 
 
 // #-----------------------------------------classe hospedagem-----------------------------------------#
+
+/// Campo que define o objeto Hospedagem e seus atributos.
 class Hospedagem {
     private:
         Codigo codigo;
@@ -111,8 +113,10 @@ class Hospedagem {
 
         void setDescricao(const string&);
         string getDescricao() const;
-        /// Cada atributo da entidade possui um set/get**NomeDoAtributo**
-        /// É necessário inserir cinco parâmetros para os construtores da  
+        /// Cada atributo da entidade possui um set/get<b>NomeDoAtributo</b>
+        ///
+        /// É necessário inserir cinco parâmetros para os construtores da Hospedagem
+        /// @param (codigo, cidade, pais, nota, descricao)
         Hospedagem(const string&, const string&, const string&, const string&, const string&);
 };
 

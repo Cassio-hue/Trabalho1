@@ -1292,7 +1292,7 @@
 1657493200 c:\users\enzo\desktop\projeto2\trabalho1\entidades.h
 	"Dominios.h"
 
-1657491081 c:\users\enzo\desktop\projeto2\trabalho1\dominios.h
+1658112318 c:\users\enzo\desktop\projeto2\trabalho1\dominios.h
 	<stdexcept>
 	<ctype.h>
 	<string>
@@ -1892,7 +1892,7 @@
 	<iomanip>
 	<cassert>
 
-1657490303 source:c:\users\enzo\desktop\projeto2\trabalho1\dominios.cpp
+1657501890 source:c:\users\enzo\desktop\projeto2\trabalho1\dominios.cpp
 	"Dominios.h"
 	<iostream>
 
@@ -1906,7 +1906,7 @@
 	"../Dominios.h"
 	<string>
 
-1657491697 source:c:\users\enzo\desktop\projeto2\trabalho1\constantes.cpp
+1657501890 source:c:\users\enzo\desktop\projeto2\trabalho1\constantes.cpp
 	"Dominios.h"
 
 1657494003 source:/home/artistreak/Desktop/progr/cpp/TP1/Trabalho1/Constantes.cpp

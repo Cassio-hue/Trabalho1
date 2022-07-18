@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: Nome Class Reference</title>
+<title>doxygenDocs: Nome Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">doxygenDocs
    </div>
   </td>
  </tr>
@@ -80,7 +80,7 @@ Inheritance diagram for Nome:</div>
  <div class="center">
   <img src="class_nome.png" usemap="#Nome_map" alt=""/>
   <map id="Nome_map" name="Nome_map">
-<area href="class_dominio.html" title="Parente de todos os domínios." alt="Dominio" shape="rect" coords="0,0,57,24"/>
+<area href="class_dominio.html" title="Domínio pai. Base para os outros domínios." alt="Dominio" shape="rect" coords="0,0,57,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -88,10 +88,10 @@ Inheritance diagram for Nome:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8d003e8b20b26511df05befe703dece1"><td class="memItemLeft" align="right" valign="top"><a id="a8d003e8b20b26511df05befe703dece1" name="a8d003e8b20b26511df05befe703dece1"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Nome</b> (const string &amp;)</td></tr>
+<tr class="memdesc:a8d003e8b20b26511df05befe703dece1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constrói o Domínio <a class="el" href="class_nome.html" title="Domínio Nome.">Nome</a>, validando o dado inserido. <br /></td></tr>
 <tr class="separator:a8d003e8b20b26511df05befe703dece1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_dominio"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_dominio')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_dominio.html">Dominio</a></td></tr>
-<tr class="memitem:a3725c14c826e915285f8126e5ea9967b inherit pub_methods_class_dominio"><td class="memItemLeft" align="right" valign="top"><a id="a3725c14c826e915285f8126e5ea9967b" name="a3725c14c826e915285f8126e5ea9967b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Dominio</b> (const string &amp;)</td></tr>
+<tr class="memitem:a3725c14c826e915285f8126e5ea9967b inherit pub_methods_class_dominio"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dominio.html#a3725c14c826e915285f8126e5ea9967b">Dominio</a> (const string &amp;)</td></tr>
 <tr class="separator:a3725c14c826e915285f8126e5ea9967b inherit pub_methods_class_dominio"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bc265ce42db9a5868b8c09d44dcb975 inherit pub_methods_class_dominio"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dominio.html#a9bc265ce42db9a5868b8c09d44dcb975">setValor</a> (const string &amp;)</td></tr>
 <tr class="separator:a9bc265ce42db9a5868b8c09d44dcb975 inherit pub_methods_class_dominio"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -103,6 +103,7 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a0f8a375558a40c9b0a6b1ab44487aa40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nome.html#a0f8a375558a40c9b0a6b1ab44487aa40">validar</a> (string)</td></tr>
 <tr class="separator:a0f8a375558a40c9b0a6b1ab44487aa40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a778fa2ec4c361cc2d368f6fa01727be8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dominio.html#a778fa2ec4c361cc2d368f6fa01727be8">validar</a> (string)=0</td></tr>
+<tr class="memdesc:a778fa2ec4c361cc2d368f6fa01727be8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que verifica se a string introduzida está conforme as especificações para cada domínio.  <a href="class_dominio.html#a778fa2ec4c361cc2d368f6fa01727be8">More...</a><br /></td></tr>
 <tr class="separator:a778fa2ec4c361cc2d368f6fa01727be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
@@ -117,10 +118,10 @@ string&#160;</td><td class="memItemRight" valign="bottom"><b>valor</b></td></tr>
 <p >Possui uma função validar. Se o nome (tipo string) passado para a função for válido, o nome é armazenado. Caso contrário, ocorre o lançamento de uma exceção.</p>
 <p ><b>Regras para o nome ser aceito</b>:</p><ol type="1">
 <li>Até 30 caracteres</li>
-<li>Formato: prenome sobrenome</li>
-<li>Não pode ter dois espaços em branco</li>
+<li>Formato: Prenome Sobrenome</li>
+<li>Não pode ter dois ou mais espaços em branco</li>
 <li>Não pode terminar ou começar com espaço em branco</li>
-<li>Somente letras</li>
+<li>Caracteres podem ser letras do alfabeto sem acento, ou espaço em branco</li>
 <li>As letras iniciais do prenome e sobrenome devem ser maiúsculas</li>
 </ol>
 <p ><b>Exemplos de nomes válidos</b>:</p><ul>
@@ -153,8 +154,14 @@ string&#160;</td><td class="memItemRight" valign="bottom"><b>valor</b></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid_argument</td><td>se não for valido </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Implements <a class="el" href="class_dominio.html">Dominio</a>.</p>
+<p>Implements <a class="el" href="class_dominio.html#a778fa2ec4c361cc2d368f6fa01727be8">Dominio</a>.</p>
 
 </div>
 </div>

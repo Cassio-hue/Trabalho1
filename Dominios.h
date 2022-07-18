@@ -199,11 +199,25 @@ class Cidade : public Dominio {
 
 
 /// \brief Domínio Email
+///
+/// **Regra para a descrição ser aceita**:
+/// 1. Nome de parte-local é composto por até 64 caracteres.
+/// 2. Caractere pode ser letra (A-Z ou a-z).
+/// 3. Caractere pode ser dígito (0-9).
+/// 4. Caractere pode ser hífen (-), sublinhado ( _ ) ou ponto (.) desde que seguido por letra ou dígito.
+/// 5. Caractere ponto (.) não pode ser o primeiro caractere no nome.
+/// 6. Nome de domínio é composto por lista de termos separados por pontos.
+/// 7. Ponto (.) não pode ser o primeiro caractere do nome de domíno e não pode ocorrer em sequência.
+/// 8. Cada termo é composto por até 63 carateres.
+/// 9. Caractere no termo pode ser letra (A-Z ou a-z).
+/// 10. Caractere no termo pode ser dígito (0-9).
+/// 11. Caractere no termo pode ser hífen (-) desde que não seja o primeiro ou o último caractere.
+
 class Email : public Dominio {
     // Matrícula: 211038208
     
     protected:
-    /// @param PADRAO_ACEITO constante regex que garante que a string inserida seja um email válido
+    /// Constante regex que garante que a string inserida seja um email válido
         static const regex PADRAO_ACEITO;
 /// @throw invalid_argument se não for valido
         void validar(string);
@@ -211,7 +225,6 @@ class Email : public Dominio {
 /// Constrói o Domínio Email e valida o dado inserido
         Email(const string&);
 
-/// Deve seguir o padrão: parte-local@dominio
 
 };
 
@@ -227,7 +240,7 @@ class Senha : public Dominio {
     // Matrícula: 211038208
 
     protected:
-    /// @param PADRAO_ACEITO constante regex que garante que a string inserida seja uma senha válida
+    /// Constante regex que garante que a string inserida seja uma senha válida
         static const regex PADRAO_ACEITO;
 /// @throw invalid_argument se não for valido
         void validar(string);
@@ -245,7 +258,7 @@ class Senha : public Dominio {
 class Descricao : public Dominio {
         // Matricula: 211026495
     protected:
-/// @param PADRAO_NAO_ACEITO constante regex que garante que a string inserida não possui pontuação em sequência
+/// Constante regex que garante que a string inserida não possui pontuação em sequência
         static const regex PADRAO_NAO_ACEITO;
         static const int MAXIMO_CARACTERES;
 /// @throw invalid_argument se não for valido
@@ -258,11 +271,14 @@ class Descricao : public Dominio {
 };
 
 /// \brief Dominio Pais escolhido para hospedagem.
+///
+/// **Regra para o país ser aceito**:
+/// Estar entre os países em POSSIVEIS_VALORES
 class Pais : public Dominio {
     // Matricula: 211026495
 
     protected:
-/// @param POSSIVEIS_VALORES objeto com únicos possíveis países que são aceitos na classe
+/// Objeto com únicos possíveis países que são aceitos na classe
         static const unordered_set<string> POSSIVEIS_VALORES;
 
 /// @throw invalid_argument país não está entre os aceitos

@@ -111,7 +111,8 @@ class Hospedagem {
 
         void setDescricao(const string&);
         string getDescricao() const;
-
+        /// Cada atributo da entidade possui um set/get**NomeDoAtributo**
+        /// É necessário inserir cinco parâmetros para os construtores da  
         Hospedagem(const string&, const string&, const string&, const string&, const string&);
 };
 
@@ -173,7 +174,6 @@ class Avaliacao {
 
         void setDescricao(const string&);
         string getDescricao() const;
-
         Avaliacao(const string&, const string&, const string&);
 };
 

@@ -29,9 +29,9 @@
 					<Add option="-s" />
 				</Linker>
 			</Target>
-			<Target title="Teste">
-				<Option output="bin/Teste/Trabalho1" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj/Teste/" />
+			<Target title="Testes">
+				<Option output="bin/Testes/Trabalho1" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Testes/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -58,22 +58,22 @@
 		</Unit>
 		<Unit filename="testes/catch.hpp">
 			<Option compile="1" />
-			<Option target="Teste" />
+			<Option target="Testes" />
 		</Unit>
 		<Unit filename="testes/testes-dominios.cpp">
-			<Option target="Teste" />
+			<Option target="Testes" />
 		</Unit>
 		<Unit filename="testes/testes-main.cpp">
-			<Option target="Teste" />
+			<Option target="Testes" />
 		</Unit>
 		<Unit filename="testes/testes-valores.h">
-			<Option target="Teste" />
+			<Option target="Testes" />
 		</Unit>
 		<Unit filename="testes/testes-valores.cpp">
-			<Option target="Teste" />
+			<Option target="Testes" />
 		</Unit>
 		<Unit filename="testes/testes-entidades.cpp">
-			<Option target="Teste" />
+			<Option target="Testes" />
 		</Unit>
 		<Extensions />
 	</Project>

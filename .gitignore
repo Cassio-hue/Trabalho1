@@ -1,6 +1,1 @@
-.gitignore
 .vscode
-bin
-obj
-a.out
-main

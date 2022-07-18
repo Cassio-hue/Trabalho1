@@ -157,14 +157,15 @@ inline string Hospedagem::getDescricao() const {
 
 
 // #-----------------------------------------classe Avaliacao-----------------------------------------#
-
+/// Avaliacao, dada por um usuario sobre uma hospedagem.
 class Avaliacao {
     private:
-        Codigo codigo;
-        Nota nota;
-        Descricao descricao;
+        Codigo codigo;  ///< Dominio Codigo. Serve como primary key da classe
+        Nota nota;  ///< Dominio Nota. Guarda a nota dada
+        Descricao descricao;  ///< Dominio Nota. Guarda a nota dada
 
     public:
+/// chama setValor() de dominio
         void setCodigo(const string&);
         string getCodigo() const;
 

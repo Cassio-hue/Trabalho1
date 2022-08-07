@@ -6,19 +6,21 @@
 using namespace std;
 
 
-TEMPLATE_TEST_CASE( "dominios tem construtor, set e get funcionando", "[dominios][template]",
-            Nome , Nota, Data, Codigo, Cidade, Email, Senha, Descricao //, outros dominios. Acessiveis no teste por TestType
+TEMPLATE_TEST_CASE( "dominios tem construtor, set e get funcionando", "[dominios]",
+            Nome , Nota, Data, Codigo, Cidade, Email, Senha, Descricao, Pais, Idioma
+            // Acessiveis no teste por TestType
     ) {
     
  
-    SECTION("Método set", "[set]"){
+    SECTION("método set", "[set]"){
         TestType dominio{
             ValoresEInfo<TestType>::VALORES_VALIDOS[0].first
         };
  
-        SECTION("Valores validos", "[validos]"){
+        SECTION("valores validos", "[validos]"){
  
-            for(const pair<string, string> &valor_e_info : ValoresEInfo<TestType>::VALORES_VALIDOS){
+            for(int i = 0; i < ValoresEInfo<TestType>::N_VALORES_VALIDOS; i++){
+                const pair<string, string> &valor_e_info = ValoresEInfo<TestType>::VALORES_VALIDOS[i];
                 const string &valor = valor_e_info.first, &info = valor_e_info.second;
  
                 SECTION(valor + '\n' + info){
@@ -30,9 +32,10 @@ TEMPLATE_TEST_CASE( "dominios tem construtor, set e get funcionando", "[dominios
  
         }
  
-        SECTION("Valores invalidos", "[invalidos]"){
-            for(const pair<string, string> &valor_e_info : ValoresEInfo<TestType>::VALORES_INVALIDOS){
-                const string& valor = valor_e_info.first, info = valor_e_info.second;
+        SECTION("valores invalidos", "[invalidos]"){
+            for(int i = 0; i < ValoresEInfo<TestType>::N_VALORES_INVALIDOS; i++){
+                const pair<string, string> &valor_e_info = ValoresEInfo<TestType>::VALORES_INVALIDOS[i];
+                const string &valor = valor_e_info.first, &info = valor_e_info.second;
  
                 SECTION(valor + '\n' + info){
                     CHECK_THROWS_AS(dominio.setValor(valor), invalid_argument);
@@ -43,13 +46,14 @@ TEMPLATE_TEST_CASE( "dominios tem construtor, set e get funcionando", "[dominios
     }
  
  
-    SECTION("Construtor", "[construtor]"){
+    SECTION("construtor", "[construtor]"){
         TestType* dominioptr;
  
-        SECTION("Valores validos", "[validos]"){
+        SECTION("valores validos", "[validos]"){
  
-            for(const pair<string, string> &valor_e_info : ValoresEInfo<TestType>::VALORES_VALIDOS){
-                const string& valor = valor_e_info.first, info = valor_e_info.second;
+            for(int i = 0; i < ValoresEInfo<TestType>::N_VALORES_VALIDOS; i++){
+                const pair<string, string> &valor_e_info = ValoresEInfo<TestType>::VALORES_VALIDOS[i];
+                const string &valor = valor_e_info.first, &info = valor_e_info.second;
  
                 SECTION(valor + '\n' + info){
  
@@ -64,9 +68,10 @@ TEMPLATE_TEST_CASE( "dominios tem construtor, set e get funcionando", "[dominios
             }
         }
  
-        SECTION("Valores invalidos", "[invalidos]"){
+        SECTION("valores invalidos", "[invalidos]"){
  
-            for(const pair<string, string> &valor_e_info : ValoresEInfo<TestType>::VALORES_INVALIDOS){
+            for(int i = 0; i < ValoresEInfo<TestType>::N_VALORES_INVALIDOS; i++){
+                const pair<string, string> &valor_e_info = ValoresEInfo<TestType>::VALORES_INVALIDOS[i];
                 const string& valor = valor_e_info.first, info = valor_e_info.second;
  
                 SECTION(valor + '\n' + info){

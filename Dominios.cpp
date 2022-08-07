@@ -34,6 +34,7 @@ Senha::Senha(const string& valor) : Dominio(valor){validar(valor);};
 
 Descricao::Descricao(const string& valor) : Dominio(valor){validar(valor);};
 
+Pais::Pais(const string& valor) : Dominio(valor){validar(valor);};
 
 void Nome::validar(string nome){
     // Matricula: 211036141
@@ -44,7 +45,7 @@ void Nome::validar(string nome){
     bool espacoBranco = false;
     bool primeiraLetraNome = isupper(nome[0]);
 
-    if (!primeiraLetraNome || nomeTamanho >= 31){
+    if (!primeiraLetraNome || nomeTamanho > 30){
         throw invalid_argument("Formato inadequado para nome.");
     }
     else if (nome[nomeTamanho-1] == ' '){
@@ -164,10 +165,18 @@ void Senha::validar(string valor){
 void Descricao::validar(string valor) {
     // Matricula: 211026495
 
-    if (valor.size() > MAXIMO_CARACTERES) {
+    if ((int)valor.size() > MAXIMO_CARACTERES) {
         throw invalid_argument("Descricao deve possuir de 0 a 40 caracteres.");
     }
     if (regex_search(valor, PADRAO_NAO_ACEITO)) {
         throw invalid_argument("Descricao invalida.");
+    }
+}
+
+void Pais::validar(string valor){
+    // Matrícula: 211026495
+
+    if (POSSIVEIS_VALORES.find(valor) == POSSIVEIS_VALORES.end()){
+        throw invalid_argument("Pais Invalido");
     }
 }

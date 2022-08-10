@@ -26,7 +26,6 @@ inline void CntrApresentacaoControle::setCntrApresentacaoAutenticacao(IApresenta
     cntrApresentacaoAutenticacao = cntr;
 }
 
-
 inline void CntrApresentacaoControle::setCntrApresentacaoUsuario(IApresentacaoUsuario *cntr){
             cntrApresentacaoUsuario = cntr;
 }
@@ -39,7 +38,6 @@ class CntrApresentacaoAutenticacao:public IApresentacaoAutenticacao {
         bool autenticar(Email*);
         void setCntrServicoAutenticacao(IServicoAutenticacao*);
 };
-
 
 inline void CntrApresentacaoAutenticacao::setCntrServicoAutenticacao(IServicoAutenticacao *cntr) {
     this->cntr = cntr;
@@ -60,7 +58,6 @@ class CntrApresentacaoUsuario:public IApresentacaoUsuario {
 inline void CntrApresentacaoUsuario::setCntrServicoUsuario(IServicoUsuario *cntr) {
     cntrServicoUsuario = cntr;
 }
-
 
 //--------------------------------------------------------------------------------------------
 

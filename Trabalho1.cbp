@@ -47,11 +47,15 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="CntlApresentacao.cpp" />
+		<Unit filename="CntlApresentacao.h" />
 		<Unit filename="Constantes.cpp" />
 		<Unit filename="Dominios.cpp" />
 		<Unit filename="Dominios.h" />
 		<Unit filename="Entidades.cpp" />
 		<Unit filename="Entidades.h" />
+		<Unit filename="Interface.cpp" />
+		<Unit filename="Interface.h" />
 		<Unit filename="main.cpp">
 			<Option target="Debug" />
 			<Option target="Release" />
@@ -63,16 +67,16 @@
 		<Unit filename="testes/testes-dominios.cpp">
 			<Option target="Testes" />
 		</Unit>
-		<Unit filename="testes/testes-main.cpp">
+		<Unit filename="testes/testes-entidades.cpp">
 			<Option target="Testes" />
 		</Unit>
-		<Unit filename="testes/testes-valores.h">
+		<Unit filename="testes/testes-main.cpp">
 			<Option target="Testes" />
 		</Unit>
 		<Unit filename="testes/testes-valores.cpp">
 			<Option target="Testes" />
 		</Unit>
-		<Unit filename="testes/testes-entidades.cpp">
+		<Unit filename="testes/testes-valores.h">
 			<Option target="Testes" />
 		</Unit>
 		<Extensions />

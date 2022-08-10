@@ -20,11 +20,11 @@ int main()
     // hospedagem->getNota();
     // hospedagem->getPais();
     // string codigo, string cidade, string pais, string nota, string descricao
-    Hospedagem hospedagem("12345678903", "Rio de Janeiro", "Brasil", "10", "oi,meu nome eh ronaldo");
+    // Hospedagem hospedagem("12345678903", "Rio de Janeiro", "Brasil", "10", "oi,meu nome eh ronaldo");
 
-    Usuario usuario("Cassio Vini", "cassiocvtb@gmail", "aZ#90", "Ingles", "10/Fev", "Sou lindo!");
+    // Usuario usuario("Cassio Vini", "cassiocvtb@gmail", "aZ#90", "Ingles", "10/Fev", "Sou lindo!");
 
-    cout << usuario.getEmail() << endl;
+    // cout << usuario.getEmail() << endl;
 
     return 0;
 };

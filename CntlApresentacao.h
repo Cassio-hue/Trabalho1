@@ -9,9 +9,7 @@
 #include "Entidades.h"
 #include "Interface.h"
 
-#define CLR_SCR system("cls");
-
-
+//
 class CntrApresentacaoControle {
     private:
         IApresentacaoAutenticacao *cntrApresentacaoAutenticacao;

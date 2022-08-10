@@ -4,6 +4,8 @@
 #include "Dominios.h"
 #include "Entidades.h"
 
+class IServicoAutenticacao;
+class IServicoUsuario;
 
 class IApresentacaoAutenticacao {
     public:
@@ -29,7 +31,7 @@ class IServicoAutenticacao {
 };
 
 
-class IServicoUsuario{
+class IServicoUsuario {
 public:
         virtual bool cadastrarUsuario(Usuario) = 0;
         virtual ~IServicoUsuario(){}

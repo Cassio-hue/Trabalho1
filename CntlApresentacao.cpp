@@ -1,4 +1,4 @@
-#include <ncurses.h>
+// #include <ncurses.h>
 #include <strings.h>
 #include "CntlApresentacao.h"
 

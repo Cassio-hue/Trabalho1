@@ -3225,3 +3225,36 @@
 	"Dominios.h"
 	"Entidades.h"
 
+1660320000 source:d:\unb\tp1\trabalho1\constantes.cpp
+	"Dominios.h"
+
+1660320000 d:\unb\tp1\trabalho1\dominios.h
+	<stdexcept>
+	<ctype.h>
+	<string>
+	<regex>
+	<unordered_set>
+
+1660320000 source:d:\unb\tp1\trabalho1\dominios.cpp
+	"Dominios.h"
+	<iostream>
+
+1660320000 source:d:\unb\tp1\trabalho1\entidades.cpp
+	"Entidades.h"
+	<stdexcept>
+
+1660320000 d:\unb\tp1\trabalho1\entidades.h
+	"Dominios.h"
+
+1660320000 source:d:\unb\tp1\trabalho1\interface.cpp
+	"Interface.h"
+
+1660320000 d:\unb\tp1\trabalho1\interface.h
+	"Dominios.h"
+	"Entidades.h"
+
+1660320000 source:d:\unb\tp1\trabalho1\main.cpp
+	<iostream>
+	"Dominios.h"
+	"Entidades.h"
+

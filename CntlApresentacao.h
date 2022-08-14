@@ -9,9 +9,10 @@
 #include "Entidades.h"
 #include "Interface.h"
 
-//
+
 class CntrApresentacaoControle {
     private:
+        Email email;
         IApresentacaoAutenticacao *cntrApresentacaoAutenticacao;
         IApresentacaoUsuario *cntrApresentacaoUsuario;
     public:
@@ -41,7 +42,6 @@ inline void CntrApresentacaoAutenticacao::setCntrServicoAutenticacao(IServicoAut
     this->cntr = cntr;
 }
 
-//----------------------------------------------------------------------------------------
 
 class CntrApresentacaoUsuario:public IApresentacaoUsuario {
     private:
@@ -56,8 +56,6 @@ class CntrApresentacaoUsuario:public IApresentacaoUsuario {
 inline void CntrApresentacaoUsuario::setCntrServicoUsuario(IServicoUsuario *cntr) {
     cntrServicoUsuario = cntr;
 }
-
-//--------------------------------------------------------------------------------------------
 
 
 #endif // CONTROLADORASAPRESENTACAO_H_INCLUDED

@@ -57,5 +57,26 @@ inline void CntrApresentacaoUsuario::setCntrServicoUsuario(IServicoUsuario *cntr
     cntrServicoUsuario = cntr;
 }
 
+class CntrApresentacaoHospedagem:public IApresentacaoHospedagem {
+    private:
+        IServicoHospedagem *cntr;
+        void listarHospedagens();
+        void acessarDadosHospedagem();
+    
+        void cadastrarHospedagem();
+        void editarHospedagem();
+        void descadastrarHospedagem();
+        void cadastrarAvaliacao();
+        void editarAvaliacao();
+        void descadastrarAvaliacao();
+    public:
+        void executar();
+        void executar(Email);
+        void setCntrServicoHospedagem(IServicoHospedagem*);
+};
+
+inline void CntrApresentacaoHospedagem::setCntrServicoHospedagem(IServicoHospedagem *cntr) {
+    this->cntr = cntr;
+}
 
 #endif // CONTROLADORASAPRESENTACAO_H_INCLUDED

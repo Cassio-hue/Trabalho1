@@ -18,23 +18,27 @@ void CntrApresentacaoControle::executar() {
     char texto8[]="2 - Selecionar servicos relacionados a produtos financeiros.";
     char texto9[]="3 - Encerrar sessao.";
 
+    char texto11[]="Digite aqui: ";
     char texto10[]="Falha na autenticacao. Digite algo para continuar.";
 
     int campo;
     bool apresentar = true;
 
-    while(apresentar){
+    while(apresentar) {
 
+        CLR_SCR;
+
+        // Apresenta a tela inicial do programa
         cout << texto1 << endl;
         cout << texto2 << endl;
         cout << texto3 << endl;
         cout << texto4 << endl;
         cout << texto5 << endl;
-
-        campo = getch() - 48;
+        cout << texto11;
+        cin >> campo;
 
         switch(campo) {
-            case 1: if(cntrApresentacaoAutenticacao->autenticar(&email)) {
+            case 1: if (cntrApresentacaoAutenticacao->autenticar(&email)) {
                         bool apresentar = true;
                         while(apresentar) {
 
@@ -43,7 +47,8 @@ void CntrApresentacaoControle::executar() {
                             cout << texto8 << endl;
                             cout << texto9 << endl;
 
-                            campo = getch() - 48;
+                            cout << texto11;
+                            cin >> campo;
 
                             switch(campo) {
                                 case 1: cntrApresentacaoUsuario->executar(email);
@@ -55,13 +60,15 @@ void CntrApresentacaoControle::executar() {
                     }
                     else {
                         cout << texto10 << endl;
-                        getch();
+                        // getch();
                     }
                     break;
             case 2: cntrApresentacaoUsuario->cadastrar();
-                    break;
+                break;
             case 3: apresentar = false;
-                    break;
+                break;
+            case 4: apresentar = false;
+                break;
         }
     }
     return;
@@ -82,9 +89,11 @@ bool CntrApresentacaoAutenticacao::autenticar(Email *email) {
 
     while(true) {
 
-        cout << texto1 << " ";
+        CLR_SCR;
+
+        cout << texto1;
         cin >> campo1;
-        cout << texto2 << " ";
+        cout << texto2;
         cin >> campo2;
 
         try{

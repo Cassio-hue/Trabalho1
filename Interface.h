@@ -16,7 +16,7 @@ class IApresentacaoAutenticacao {
 };
 
 
-class IApresentacaoUsuario{
+class IApresentacaoUsuario {
     public:
         virtual void executar(Email) = 0;
         virtual void cadastrar() = 0;

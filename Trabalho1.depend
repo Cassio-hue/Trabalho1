@@ -3258,3 +3258,50 @@
 	"Dominios.h"
 	"Entidades.h"
 
+1660876667 source:c:\users\cassi\documents\codas\trabalho1\constantes.cpp
+	"Dominios.h"
+
+1660876667 c:\users\cassi\documents\codas\trabalho1\dominios.h
+	<stdexcept>
+	<ctype.h>
+	<string>
+	<regex>
+	<unordered_set>
+
+1660876667 source:c:\users\cassi\documents\codas\trabalho1\dominios.cpp
+	"Dominios.h"
+	<iostream>
+
+1660876667 source:c:\users\cassi\documents\codas\trabalho1\entidades.cpp
+	"Entidades.h"
+	<stdexcept>
+
+1660876667 c:\users\cassi\documents\codas\trabalho1\entidades.h
+	"Dominios.h"
+
+1660876667 source:c:\users\cassi\documents\codas\trabalho1\interface.cpp
+	"Interface.h"
+
+1660876888 c:\users\cassi\documents\codas\trabalho1\interface.h
+	"Dominios.h"
+	"Entidades.h"
+
+1660926520 source:c:\users\cassi\documents\codas\trabalho1\main.cpp
+	<iostream>
+	"Dominios.h"
+	"Entidades.h"
+	"Interface.h"
+	"CntlApresentacao.h"
+
+1660927714 c:\users\cassi\documents\codas\trabalho1\cntlapresentacao.h
+	<conio.h>
+	<iostream>
+	<string.h>
+	"Dominios.h"
+	"Entidades.h"
+	"Interface.h"
+
+1660927137 source:c:\users\cassi\documents\codas\trabalho1\cntlapresentacao.cpp
+	<strings.h>
+	"CntlApresentacao.h"
+

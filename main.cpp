@@ -15,7 +15,7 @@ int main() {
     IApresentacaoUsuario *cntrApresentacaoUsuario;
     IApresentacaoHospedagem *cntrApresentacaoHospedagem;
 
-    cntrApresentacaoControle = new CntrApresentacaoControle();
+    cntrApresentacaoControle = new CntrApresentacaoControle(); // bug que não sei resolver
     cntrApresentacaoAutenticacao = new CntrApresentacaoAutenticacao();
     cntrApresentacaoUsuario = new CntrApresentacaoUsuario();
     cntrApresentacaoHospedagem = new CntrApresentacaoHospedagem();
